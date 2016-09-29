@@ -21,6 +21,9 @@ class CreateProjectsTable extends Migration
             $table->text('goal');
             $table->text('foto');
             $table->string('category');
+            $table->string('address');
+            $table->double('lat', 15, 8);  
+            $table->double('lng', 15, 8);
             $table->timestamps();
         });
     }

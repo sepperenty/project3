@@ -3,14 +3,21 @@
 
 
 @section('content')
-
-
-	@foreach($projects as $project)
-
-		<h1>{{$project->title}}</h1>
 	
+	<div class="col-md-4">
+		
+		<ul class="list-group">
+			@foreach($projects as $project)
+				<li class="list-group-item">
+					{{$project->title}}
+				</li>
+					
+				
 
-	@endforeach
+			@endforeach
+		</ul>
+		
+	
 
 
 
