@@ -76,25 +76,68 @@
     $(function () {
 
         function initMap() {
-            var myLatLng = {lat: -25.363, lng: 131.044};
+            var myLatLng = {lat: 51.1902454, lng: 4.3883994};
 
             var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 4,
+                zoom: 12,
                 center: myLatLng
             });
 
-            var marker = new google.maps.Marker({
-                        position: myLatLng,
-                        map: map,
-                        title: 'Hello World!'
-                    },
-                    {
-                        position: {lat: -25.300, lng: 131.046},
-                        map: map,
-                        title: 'Hello World!'
+            var jqxhr = $.get( "http://localhost/Web_project_vrijwilligerswerk/project3/project3/public/api/projects", function() {
+                console.log("success");
+            })
+                    .done(function(data) {
+                        console.log('second succes',data);
+
+                            if(data){
+                                for (i = 0; i < data.length; i++) {
+
+                                    var infowindow = new google.maps.InfoWindow();
+                                    var marker, i;
+
+                                    marker = new google.maps.Marker({
+                                        position: new google.maps.LatLng(data[i].lat, data[i].lng),
+                                        map: map
+                                    });
+
+                                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+
+                                        var contentString = '<div id="content"> <img src="'+data[i].foto+'" '+
+                                                '<div id="siteNotice">'+
+                                                '</div>'+
+                                                '<h1 id="firstHeading" class="firstHeading">'+data[i].title+'</h1>'+
+                                                '<div id="bodyContent">'+
+                                                '<p>'+data[i].description+'</p>'+'<div><a href="http://localhost/Web_project_vrijwilligerswerk/project3/project3/public/'+data[i].id+'/project">meer</a><div>'+
+                                                '</div>'+
+                                                '</div>';
+
+                                        return function() {
+                                            infowindow.setContent(contentString);
+                                            infowindow.open(map, marker);
+                                        }
+                                    })(marker, i));
+                                }
+                            }else {
+                                alert("data base gegevens zijn leeg");
+                            }
+                    })
+                    .fail(function() {
+                        console.log("error")
                     });
+
+
+
         }
         google.maps.event.addDomListener(window, 'load', initMap);
+
+
+//        $.get( "ajax/test.html", function( data ) {
+//            console.log(data);
+//        });
+
+
+
+
     });
 </script>
 </body>
