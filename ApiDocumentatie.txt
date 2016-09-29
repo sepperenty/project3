@@ -1,0 +1,8 @@
+/api/projects               ->          Returnt al de projecten + info over de user
+
+/api/projects/{project_id}  ->          Returnt info over 1 project + info over de user
+
+
+/projects                   ->          Lege vieuw waar de kaart met projecten op komt.          : vieuws/projects/index.blade.php
+
+/projects/manage            ->          Returnt vieuw waar projecten van de ingelogde user komen : vieuws/projects/manage.blade.php

@@ -18,3 +18,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/projects', 'ProjectsController@index');
+
+Route::get('/projects/manage', 'ProjectsController@manage');
+
+///////////////////*API's*///////////////////////////////////
+Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');
+
+Route::get('/api/projects/{project}', 'APIcontroller@showOneProjectAPI');
