@@ -15,6 +15,8 @@
           rel="stylesheet">
 
     <!-- scripts -->
+    <!-- root script altijd van boven staan -->
+    <script src="{{ url('/js/root.js') }}"></script>
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug"></script>
     <style>
@@ -75,15 +77,20 @@
 <script>
     $(function () {
 
+
+
+        console.log(getBaseUrl());
+
+
         function initMap() {
-            var myLatLng = {lat: 51.1902454, lng: 4.3883994};
+            var myLatLng = {lat: 51.2194475, lng: 4.4024643};
 
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 12,
                 center: myLatLng
             });
 
-            var jqxhr = $.get( "http://localhost/Web_project_vrijwilligerswerk/project3/project3/public/api/projects", function() {
+            var jqxhr = $.get( root+"/api/projects", function() {
                 console.log("success");
             })
                     .done(function(data) {
