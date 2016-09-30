@@ -41,14 +41,23 @@ class ProjectsController extends Controller
     	$project->description = $request->description;
     	$project->goal = $request->goal;
     	$project->category = $request->category;
+    	$project->address = $request->address;
+    	$project->lat = 1.5215;
+    	$project->lng = 1.02524;
 
 
     	if($request->hasFile('foto'))
     	{
-    		return 'true';
+    		$path = $request->foto->store('media/images');
+    		$project->foto = $path;
+    		$project->save();
+    		return redirect('/projects/manage');
     	}
 
-    	return 'false';
+    	else
+    	{
+    		return "error";
+    	}
     	
     	
     	
