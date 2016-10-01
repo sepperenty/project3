@@ -114,7 +114,7 @@
                                                 '</div>'+
                                                 '<h1 id="firstHeading" class="firstHeading">'+data[i].title+'</h1>'+
                                                 '<div id="bodyContent">'+
-                                                '<p>'+data[i].description+'</p>'+'<div><a href="http://localhost/Web_project_vrijwilligerswerk/project3/project3/public/'+data[i].id+'/project">meer</a><div>'+
+                                                '<p>'+data[i].description+'</p>'+'<div><a href="/projects/'+data[i].id+'/">meer</a><div>'+
                                                 '</div>'+
                                                 '</div>';
 

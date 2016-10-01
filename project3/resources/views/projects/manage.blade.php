@@ -16,6 +16,24 @@
                     creeër nieuw project
                 </li>
                     <p class="alert alert-info info col-md-12">Vul de gegevens in om je zoekertje te plaatsen</p>
+
+                    
+                   
+                    @if(count($errors))
+					
+				
+					@foreach($errors->all() as $error)
+					
+					<li class="alert alert-danger col-md-12 list-group-item">{{$error}}</li>		
+			
+					@endforeach
+
+				
+		
+			@endif
+
+
+
             </ul>
 
         </div>
@@ -39,17 +57,17 @@
 
                 <div class="form-group col-md-12">
                     <label for="description">Description</label>
-                    <textarea name="description" cols="30" rows="10" class="form-control "></textarea>
+                    <textarea name="description" cols="30" rows="10" class="form-control ">{{old('description')}}</textarea>
                 </div>
 
                 <div class="form-group col-md-12">
                     <label for="category">Category</label>
-                    <input type="text" name="category" class="form-control ">
+                    <input type="text" name="category" class="form-control" value="{{old('category')}}">
                 </div>
 
                 <div class="form-group col-md-12">
                     <label for="goal">Goal</label>
-                    <input type="text" name="goal" class="form-control ">
+                    <input type="text" name="goal" class="form-control" vlue="{{old('goal')}}">
                 </div>
             </div>
             <div class="row">
@@ -74,7 +92,7 @@
                 </div>
 
                 <div class="form-group col-md-12">
-                    <button class="btn btn-primary">Create Project</button>
+                    <button class="btn btn-primary" id="manageBtn">Create Project</button>
                 </div>
             </div>
             {{ Form::close() }}

@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
 
-    $('#form_project').validate({ // initialize the plugin
+  /*  $('#form_project').validate({ // initialize the plugin
         rules: {
             title: {
                 required: true,
@@ -32,7 +32,7 @@ $(document).ready(function () {
             }
         }
     });
-
+*/
 
 
 
@@ -46,6 +46,8 @@ $(document).ready(function () {
 
         if (project_id != "new_project") {
 
+             $(".id").val(project_id);
+             $("#manageBtn").html("Update Project");
             var jqxhr = $.get(root + "/api/projects/" + project_id, function () {
                 console.log("success");
             })
@@ -79,12 +81,14 @@ $(document).ready(function () {
 
                 });
         } else {
+            $("#manageBtn").html("Create Project");
             console.log($('form').trigger("reset"));
             show_message("info","Vul de gegevens in om je zoekertje te plaatsen");
             if ($(".project_foto")) {
                 $(".project_foto").remove();
             }
             init_map(cons_lan,cons_lng,cons_zoom_uot);
+
         }
 
 
