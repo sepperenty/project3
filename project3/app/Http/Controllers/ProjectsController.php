@@ -10,7 +10,7 @@ use App\Http\Requests;
 use App\Project;
 
 class ProjectsController extends Controller
-{	
+{
 
 	public function index()
 	{
@@ -24,7 +24,7 @@ class ProjectsController extends Controller
 
 	}
 
-    
+
 
 	public function __construct()
     {
@@ -37,7 +37,7 @@ class ProjectsController extends Controller
     	$projects = Project::all()->where('user_id', Auth()->user()->id);
 
     	return view('projects/manage', compact('projects'));
-       
+
     }
 
 
@@ -49,14 +49,14 @@ class ProjectsController extends Controller
         'category' => 'required | max: 100',
         'goal' => 'required | max:255',
         'address' => 'required | max:255',
-        'foto' 	=> 'max:5000 | mimes:jpeg,bmp,png' 
+        'foto' 	=> 'max:5000 | mimes:jpeg,bmp,png'
    			 ]);
 
 
     	$project = new Project;
 
     	$path = "";
-    	
+
         if($request->hasFile('foto'))
     	{
     		$path = $request->foto->store('media/images');
@@ -103,7 +103,7 @@ class ProjectsController extends Controller
     			$path = "media/images/default.jpeg";
     			$project->foto = $path;
     		}
-    		
+
 	    	$project->user_id = Auth()->user()->id;
 	    	$project->title = $request->title;
 	    	$project->description = $request->description;
@@ -115,15 +115,15 @@ class ProjectsController extends Controller
     		$project->save();
     	}
 
-    	
+
     	return redirect('/projects/manage');
 
-    	
-    	
-    	
-    	
 
-    	
+
+
+
+
+
 
     }
 
