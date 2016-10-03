@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -15,7 +14,7 @@ class ProjectsController extends Controller
 
 	public function index()
 	{
-		return view('projects/index');
+        return view('projects/index');
 	}
 
 	public function show(Project $project)
@@ -38,11 +37,12 @@ class ProjectsController extends Controller
     	$projects = Project::all()->where('user_id', Auth()->user()->id);
 
     	return view('projects/manage', compact('projects'));
+       
     }
+
 
     public function store(Request $request)
     {
-
     	 $this->validate($request, [
         'title' => 'required|max:255',
         'description' => 'required | max:500',
@@ -54,8 +54,10 @@ class ProjectsController extends Controller
 
 
     	$project = new Project;
+
     	$path = "";
-    	if($request->hasFile('foto'))
+    	
+        if($request->hasFile('foto'))
     	{
     		$path = $request->foto->store('media/images');
     		$project->foto = $path;
