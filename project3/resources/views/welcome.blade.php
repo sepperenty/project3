@@ -109,7 +109,8 @@
 
                                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
 
-                                        var urlproject = getBaseUrl()+'projects/'+data[i].id;
+                                        var urlproject = getBaseUrl()+'projects/'+data[i].id+'/show';
+                                        console.log(urlproject);
 
                                         var contentString = '<div id="content"> <img src="'+data[i].foto+'" '+
                                                 '<div id="siteNotice">'+
@@ -117,9 +118,7 @@
                                                 '<h1 id="firstHeading" class="firstHeading">'+data[i].title+'</h1>'+
                                                 '<div id="bodyContent">'+
 
-                                                '<p>'+data[i].description+'</p>'+'<div><a href=""'+urlproject+'">meer</a><div>'+
-
-                                                '<p>'+data[i].description+'</p>'+'<div><a href="">meer</a><div>'+
+                                                '<p>'+data[i].description+'</p>'+'<div><a href="'+urlproject+'">meer</a><div>'+
 
                                                 '</div>'+
                                                 '</div>';
