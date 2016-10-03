@@ -109,12 +109,14 @@
 
                                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
 
+                                        var urlproject = getBaseUrl()+'/projects/'+data[i].id;
+
                                         var contentString = '<div id="content"> <img src="'+data[i].foto+'" '+
                                                 '<div id="siteNotice">'+
                                                 '</div>'+
                                                 '<h1 id="firstHeading" class="firstHeading">'+data[i].title+'</h1>'+
                                                 '<div id="bodyContent">'+
-                                                '<p>'+data[i].description+'</p>'+'<div><a href="/projects/'+data[i].id+'/">meer</a><div>'+
+                                                '<p>'+data[i].description+'</p>'+'<div><a href="'+urlproject+'">meer</a><div>'+
                                                 '</div>'+
                                                 '</div>';
 
@@ -122,11 +124,13 @@
                                             infowindow.setContent(contentString);
                                             infowindow.open(map, marker);
                                         }
+
                                     })(marker, i));
                                 }
                             }else {
                                 alert("data base gegevens zijn leeg");
                             }
+
                     })
                     .fail(function() {
                         console.log("error")

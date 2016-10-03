@@ -1,6 +1,9 @@
 @extends('layouts/app')
-
-
+@section('header')
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="{{ url('/js/manage.js') }}"></script>
+@endsection
 
 @section('content')
     <div class="row">
@@ -15,23 +18,21 @@
                 <li class="list-group-item project_list" data-project_id="new_project">
                     creeër nieuw project
                 </li>
-                    <p class="alert alert-info info col-md-12">Vul de gegevens in om je zoekertje te plaatsen</p>
+                <p class="alert alert-info info col-md-12">Vul de gegevens in om je zoekertje te plaatsen</p>
 
-                    
-                   
-                    @if(count($errors))
-					
-				
-					@foreach($errors->all() as $error)
-					
-					<li class="alert alert-danger col-md-12 list-group-item">{{$error}}</li>		
-			
-					@endforeach
 
-				
-		
-			@endif
+                @if(count($errors))
 
+
+                    @foreach($errors->all() as $error)
+
+                        <li class="alert alert-danger col-md-12 list-group-item">{{$error}}</li>
+
+                    @endforeach
+
+
+
+                @endif
 
 
             </ul>
@@ -57,7 +58,8 @@
 
                 <div class="form-group col-md-12">
                     <label for="description">Description</label>
-                    <textarea name="description" cols="30" rows="10" class="form-control ">{{old('description')}}</textarea>
+                    <textarea name="description" cols="30" rows="10"
+                              class="form-control ">{{old('description')}}</textarea>
                 </div>
 
                 <div class="form-group col-md-12">
@@ -78,7 +80,8 @@
                     <input type="text" name="address" class="form-control" id="searchTextField">
                     <input type="text" name="lat" value="" hidden>
                     <input type="text" name="lng" value="" hidden>
-                    <p class="alert alert-danger info_location col-md-12" hidden>Er ging iets mis, probeer het later nog eens</p>
+                    <p class="alert alert-danger info_location col-md-12" hidden>Er ging iets mis, probeer het later nog
+                        eens</p>
                 </div>
                 <div class="col-md-6">
                     <div id="map_form"></div>
