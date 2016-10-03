@@ -21,13 +21,12 @@ Route::get('/home', 'HomeController@index');
 
 Route::get('/projects', 'ProjectsController@index');
 
-Route::get('/projects/{project}', 'ProjectsController@show');
 
 Route::get('/projects/manage', 'ProjectsController@manage');
 
 Route::post('/projects/manage/add', 'ProjectsController@store');
 
-
+Route::get('/projects/{project}/show', 'ProjectsController@show');
 
 ///////////////////*API's*///////////////////////////////////
 Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');

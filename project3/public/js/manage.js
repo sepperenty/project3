@@ -12,7 +12,7 @@ $(document).ready(function () {
 
 
 
-  /*  $('#form_project').validate({ // initialize the plugin
+   $('#form_project').validate({ // initialize the plugin
         rules: {
             title: {
                 required: true,
@@ -32,7 +32,7 @@ $(document).ready(function () {
             }
         }
     });
-*/
+
 
 
 
