@@ -15,8 +15,8 @@
           rel="stylesheet">
 
     <!-- scripts -->
-    <!-- root script altijd van boven staan -->
-    <script src="{{ url('/js/root.js') }}"></script>
+
+
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug"></script>
     <style>
@@ -79,7 +79,7 @@
 
 
 
-        console.log(getBaseUrl());
+
 
 
         function initMap() {
@@ -90,7 +90,7 @@
                 center: myLatLng
             });
 
-            var jqxhr = $.get( root+"/api/projects", function() {
+            var jqxhr = $.get( "/api/projects", function() {
                 console.log("success");
             })
                     .done(function(data) {
@@ -109,7 +109,7 @@
 
                                     google.maps.event.addListener(marker, 'click', (function(marker, i) {
 
-                                        var urlproject = getBaseUrl()+'projects/'+data[i].id+'/show';
+                                        var urlproject = '/projects/'+data[i].id+'/show';
                                         console.log(urlproject);
 
                                         var contentString = '<div id="content"> <img src="'+data[i].foto+'" '+
