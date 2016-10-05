@@ -1,0 +1,25 @@
+"Verzorging",
+                "Klusjes"
+                "Winkelen"
+                "Poetsen"
+                "Administratie"
+                "Algemene hulp"
+                "Advies"
+                "Animatie"
+                "Negeleiding"
+                "Financiën"
+                "Computer"
+                "Dieren"
+                "Eerste Hulp"
+                "Gezelschap"
+                "Groene taken"
+                "Knutselen"
+                "Koken"
+                "Les geven"
+                "Muziek"
+                "Oppas"
+                "Reizen"
+                "Thuiswerk",
+                "Vervoer",
+                "Vertalen",
+                "Juridische hulp"')

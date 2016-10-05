@@ -17,4 +17,11 @@ class Project extends Model
     {
     	return $this->hasMany(Reaction::class);
     }
+
+    public function categorys()
+    {
+        return $this->hasMany(Category::class);
+    }
+
+
 }

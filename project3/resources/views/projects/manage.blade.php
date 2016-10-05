@@ -62,17 +62,24 @@
                               class="form-control ">{{old('description')}}</textarea>
                 </div>
 
-                <div class="form-group col-md-12">
-                    <label for="category">Category</label>
-                    <input type="text" name="category" class="form-control" value="{{old('category')}}">
-                </div>
 
                 <div class="form-group col-md-12">
-                    <label for="goal">Goal</label>
-                    <input type="text" name="goal" class="form-control" vlue="{{old('goal')}}">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" class="form-control" value="{{ old('email') }}">
                 </div>
+
+
+                <div class="form-group col-md-12">
+                    <label for="telephoneNumber">Telephone Number</label>
+                    <input type="text" name="telephoneNumber" class="form-control" value="{{ old('telephoneNumber') }}">
+                </div>
+
+
             </div>
+
+
             <div class="row">
+
                 <div class="form-group col-md-6">
 
                     <label for="address">Address</label>

@@ -46,8 +46,6 @@ class ProjectsController extends Controller
     	 $this->validate($request, [
         'title' => 'required|max:255',
         'description' => 'required | max:500',
-        'category' => 'required | max: 100',
-        'goal' => 'required | max:255',
         'address' => 'required | max:255',
         'foto' 	=> 'max:5000 | mimes:jpeg,bmp,png'
    			 ]);
@@ -80,8 +78,6 @@ class ProjectsController extends Controller
 
     						'title'			=>	$request->title,
     						'description'	=>	$request->description,
-    						'goal'			=>	$request->goal,
-    						'category'		=>	$request->category,
     						'address'		=>	$request->address,
     						'lat'			=>	$request->lat,
     						'lng'			=>	$request->lng,
@@ -107,8 +103,6 @@ class ProjectsController extends Controller
 	    	$project->user_id = Auth()->user()->id;
 	    	$project->title = $request->title;
 	    	$project->description = $request->description;
-	    	$project->goal = $request->goal;
-	    	$project->category = $request->category;
 	    	$project->address = $request->address;
 	    	$project->lat = $request->lat;
 	    	$project->lng = $request->lng;
