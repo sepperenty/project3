@@ -1,6 +1,10 @@
 <?php
 namespace App\Http\Controllers;
 
+
+
+use Intervention\Image\ImageManagerStatic as Image;
+
 use Illuminate\Http\Request;
 
 use Illuminate\Http\UploadedFile;
@@ -55,8 +59,16 @@ class ProjectsController extends Controller
         $path = "";
 
         if ($request->hasFile('foto')) {
-            $path = $request->foto->store('media/images');
-            $project->foto = $path;
+
+//            $img = Image::make($request->foto)->resize(300, 200);
+//
+//            $path = $img->store('media/images');
+
+
+
+            $img = Image::make($request->foto)->fit(150,150)->save('images/foo.jpg');
+
+//            $project->foto = $path;
         }
 
 
@@ -73,14 +85,16 @@ class ProjectsController extends Controller
 
                     'title' => $request->title,
                     'description' => $request->description,
-                    'email' => $request->email,
-                    'telephoneNumber' => $request->telephoneNumber,
                     'address' => $request->address,
                     'lat' => $request->lat,
                     'lng' => $request->lng,
                     'foto' => $path,
+                    'email' => $request->email,
+                    'telephoneNumber' => $request->telephoneNumber,
 
                 ]);
+
+
             } else {
                 return "unauthorised";
             }
