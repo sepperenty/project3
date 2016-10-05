@@ -75,9 +75,6 @@
     <div class="row">
         <div class="input-group col-md-6">
             <div class="col-md-6">
-                <input type="text" name="category" class="form-control" placeholder="Categorie">
-            </div>
-            <div class="col-md-6">
                 <input type="text" name="loction" class="form-control" placeholder="Locatie" id="searchTextField">
             </div>
 
