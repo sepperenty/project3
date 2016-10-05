@@ -60,15 +60,62 @@ class ProjectsController extends Controller
 
         if ($request->hasFile('foto')) {
 
-//            $img = Image::make($request->foto)->resize(300, 200);
+            $newSmallHeight = "";
+            $newSmallWidth = "";
+
+            $newMediumHeight = "";
+            $newMediumWidth = "";
+
+            $newBigHeight = "";
+            $newBigWidth = "";
+
+
+            $size = getimagesize($request->foto);
+            $oldHeight = $size{1};
+            $oldWidth = $size{0};
+
+            if ($oldHeight > $oldWidth) {
+                $newSmallHeight = 108;
+                $newSmallWidth = $oldWidth/$oldHeight*108;
+
+                $newMediumHeight = 216;
+                $newMediumWidth = $oldWidth/$oldHeight*216;
+
+                $newBigHeight = 1080;
+                $newBigWidth = $oldWidth/$oldHeight*1080;
+
+            } elseif ($oldWidth > $oldHeight) {
+                $newSmallWidth = 162;
+                $newSmallHeight = $oldHeight/$oldWidth*162;
+
+                $newMediumWidth = 384;
+                $newMediumHeight = $oldHeight/$oldWidth*384;
+
+                $newBigWidth = 1920;
+                $newBigHeight = $oldHeight/$oldWidth*1920;
+            }
+            else{
+                $newSmallHeight = 108;
+                $newSmallWidth = $oldWidth/$oldHeight*108;
+
+                $newMediumHeight = 216;
+                $newMediumWidth = $oldWidth/$oldHeight*216;
+
+                $newBigHeight = 1080;
+                $newBigWidth = $oldWidth/$oldHeight*1080;
+            }
+
+
 //
-//            $path = $img->store('media/images');
+
+            $newName = rtrim(base64_encode(md5(microtime())),"=");
+
+            $imgSmal = Image::make($request->foto)->resize($newSmallWidth,$newSmallHeight)->save('images/small/' . $newName . ".jpg");
+            $imgMedium = Image::make($request->foto)->resize($newMediumWidth,$newMediumHeight)->save('images/medium/' . $newName . ".jpg");
+            $imgBig  = Image::make($request->foto)->resize($newBigWidth,$newBigHeight)->save('images/big/' . $newName . ".jpg");
 
 
-
-            $img = Image::make($request->foto)->fit(150,150)->save('images/foo.jpg');
-
-//            $project->foto = $path;
+           $path = $newName;
         }
 
 
@@ -100,9 +147,10 @@ class ProjectsController extends Controller
             }
         } else {
             if ($path == "") {
-                $path = "media/images/default.jpeg";
-                $project->foto = $path;
+                $path = "default";
+
             }
+            $project->foto = $path;
 
             $project->user_id = Auth()->user()->id;
             $project->title = $request->title;

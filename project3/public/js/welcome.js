@@ -31,7 +31,7 @@ $(function () {
                             var urlproject = '/projects/' + data[i].id + '/show';
                             console.log(urlproject);
 
-                            var contentString = '<div id="content"> <img src="' + data[i].foto + '" ' +
+                            var contentString = '<div id="content"> <img src="/images/small/' + data[i].foto + '.jpg" ' +
                                 '<div id="siteNotice">' +
                                 '</div>' +
                                 '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +

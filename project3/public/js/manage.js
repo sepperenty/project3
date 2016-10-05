@@ -66,7 +66,7 @@ $(document).ready(function () {
                         $('input[name="lat"]').val(data.lat);
                         $('input[name="lng"]').val(data.lng);
 
-                        $('.project_file').append("<img class='project_foto' src='" + data.foto + "'>");
+                        $('.project_file').append("<img class='project_foto' src='/images/small/" + data.foto + ".jpg'>");
                         console.log('project api request succes', data);
                         init_map(data.lat, data.lng,cons_zoom_closup);
                         set_marker(data.lat, data.lng);
