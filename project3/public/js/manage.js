@@ -16,17 +16,17 @@ $(document).ready(function () {
         rules: {
             title: {
                 required: true,
-                minlength: 10
+                minlength: 1
             },
             description: {
                 required: true,
-                minlength: 75
+                minlength: 1
             },
             category: {
                 required: true,
             },goal: {
                 required: true,
-                minlength:25
+                minlength:1
             },address: {
                 required: true,
             }
@@ -65,6 +65,7 @@ $(document).ready(function () {
                         $('input[name="address"]').val(data.address);
                         $('input[name="lat"]').val(data.lat);
                         $('input[name="lng"]').val(data.lng);
+
                         $('.project_file').append("<img class='project_foto' src='" + data.foto + "'>");
                         console.log('project api request succes', data);
                         init_map(data.lat, data.lng,cons_zoom_closup);

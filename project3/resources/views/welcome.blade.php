@@ -18,18 +18,21 @@
 
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
+    <script src="{{ url('/js/welcome.js') }}"></script>
     <style>
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
         }
+
         #map {
             height: 500px;
             width: 100%;
         }
-        .google-maps{
+
+        .google-maps {
 
         }
     </style>
@@ -70,89 +73,33 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md-12 google-maps"><div id="map"></div></div>
+        <div class="input-group col-md-6">
+            <div class="col-md-6">
+                <input type="text" name="category" class="form-control" placeholder="Categorie">
+            </div>
+            <div class="col-md-6">
+                <input type="text" name="loction" class="form-control" placeholder="Locatie" id="searchTextField">
+            </div>
+
+
+            <div class="input-group-btn">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span> Zoeken
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-md-12 google-maps">
+            <div id="map"></div>
+        </div>
     </div>
 
 </div>
 <script>
-    $(function () {
 
-
-
-
-
-
-        function initMap() {
-            var myLatLng = {lat: 51.2194475, lng: 4.4024643};
-
-            var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 12,
-                center: myLatLng
-            });
-
-            var jqxhr = $.get( "/api/projects", function() {
-                console.log("success");
-            })
-                    .done(function(data) {
-                        console.log('second succes',data);
-
-                            if(data){
-                                for (i = 0; i < data.length; i++) {
-
-                                    var infowindow = new google.maps.InfoWindow();
-                                    var marker, i;
-
-                                    marker = new google.maps.Marker({
-                                        position: new google.maps.LatLng(data[i].lat, data[i].lng),
-                                        map: map
-                                    });
-
-                                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-
-                                        var urlproject = '/projects/'+data[i].id+'/show';
-                                        console.log(urlproject);
-
-                                        var contentString = '<div id="content"> <img src="'+data[i].foto+'" '+
-                                                '<div id="siteNotice">'+
-                                                '</div>'+
-                                                '<h1 id="firstHeading" class="firstHeading">'+data[i].title+'</h1>'+
-                                                '<div id="bodyContent">'+
-
-                                                '<p>'+data[i].description+'</p>'+'<div><a href="'+urlproject+'">meer</a><div>'+
-
-                                                '</div>'+
-                                                '</div>';
-
-                                        return function() {
-                                            infowindow.setContent(contentString);
-                                            infowindow.open(map, marker);
-                                        }
-
-                                    })(marker, i));
-                                }
-                            }else {
-                                alert("data base gegevens zijn leeg");
-                            }
-
-                    })
-                    .fail(function() {
-                        console.log("error")
-                    });
-
-
-
-        }
-        google.maps.event.addDomListener(window, 'load', initMap);
-
-
-//        $.get( "ajax/test.html", function( data ) {
-//            console.log(data);
-//        });
-
-
-
-
-    });
 </script>
 </body>
 </html>
