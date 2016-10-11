@@ -106,7 +106,7 @@ $(function () {
                 });
         }
     }
-
+$(".reviuw").html("div><ul></ul></div>")
 
     function init_map(lat,lng,zoom) {
         var myLatLng = new google.maps.LatLng(lat, lng);
