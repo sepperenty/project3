@@ -13,6 +13,7 @@
                 @foreach($projects as $project)
                     <li class="list-group-item project_list" data-project_id="{{$project->id}}">
                         {{$project->title}}
+                        <a class="badge" href="/projects/{{$project->id}}/delete">delete</a>
                     </li>
                 @endforeach
                 <li class="list-group-item project_list" data-project_id="new_project">
@@ -100,6 +101,7 @@
                     <label for="foto">Foto</label>
                     <input type="file" class="form-control" name="foto">
                 </div>
+                <img src="" alt="" class="project_foto" id="currentPicture" hidden>
 
                 <div class="form-group col-md-12">
                     <button class="btn btn-primary" id="manageBtn">Create Project</button>

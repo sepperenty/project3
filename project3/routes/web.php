@@ -28,6 +28,8 @@ Route::post('/projects/manage/add', 'ProjectsController@store');
 
 Route::get('/projects/{project}/show', 'ProjectsController@show');
 
+Route::get('/projects/{project}/delete', 'ProjectsController@delete');
+
 ///////////////////*API's*///////////////////////////////////
 Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');
 

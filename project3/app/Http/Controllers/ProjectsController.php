@@ -37,7 +37,7 @@ class ProjectsController extends Controller
 
     public function manage()
     {
-        $projects = Project::all()->where('user_id', Auth()->user()->id);
+        $projects = Project::all()->where('user_id', Auth()->user()->id)->where('is_active', 1);
 
         return view('projects/manage', compact('projects'));
 
@@ -167,6 +167,15 @@ class ProjectsController extends Controller
         return redirect('/projects/manage');
 
 
+    }
+
+    public function delete(Project $project)
+    {
+        $project->update([
+            'is_active'=>0,
+        ]);
+
+        return redirect('/projects/manage');
     }
 
 

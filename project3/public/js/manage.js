@@ -66,7 +66,10 @@ $(document).ready(function () {
                         $('input[name="lat"]').val(data.lat);
                         $('input[name="lng"]').val(data.lng);
 
-                        $('.project_file').append("<img class='project_foto' src='/images/small/" + data.foto + ".jpg'>");
+                        // $('.project_file').append("<img class='project_foto' src='/images/small/" + data.foto + ".jpg'>");
+                        var picturePath = '/images/small/' + data.foto + ".jpg";
+                        $('#currentPicture').attr('src', picturePath);
+                        $('#currentPicture').show();
                         console.log('project api request succes', data);
                         init_map(data.lat, data.lng,cons_zoom_closup);
                         set_marker(data.lat, data.lng);
