@@ -2,7 +2,6 @@
 namespace App\Http\Controllers;
 
 
-
 use Intervention\Image\ImageManagerStatic as Image;
 
 use Illuminate\Http\Request;
@@ -37,7 +36,7 @@ class ProjectsController extends Controller
 
     public function manage()
     {
-        $projects = Project::all()->where('user_id', Auth()->user()->id)->where('is_active', 1);
+        $projects = Project::where('user_id', Auth()->user()->id)->where('is_active', 1)->get();
 
         return view('projects/manage', compact('projects'));
 
@@ -46,6 +45,8 @@ class ProjectsController extends Controller
 
     public function store(Request $request)
     {
+
+
         $this->validate($request, [
             'title' => 'required|max:255',
             'description' => 'required | max:500',
@@ -57,6 +58,17 @@ class ProjectsController extends Controller
         $project = new Project;
 
         $path = "";
+
+        $isPriority = 0;
+        $isCompany = 0;
+
+        if ($request->isPriority == 'on') {
+            $isPriority = 1;
+        }
+        if ($request->isCompany == 'on') {
+            $isCompany = 1;
+
+        }
 
         if ($request->hasFile('foto')) {
 
@@ -76,46 +88,45 @@ class ProjectsController extends Controller
 
             if ($oldHeight > $oldWidth) {
                 $newSmallHeight = 108;
-                $newSmallWidth = $oldWidth/$oldHeight*108;
+                $newSmallWidth = $oldWidth / $oldHeight * 108;
 
                 $newMediumHeight = 216;
-                $newMediumWidth = $oldWidth/$oldHeight*216;
+                $newMediumWidth = $oldWidth / $oldHeight * 216;
 
                 $newBigHeight = 1080;
-                $newBigWidth = $oldWidth/$oldHeight*1080;
+                $newBigWidth = $oldWidth / $oldHeight * 1080;
 
             } elseif ($oldWidth > $oldHeight) {
                 $newSmallWidth = 162;
-                $newSmallHeight = $oldHeight/$oldWidth*162;
+                $newSmallHeight = $oldHeight / $oldWidth * 162;
 
                 $newMediumWidth = 384;
-                $newMediumHeight = $oldHeight/$oldWidth*384;
+                $newMediumHeight = $oldHeight / $oldWidth * 384;
 
                 $newBigWidth = 1920;
-                $newBigHeight = $oldHeight/$oldWidth*1920;
-            }
-            else{
+                $newBigHeight = $oldHeight / $oldWidth * 1920;
+            } else {
                 $newSmallHeight = 108;
-                $newSmallWidth = $oldWidth/$oldHeight*108;
+                $newSmallWidth = $oldWidth / $oldHeight * 108;
 
                 $newMediumHeight = 216;
-                $newMediumWidth = $oldWidth/$oldHeight*216;
+                $newMediumWidth = $oldWidth / $oldHeight * 216;
 
                 $newBigHeight = 1080;
-                $newBigWidth = $oldWidth/$oldHeight*1080;
+                $newBigWidth = $oldWidth / $oldHeight * 1080;
             }
 
 
 //
 
-            $newName = rtrim(base64_encode(md5(microtime())),"=");
+            $newName = rtrim(base64_encode(md5(microtime())), "=");
 
-            $imgSmal = Image::make($request->foto)->resize($newSmallWidth,$newSmallHeight)->save('images/small/' . $newName . ".jpg");
-            $imgMedium = Image::make($request->foto)->resize($newMediumWidth,$newMediumHeight)->save('images/medium/' . $newName . ".jpg");
-            $imgBig  = Image::make($request->foto)->resize($newBigWidth,$newBigHeight)->save('images/big/' . $newName . ".jpg");
+            $imgSmal = Image::make($request->foto)->resize($newSmallWidth, $newSmallHeight)->save('images/small/' . $newName . ".jpg");
+            $imgMedium = Image::make($request->foto)->resize($newMediumWidth, $newMediumHeight)->save('images/medium/' . $newName . ".jpg");
+            $imgBig = Image::make($request->foto)->resize($newBigWidth, $newBigHeight)->save('images/big/' . $newName . ".jpg");
 
 
-           $path = $newName;
+            $path = $newName;
         }
 
 
@@ -138,6 +149,8 @@ class ProjectsController extends Controller
                     'foto' => $path,
                     'email' => $request->email,
                     'telephoneNumber' => $request->telephoneNumber,
+                    'isPriority' => $isPriority,
+                    'isCompany' => $isCompany,
 
                 ]);
 
@@ -160,6 +173,8 @@ class ProjectsController extends Controller
             $project->address = $request->address;
             $project->lat = $request->lat;
             $project->lng = $request->lng;
+            $project->isPriority = $isPriority;
+            $project->isCompany = $isCompany;
             $project->save();
         }
 
@@ -172,7 +187,7 @@ class ProjectsController extends Controller
     public function delete(Project $project)
     {
         $project->update([
-            'is_active'=>0,
+            'is_active' => 0,
         ]);
 
         return redirect('/projects/manage');

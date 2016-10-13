@@ -103,10 +103,24 @@
                 </div>
                 <img src="" alt="" class="project_foto" id="currentPicture" hidden>
 
+                <div class="checkbox col-md-12">
+                    <label>
+                        <input type="checkbox" name="isPriority"> Het is dringend!
+                    </label>
+                </div>
+
+                <div class="checkbox col-md-12">
+                    <label>
+                        <input type="checkbox" name="isCompany"> Ik ben een bedrijf.
+                    </label>
+                </div>
+
+
                 <div class="form-group col-md-12">
                     <button class="btn btn-primary" id="manageBtn">Create Project</button>
                 </div>
             </div>
+
             {{ Form::close() }}
 
         </div>

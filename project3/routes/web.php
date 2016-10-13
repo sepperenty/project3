@@ -34,3 +34,5 @@ Route::get('/projects/{project}/delete', 'ProjectsController@delete');
 Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');
 
 Route::get('/api/projects/{project}', 'APIcontroller@showOneProjectAPI');
+
+Route::get('/api/projects/filter/{isCompany}/{isPriority}', 'APIcontroller@fiterProjects');

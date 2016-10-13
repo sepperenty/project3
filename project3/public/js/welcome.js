@@ -14,9 +14,15 @@ $(function () {
             console.log("success");
         })
             .done(function (data) {
+
                 console.log('second succes', data);
                 if (data) {
+
+                console.log(data);
+
                     for (i = 0; i < data.length; i++) {
+
+
 
                         var infowindow = new google.maps.InfoWindow();
                         var marker, i;
@@ -25,6 +31,7 @@ $(function () {
                             position: new google.maps.LatLng(data[i].lat, data[i].lng),
                             map: map
                         });
+
 
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {
 
