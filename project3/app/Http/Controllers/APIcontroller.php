@@ -10,19 +10,29 @@ use App\Project;
 
 class APIcontroller extends Controller
 {
-    
-	public function allPorjectsAPI()
-	{
-		$projects = Project::all();
-		$projects->load('user');
 
-		return $projects;
-	}
+    public function allPorjectsAPI()
+    {
+        $projects = Project::where('is_active', 1)->get();
+        $projects->load('user');
 
-	public function showOneProjectAPI(Project $project)
-	{
-		$project->load('user');
+        return $projects;
+    }
 
-		return $project;
-	}
+    public function fiterProjects($isCompany, $isPriority)
+    {
+        $projects = Project::where('is_active', 1)->where('isCompany', $isCompany)->where('isPriority', $isPriority)->get();
+        $projects->load('user');
+
+        return $projects;
+    }
+
+
+
+    public function showOneProjectAPI(Project $project)
+    {
+        $project->load('user');
+
+        return $project;
+    }
 }
