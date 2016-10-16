@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!--Basistaal van iedere pagina is aangegeven-->
+<!--Nederlands: lang="nl"-->
+<!--Frans: lang="fr"-->
+<!--Engels: lang="en"-->
+<!--Duits: lang="de"-->
+<!--In HTML : <html lang="nl">-->
+<html lang="nl">
+<head>
+    <!--Pagina's hebben een betekenisvolle titel-->
+    <!--bv title>Openingsuren bibliotheek - gemeente Aalst</title>-->
+    <!--naam van de bedrijf achteraan plaatsen behaalve voor home page -> altijd naam van website vermelden-->
+    <title>Graag gedaan, Hulp voor minder invaliden </title>
+
+
+    <!--styles-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+          rel="stylesheet">
+    <link href="base.css" rel="stylesheet">
+
+
+
+
+    <!--scripts-->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="nav-font-size">
+        <div class="navbar-header">
+            <!--Logo linkt naar homepage-->
+            <!--<a href="http://www.vioe.be/">-->
+            <!--<img src="vioe-logo.png" alt="Home VIOE - Vlaams Instituut voor het Onroerend Erfgoed" /></a>-->
+
+            <a class="navbar-brand" href="#">Brand</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
+            <ul class="nav navbar-nav ">
+                <li class="active">
+                    <a href="#" class="pull-left back">Home</a>
+                </li>
+                <li>
+                    <a href="#">Plaats oproep</a>
+                </li>
+                <li>
+                    <!--Linkteksten zijn betekenisvol binnen hun context-->
+                    <a href="#">Over Graag Gedaan</a>
+                </li>
+                <li>
+                    <!--Linkteksten zijn betekenisvol binnen hun context-->
+                    <a href="#">Registreer</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="row">
+    <div class="col-md-12 google-maps">
+        <div id="map"></div>
+    </div>
+</div>
+
+<div class="row content-home">
+    <div class="col-md-4 content-home-child">
+        <img class="introduction-img" src="img/question.png" alt="Icon met een vraagteken">
+        <h1>Wat is Graag Gedaan</h1>
+        <p >ndustry. Lorem Ipsum has been the industry's
+            standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but
+            also the leap into electronic typesetting, remaining
+            essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum
+            passages, and more recently with desktop publishing software
+            like Aldus PageMaker in</p>
+    </div>
+</div>
+
+
+
+<!--En plaats de footer-div altijd onderaan in de broncode.-->
+</body>
+
+<script>
+    $(function () {
+
+        function initMap() {
+            var myLatLng = {lat: -25.363, lng: 131.044};
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: 'Hello World!'
+                    },
+                    {
+                        position: {lat: -25.300, lng: 131.046},
+                        map: map,
+                        title: 'Hello World!'
+                    });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initMap);
+    });
+</script>
+</html>
