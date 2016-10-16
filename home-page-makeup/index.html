@@ -10,7 +10,7 @@
     <!--Pagina's hebben een betekenisvolle titel-->
     <!--bv title>Openingsuren bibliotheek - gemeente Aalst</title>-->
     <!--naam van de bedrijf achteraan plaatsen behaalve voor home page -> altijd naam van website vermelden-->
-    <title>Graag gedaan, Hulp voor minder invaliden </title>
+    <title>Graag gedaan, Vrijwilligerswerk voor mindervaliden </title>
 
 
     <!--styles-->
@@ -21,10 +21,9 @@
     <link href="base.css" rel="stylesheet">
 
 
-
-
     <!--scripts-->
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
 
 
@@ -38,10 +37,17 @@
             <!--<a href="http://www.vioe.be/">-->
             <!--<img src="vioe-logo.png" alt="Home VIOE - Vlaams Instituut voor het Onroerend Erfgoed" /></a>-->
 
-            <a class="navbar-brand" href="#">Brand</a>
+            <a class="navbar-brand" href="#"><img class="brand-logo" src="img/GraagGedaan-small.png"
+                                                  alt="home Graag Gedaan - Vrijwilligerswerk voor mindervaliden"></a>
         </div>
+
+
         <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
             <ul class="nav navbar-nav ">
+
+                <li>
+                    <button type="submit" class="go-to-content">Naar inhoud</button>
+                </li>
                 <li class="active">
                     <a href="#" class="pull-left back">Home</a>
                 </li>
@@ -62,29 +68,75 @@
 </nav>
 
 
-<div class="row">
-    <div class="col-md-12 google-maps">
+<div class="container-fluid">
+
+    <div class=" google-maps">
         <div id="map"></div>
-    </div>
+
+        <div class=" google-maps-search">
+            <fieldset>
+                <legend>Zoeken op google maps</legend>
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Categorie <span
+                                class="glyphicon glyphicon-align-justify"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Noodoproep</a></li>
+                            <li><a href="#">Gewoon oproep</a></li>
+                            <li><a href="#">Bedrijven</a></li>
+                        </ul>
+                    </div><!-- /btn-group -->
+                    <input type="text" name="seach" class="form-control" aria-label="..." placeholder="Locatie">
+                    <span class="input-group-btn">
+                         <button class="btn btn-default" type="button">Zoek <span
+                                 class="glyphicon glyphicon-search"></span></button>
+                     </span>
+                </div>
+            </fieldset>
+
+        </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+</div>
 </div>
 
-<div class="row content-home">
-    <div class="col-md-4 content-home-child">
+<div class="container-fluid content-home">
+    <div class="col-md-3 content-home-child">
         <img class="introduction-img" src="img/question.png" alt="Icon met een vraagteken">
         <h1>Wat is Graag Gedaan</h1>
-        <p >ndustry. Lorem Ipsum has been the industry's
+        <p>ndustry. Lorem Ipsum has been the industry's
             standard dummy text ever since the 1500s,
             when an unknown printer took a galley of type
             and scrambled it to make a type specimen book.
             It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining
-            essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum
-            passages, and more recently with desktop publishing software
-            like Aldus PageMaker in</p>
+            also the leap </p>
+        <button class="head-button">Registreer & plaats oproep</button>
     </div>
 </div>
 
+<div class="container-fluid extra-info">
+    <div class="row">
+        <div class="col-md-4">
+            <p>Er zoeken</p>
+            <h1>5000</h1>
+            <p>mensen hulp</p>
+        </div>
+        <hr>
+        <div class="col-md-4">
+            <p>Er zijn</p>
+            <h1>1259</h1>
+            <p>bedrijven gerigistreerd</p>
+        </div>
+        <hr>
+        <div class="col-md-4">
+            <p>We zijn trots op onze</p>
+            <h1>7854</h1>
+            <p>Geregistreerde leden</p>
+        </div>
+        <hr>
+    </div>
+
+</div>
 
 
 <!--En plaats de footer-div altijd onderaan in de broncode.-->
@@ -98,7 +150,8 @@
 
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
-                center: myLatLng
+                center: myLatLng,
+                disableDefaultUI: true
             });
 
             var marker = new google.maps.Marker({

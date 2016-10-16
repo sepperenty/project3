@@ -277,7 +277,7 @@ textarea {
 
 a {
   color: #428bca;
-  text-decoration: underline; }
+  text-decoration: none; }
 
 a:hover,
 a:focus {
@@ -3388,7 +3388,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
   z-index: 1000;
   min-height: 50px;
   margin-bottom: 20px;
-  border: 1px solid black; }
+  border-bottom: thin solid black; }
 
 .navbar:before,
 .navbar:after {
@@ -5647,8 +5647,44 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
+.container-fluid:after {
+  clear: both; }
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto; }
+
+.container-fluid > .navbar-header,
+.container-fluid > .navbar-collapse {
+  margin-right: -15px;
+  margin-left: -15px; }
+
+@media (min-width: 768px) {
+  .container-fluid > .navbar-header,
+  .container-fluid > .navbar-collapse {
+    margin-right: 0;
+    margin-left: 0; } }
+@media (min-width: 768px) {
+  .navbar > .container-fluid .navbar-brand {
+    margin-left: -15px; } }
+.container-fluid .jumbotron {
+  padding-right: 15px;
+  padding-left: 15px;
+  border-radius: 6px; }
+
+.container-fluid .jumbotron {
+  padding-right: 60px;
+  padding-left: 60px; }
+
+.container-fluid:before,
+.container-fluid:after {
+  display: table;
+  content: " "; }
+
 p {
-  font-size: 1.2em; }
+  font-size: 1.1em; }
 
 .nav-font-size {
   font-size: 20px; }
@@ -5656,25 +5692,102 @@ p {
 .back:hover {
   background-color: #4cae4c; }
 
+.brand-logo {
+  max-height: 39px; }
+
+.google-maps-search {
+  position: absolute;
+  margin-left: 25%;
+  max-width: 25%; }
+  @media (max-width: 992px) {
+    .google-maps-search {
+      margin-left: 10%;
+      max-width: 75%; } }
+  .google-maps-search legend {
+    margin-bottom: -5px; }
+
 .content-home {
-  margin-top: -500px; }
+  margin-left: -15px;
+  margin-top: -20px;
+  background-color: rgba(0, 0, 0, 0.8); }
+  @media (max-width: 992px) {
+    .content-home {
+      margin-top: 550px;
+      background-color: #202933; } }
   .content-home div {
-    background-color: black;
-    min-height: 500px;
-    padding-left: 2%;
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: 575px;
+    padding-left: 1%;
     color: #fff; }
-    .content-home div p {
-      font-size: 1.3em; }
+    @media (max-width: 992px) {
+      .content-home div {
+        background-color: rgba(32, 41, 51, 0); } }
     .content-home div img {
       position: relative;
-      margin-top: 2%;
+      margin-top: 50px;
       left: 50%;
-      margin-left: -62.5px;
-      max-height: 125px; }
+      margin-left: -71.875px;
+      max-height: 143.75px; }
+    .content-home div button {
+      font-size: 1.1em;
+      margin-top: 20px;
+      display: inline-block;
+      width: 100%;
+      padding: 8px;
+      color: #fff;
+      border: 1px solid #fff;
+      text-align: center;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      text-transform: uppercase;
+      transition: background-color 0.2s ease-out, color 0.2s ease-out; }
+      .content-home div button:hover, .content-home div button:focus {
+        background-color: #000;
+        color: #fff;
+        transition: background-color 0.3s ease-in, color 0.3s ease-in; }
 
 #map {
+  position: absolute;
   margin-top: -20px;
-  height: 500px;
-  width: 100%; }
+  height: 575px;
+  width: 100%;
+  left: 0;
+  right: 0; }
+
+.extra-info {
+  background-color: #6cd09e;
+  color: #fff;
+  min-height: 150px; }
+
+nav {
+  text-transform: uppercase; }
+
+.go-to-content {
+  min-height: 70px;
+  color: #fff;
+  background-color: #fff;
+  border: 0px; }
+  .go-to-content:hover, .go-to-content:focus {
+    cursor: default;
+    background-color: #000;
+    color: #fff; }
+
+.extra-info {
+  text-align: center;
+  padding-top: 15px; }
+  .extra-info p {
+    font-size: 1.6em;
+    color: #000; }
+  .extra-info h1 {
+    font-size: 4.2em;
+    margin-top: -15px;
+    margin-bottom: -10px; }
+  .extra-info hr {
+    opacity: 0;
+    position: absolute; }
+    @media (max-width: 992px) {
+      .extra-info hr {
+        position: relative;
+        opacity: 1; } }
 
 /*# sourceMappingURL=base.css.map */
