@@ -10,29 +10,25 @@ $(function () {
         //     zoom: 12,
         //     center: myLatLng
         // });
-        var jqxhr = $.get("/api/projects", function () {
-            console.log("success");
-        })
-            .done(function (data) {
+        configur_google_map();
+    }
 
+
+    function configur_google_map() {
+        var jqxhr = $.get("/api/projects", function () {
+                console.log("success");
+            })
+            .done(function (data) {
                 console.log('second succes', data);
                 if (data) {
-
-                console.log(data);
-
+                    console.log(data);
                     for (i = 0; i < data.length; i++) {
-
-
-
                         var infowindow = new google.maps.InfoWindow();
                         var marker, i;
-
                         marker = new google.maps.Marker({
                             position: new google.maps.LatLng(data[i].lat, data[i].lng),
                             map: map
                         });
-
-
                         google.maps.event.addListener(marker, 'click', (function (marker, i) {
 
                             var urlproject = '/projects/' + data[i].id + '/show';
@@ -64,10 +60,7 @@ $(function () {
             .fail(function () {
                 console.log("error")
             });
-
-
     }
-
 
 
     var placeSearch, autocomplete,input;
@@ -120,7 +113,10 @@ $(".reviuw").html("div><ul></ul></div>")
 
         map = new google.maps.Map(document.getElementById('map'), {
             zoom: zoom,
-            center: myLatLng
+            center: myLatLng,
+            disableDefaultUI: true,
+            zoomControl: true,
+            scaleControl: true
         });
 
 

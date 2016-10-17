@@ -12,6 +12,8 @@
 
 	<p>{{ $project-> address }}</p>
 
+	<p>{{$project->telephoneNumber}}</p>
+
 
 	<h3>Reactions</h3>
 
