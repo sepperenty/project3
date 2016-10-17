@@ -31,7 +31,8 @@ class PictureController extends Controller
 
         $this->validate($request, [
 
-            'foto' => 'required | max:5000 | mimes:jpeg,bmp,png'
+            'foto' => 'required | max:5000 | mimes:jpeg,bmp,png',
+            'picture_info' => 'required',
 
         ]);
 
@@ -44,6 +45,7 @@ class PictureController extends Controller
             $picture = new Picture;
             $picture->name = $newName;
             $picture->user_id = Auth()->user()->id;
+            $picture->picture_info = $request->picture_info;
             $picture->save();
         }
 

@@ -21,8 +21,16 @@
     </div>
 
     <div class="form-group col-md-12">
+        <label for="pictureInfo">Wat zie jehier ?</label>
+        <input type="text" class="form-control" name="picture_info"></input>
+    </div>
+
+    <div class="form-group col-md-12">
         <button class="btn btn-primary">Foto toevoegen</button>
     </div>
+
+
+
 
     {{Form::close()}}
 

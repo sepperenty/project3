@@ -169,16 +169,21 @@
             <h1>Fotogelerij getuigenissen</h1>
             <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
         </div>
+
+        @foreach($randomPictures as $picture)
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
                 <div class="img-frame">
-                    <img src="/images/medium/auto.jpg" alt="...">
+                    <img src="/images/medium/{{$picture->name}}.jpg" alt="...">
                     <div class="caption">
-                        <p>Thumbnail label</p>
+                        <p>{{$picture->picture_info}}</p>
                     </div>
                 </div>
             </div>
         </div>
+            @endforeach
+
+
     </div>
 </div>
 

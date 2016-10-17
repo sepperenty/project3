@@ -23,18 +23,18 @@ class PublicController extends Controller
         $pictureCount = Picture::count();
         $maxAmount = 8;
 
-        if($pictureCount<$maxAmount)
+        if($pictureCount < $maxAmount)
         {
             $maxAmount = $pictureCount;
         }
 
-        $randomPictures = Picture::orderByRaw('RAND()')->take($pictureCount)->get();
+        $randomPictures = Picture::orderByRaw('RAND()')->take($maxAmount)->get();
 
 
 
 
 
-        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "$randomPictures"));
+        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "randomPictures"));
     }
 
     public function show(Project $project)
