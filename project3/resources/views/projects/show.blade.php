@@ -14,6 +14,8 @@
 
 
 	<h3>Reactions</h3>
+
+	@if(Auth::check())
 	<form action="/reactions/{{$project->id}}/add" method="POST">
 
 		{{ csrf_field() }}
@@ -27,6 +29,7 @@
 		</div>
 
 	</form>
+	@endif
 	@foreach($project->reactions as $reaction)
 		
 		<strong>{{$reaction->user->name}}</strong>

@@ -12,20 +12,11 @@ use App\Http\Requests;
 
 use App\Project;
 
+use App\User;
+
 class ProjectsController extends Controller
 {
 
-    public function index()
-    {
-        return view('projects/index');
-    }
-
-    public function show(Project $project)
-    {
-        $project->load('reactions.user');
-        return view('projects/show', compact('project'));
-
-    }
 
 
     public function __construct()

@@ -11,28 +11,26 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PublicController@index');
+
+Route::get('/projects/{project}/show', 'PublicController@show');
+
+Route::get('/pictures/add', "PictureController@add");
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/projects', 'ProjectsController@index');
-
-
 Route::get('/projects/manage', 'ProjectsController@manage');
 
 Route::post('/projects/manage/add', 'ProjectsController@store');
-
-Route::get('/projects/{project}/show', 'ProjectsController@show');
 
 Route::get('/projects/{project}/delete', 'ProjectsController@delete');
 
 Route::post('/reactions/{project}/add', 'ReactionsController@store');
 
 ///////////////////*API's*///////////////////////////////////
+
 Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');
 
 Route::get('/api/projects/{project}', 'APIcontroller@showOneProjectAPI');

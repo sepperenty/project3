@@ -16,6 +16,11 @@ class User extends Authenticatable
         return $this->hasMany(Reaction::class);
     }
 
+    public function pictures()
+    {
+        return $this->hasMany(Picture::class);
+    }
+
      public function projects()
     {
         return $this->hasMany(Project::class);

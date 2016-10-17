@@ -67,6 +67,13 @@
                     </li>
                 @endif
             </ul>
+
+            {{--VARIABELEN--}}
+            <p>{{$amountRegistered}}</p>
+            <p>{{$amountProjectCompanys}}</p>
+            <p>{{$amountProjectUsers}}</p>
+
+
         </div>
     </div>
 </nav>
