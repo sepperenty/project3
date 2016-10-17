@@ -17,6 +17,8 @@ Route::get('/projects/{project}/show', 'PublicController@show');
 
 Route::get('/pictures/add', "PictureController@add");
 
+Route::post('/pictures/store', "PictureController@store");
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

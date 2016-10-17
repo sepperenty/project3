@@ -8,7 +8,9 @@ use App\Http\Requests;
 
 use App\User;
 use App\Project;
+use App\Picture;
 use App\Reaction;
+use App\RandomPictures;
 
 class PublicController extends Controller
 {
@@ -18,7 +20,21 @@ class PublicController extends Controller
         $amountProjectCompanys = Project::where('isCompany', 1)->where("is_active", 1)->count();
         $amountProjectUsers = Project::where('isCompany', 0)->where("is_active", 1)->count();
 
-        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers"));
+        $pictureCount = Picture::count();
+        $maxAmount = 8;
+
+        if($pictureCount<$maxAmount)
+        {
+            $maxAmount = $pictureCount;
+        }
+
+        $randomPictures = Picture::orderByRaw('RAND()')->take($pictureCount)->get();
+
+
+
+
+
+        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "$randomPictures"));
     }
 
     public function show(Project $project)
