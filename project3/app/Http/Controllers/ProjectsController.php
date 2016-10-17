@@ -14,6 +14,8 @@ use App\Project;
 
 use App\User;
 
+use App\UploadPicture;
+
 class ProjectsController extends Controller
 {
 
@@ -63,58 +65,11 @@ class ProjectsController extends Controller
 
         if ($request->hasFile('foto')) {
 
-            $newSmallHeight = "";
-            $newSmallWidth = "";
-
-            $newMediumHeight = "";
-            $newMediumWidth = "";
-
-            $newBigHeight = "";
-            $newBigWidth = "";
-
-
-            $size = getimagesize($request->foto);
-            $oldHeight = $size{1};
-            $oldWidth = $size{0};
-
-            if ($oldHeight > $oldWidth) {
-                $newSmallHeight = 108;
-                $newSmallWidth = $oldWidth / $oldHeight * 108;
-
-                $newMediumHeight = 216;
-                $newMediumWidth = $oldWidth / $oldHeight * 216;
-
-                $newBigHeight = 1080;
-                $newBigWidth = $oldWidth / $oldHeight * 1080;
-
-            } elseif ($oldWidth > $oldHeight) {
-                $newSmallWidth = 162;
-                $newSmallHeight = $oldHeight / $oldWidth * 162;
-
-                $newMediumWidth = 384;
-                $newMediumHeight = $oldHeight / $oldWidth * 384;
-
-                $newBigWidth = 1920;
-                $newBigHeight = $oldHeight / $oldWidth * 1920;
-            } else {
-                $newSmallHeight = 108;
-                $newSmallWidth = $oldWidth / $oldHeight * 108;
-
-                $newMediumHeight = 216;
-                $newMediumWidth = $oldWidth / $oldHeight * 216;
-
-                $newBigHeight = 1080;
-                $newBigWidth = $oldWidth / $oldHeight * 1080;
-            }
-
-
-//
 
             $newName = rtrim(base64_encode(md5(microtime())), "=");
 
-            $imgSmal = Image::make($request->foto)->resize($newSmallWidth, $newSmallHeight)->save('images/small/' . $newName . ".jpg");
-            $imgMedium = Image::make($request->foto)->resize($newMediumWidth, $newMediumHeight)->save('images/medium/' . $newName . ".jpg");
-            $imgBig = Image::make($request->foto)->resize($newBigWidth, $newBigHeight)->save('images/big/' . $newName . ".jpg");
+            $uploader = new UploadPicture($request->foto, $newName);
+            $uploader->store();
 
 
             $path = $newName;

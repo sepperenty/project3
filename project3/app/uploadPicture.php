@@ -10,6 +10,8 @@ namespace App;
 
 
 
+use Intervention\Image\ImageManagerStatic as Image;
+
 
 class uploadPicture
 {
@@ -22,13 +24,14 @@ class uploadPicture
         private $newBigHeight = "";
         private $newBigWidth = "";
 
-        public $file;
+        private $file;
+        private $name;
 
 
-    public function __construct($initFile)
+    public function __construct($initFile, $initName)
     {
         $this->file = $initFile;
-
+        $this->name = $initName;
 
     }
 
@@ -69,14 +72,13 @@ class uploadPicture
             $this->newBigWidth = $oldWidth / $oldHeight * 1080;
         }
 
-        $newName = rtrim(base64_encode(md5(microtime())), "=");
-
-        $imgSmal = Image::make($request->foto)->resize($this->newSmallWidth, $this->newSmallHeight)->save('images/small/' . $newName . ".jpg");
-        $imgMedium = Image::make($request->foto)->resize($this->newMediumWidth, $this->newMediumHeight)->save('images/medium/' . $newName . ".jpg");
-        $imgBig = Image::make($request->foto)->resize($this->newBigWidth, $this->newBigHeight)->save('images/big/' . $newName . ".jpg");
 
 
-        $path = $newName;
+        $imgSmal = Image::make($this->file)->resize($this->newSmallWidth, $this->newSmallHeight)->save('images/small/' . $this->name . ".jpg");
+        $imgMedium = Image::make($this->file)->resize($this->newMediumWidth, $this->newMediumHeight)->save('images/medium/' .  $this->name . ".jpg");
+        $imgBig = Image::make($this->file)->resize($this->newBigWidth, $this->newBigHeight)->save('images/big/' .  $this->name . ".jpg");
+
+
 
     }
 
