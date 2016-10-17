@@ -74,7 +74,7 @@
         <div id="map"></div>
 
         <div class=" google-maps-search">
-            <fieldset>
+            <fieldset class="search-fieldset">
                 <legend>Zoeken op google maps</legend>
                 <div class="input-group">
                     <div class="input-group-btn">
@@ -114,8 +114,8 @@
     </div>
 </div>
 
-<div class="container-fluid extra-info">
-    <div class="row">
+<div class="container-fluid ">
+    <div class="row extra-info">
         <div class="col-md-4">
             <p>Er zoeken</p>
             <h1>5000</h1>
@@ -133,13 +133,82 @@
             <h1>7854</h1>
             <p>Geregistreerde leden</p>
         </div>
-        <hr>
     </div>
 
 </div>
 
 
+<div class="container-fluid foto-gallery">
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-lg-12 heading">
+            <h1>Fotogelerij getuigenissen</h1>
+            <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <div class="img-frame">
+                    <img src="img/auto.jpg" alt="...">
+                    <div class="caption">
+                        <p>Thumbnail label</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <div class="img-frame">
+                    <img src="img/5-Things.jpg" alt="...">
+                    <div class="caption">
+                        <p>Thumbnail label</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <div class="img-frame">
+                    <img src="img/1.jpg" alt="...">
+                    <div class="caption">
+                        <p>Thumbnail label</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <div class="img-frame">
+                    <img src="img/2.jpg" alt="...">
+                    <div class="caption">
+                        <p>Thumbnail label</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <!--En plaats de footer-div altijd onderaan in de broncode.-->
+
+<div class="container-fluid footer">
+
+    <div class="row">
+        <footer>
+            <H1><a href="/contact">Gemaakt door Graag Gedaan<p>Voor vragen of opmerkingen contacteer ons</p></a></H1>
+
+        </footer>
+
+    </div>
+</div>
+
+
 </body>
 
 <script>
@@ -151,7 +220,9 @@
             var map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 4,
                 center: myLatLng,
-                disableDefaultUI: true
+                disableDefaultUI: true,
+                zoomControl: true,
+                scaleControl: true
             });
 
             var marker = new google.maps.Marker({

@@ -147,6 +147,7 @@ fieldset {
   padding: 0.35em 0.625em 0.75em;
   margin: 0 2px;
   border: 1px solid #c0c0c0;
+
 }
 
 legend {
@@ -1645,6 +1646,7 @@ legend {
   color: #333333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
+
 }
 
 label {
@@ -4973,12 +4975,12 @@ a.list-group-item.active > .badge,
   height: auto;
   max-width: 100%;
   padding: 4px;
-  line-height: 1.428571429;
-  background-color: #ffffff;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  //line-height: 1.428571429;
+  //background-color: #ffffff;
+  //border: 1px solid #dddddd;
+  //border-radius: 4px;
+  //-webkit-transition: all 0.2s ease-in-out;
+  //transition: all 0.2s ease-in-out;
 }
 
 .thumbnail > img {
