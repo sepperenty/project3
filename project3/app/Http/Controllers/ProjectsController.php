@@ -44,7 +44,7 @@ class ProjectsController extends Controller
             'title' => 'required|max:255',
             'description' => 'required | max:500',
             'address' => 'required | max:255',
-            'foto' => 'max:5000 | mimes:jpeg,bmp,png'
+            'foto' => 'max:50000000 | mimes:jpeg,bmp,png'
         ]);
 
 

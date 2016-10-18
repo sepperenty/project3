@@ -19,10 +19,18 @@ class APIcontroller extends Controller
         return $projects;
     }
 
-    public function fiterProjects($isCompany, $isPriority)
+    public function fiterProjects($key)
     {
-        $projects = Project::where('is_active', 1)->where('isCompany', $isCompany)->where('isPriority', $isPriority)->get();
-        $projects->load('user');
+        $projects = "";
+        if($key == "company") {
+            $projects = Project::where('is_active', 1)->where('isCompany', 1)->get();
+
+        }elseif($key == "individual"){
+            $projects = Project::where('is_active', 1)->where('isCompany', 0)->get();
+        }elseif($key == "priority"){
+            $projects = Project::where('is_active', 1)->where('isPriority', 1)->get();
+        }
+
 
         return $projects;
     }

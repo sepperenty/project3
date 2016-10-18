@@ -37,4 +37,4 @@ Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');
 
 Route::get('/api/projects/{project}', 'APIcontroller@showOneProjectAPI');
 
-Route::get('/api/projects/filter/{isCompany}/{isPriority}', 'APIcontroller@fiterProjects');
+Route::get('/api/projects/filter/{key}', 'APIcontroller@fiterProjects');

@@ -6,3 +6,9 @@
 /projects                   ->          Lege vieuw waar de kaart met projecten op komt.          : vieuws/projects/index.blade.php
 
 /projects/manage            ->          Returnt vieuw waar projecten van de ingelogde user komen : vieuws/projects/manage.blade.php
+
+/api/projects/filter/company ->		   Returnt alle compnay's
+
+/api/projects/filter/individual  ->     Returnt al de niet-company's
+
+/api/projects/filter/priority ->	   Returnt alle dringende 
