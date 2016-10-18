@@ -31,6 +31,15 @@ Route::get('/projects/{project}/delete', 'ProjectsController@delete');
 
 Route::post('/reactions/{project}/add', 'ReactionsController@store');
 
+////////////////////ADMIN///////////////////////////////////
+
+Route::get('/admin/projects/{project}/edit', 'AdminController@edit');
+
+Route::post('/admin/projects/{project}/update', 'AdminController@update');
+
+Route::get('/admin/projects/{project}/delete', 'AdminController@edit');
+
+
 ///////////////////*API's*///////////////////////////////////
 
 Route::get('/api/projects', 'APIcontroller@allPorjectsAPI');

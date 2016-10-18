@@ -26,6 +26,12 @@ class User extends Authenticatable
         return $this->hasMany(Project::class);
     }
 
+    public function isAdmin()
+    {
+        return $this->admin;
+    }
+
+
     /**
      * The attributes that are mass assignable.
      *

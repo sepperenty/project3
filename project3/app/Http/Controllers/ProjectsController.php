@@ -132,11 +132,18 @@ class ProjectsController extends Controller
 
     public function delete(Project $project)
     {
-        $project->update([
-            'is_active' => 0,
-        ]);
+        if(Auth()->user()->id == $project->user_id)
+        {
+            $project->update([
+                'is_active' => 0,
+            ]);
 
-        return redirect('/projects/manage');
+            return redirect('/projects/manage');
+        }
+        else{
+            return redirect('/');
+        }
+
     }
 
 
