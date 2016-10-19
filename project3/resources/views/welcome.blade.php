@@ -112,9 +112,9 @@
                             <li><a href="#">Bedrijven</a></li>
                         </ul>
                     </div><!-- /btn-group -->
-                    <input type="text" name="seach" class="form-control" aria-label="..." placeholder="Locatie">
+                    <input type="text" name="seach" id="searchTextField" class="form-control" aria-label="..." placeholder="Locatie">
                     <span class="input-group-btn">
-                         <button class="btn btn-default" type="button">Zoek <span
+                         <button class="btn btn-default" id="search_button" type="button">Zoek <span
                                      class="glyphicon glyphicon-search"></span></button>
                      </span>
                 </div>
