@@ -11,87 +11,18 @@
     <!--naam van de bedrijf achteraan plaatsen behaalve voor home page -> altijd naam van website vermelden-->
     <title>Graag gedaan, Vrijwilligerswerk voor mindervaliden </title>
 
+    @extends('layouts.app')
+
 
     <!--styles-->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
-          rel="stylesheet">
-    <link href="/css/base.css" rel="stylesheet">
-
-
-    <!--scripts-->
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
+    @section('header')
     <script src="{{ url('/js/welcome.js') }}"></script>
+        @endsection
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
-    <div class="nav-font-size">
-        <div class="navbar-header">
-            <!--Logo linkt naar homepage-->
-            <!--<a href="http://www.vioe.be/">-->
-            <!--<img src="vioe-logo.png" alt="Home VIOE - Vlaams Instituut voor het Onroerend Erfgoed" /></a>-->
 
-            <a class="navbar-brand" href="/"><img class="brand-logo" src="/images/medium/GraagGedaan-small.png"
-                                                  alt="home Graag Gedaan - Vrijwilligerswerk voor mindervaliden"></a>
-        </div>
-
-
-        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
-            <ul class="nav navbar-nav ">
-
-                <li>
-                    <button type="submit" class="go-to-content">Naar inhoud</button>
-                </li>
-                <li class="active">
-                    <a href="#" class="pull-left back">Home</a>
-                </li>
-                <li>
-                    <a href="/projects/manage">Plaats oproep</a>
-                </li>
-                <li>
-                    <!--Linkteksten zijn betekenisvol binnen hun context-->
-                    <a href="#">Over Graag Gedaan</a>
-                </li>
-                <li>
-                    <!--Linkteksten zijn betekenisvol binnen hun context-->
-                    <a href="#">Contact</a>
-                </li>
-
-                @if (Auth::guest())
-                    <li><a href="{{ url('/login') }}">Login</a></li>
-                    <li><a href="{{ url('/register') }}">Register</a></li>
-
-
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
-                        </ul>
-                    </li>
-                @endif
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
+@section('welcome')
 
 <div class="container-fluid">
 
@@ -200,6 +131,8 @@
 
     </div>
 </div>
+
+@endsection
 </body>
 </html>
 

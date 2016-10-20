@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('header')
-    <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
+    {{--<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>--}}
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
     <script src="{{ url('/js/manage.js') }}"></script>
 @endsection
@@ -8,7 +8,6 @@
 @section('content')
     <div class="row">
         <div class="col-md-4">
-
             <ul class="list-group">
                 @foreach($projects as $project)
                     <li class="list-group-item project_list" data-project_id="{{$project->id}}">
@@ -23,21 +22,11 @@
 
 
                 @if(count($errors))
-
-
                     @foreach($errors->all() as $error)
-
                         <li class="alert alert-danger col-md-12 list-group-item">{{$error}}</li>
-
                     @endforeach
-
-
-
                 @endif
-
-
             </ul>
-
         </div>
 
 
