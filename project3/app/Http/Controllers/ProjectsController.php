@@ -33,11 +33,11 @@ class ProjectsController extends Controller
 
         if(Auth()->user()->isAdmin())
         {
-            $projects = Project::where('is_active', 1)->get();
+            $projects = Project::where('is_active', 1)->orderBy('updated_at', 'desc')->simplePaginate(6);;
         }
         else
         {
-        $projects = Project::where('user_id', Auth()->user()->id)->where('is_active', 1)->get();
+            $projects = Project::where('user_id', Auth()->user()->id)->where('is_active', 1)->orderBy('updated_at', 'desc')->simplePaginate(6);
         }
 
         $message = "";
