@@ -15,6 +15,7 @@ use App\Project;
 use App\User;
 
 use App\UploadPicture;
+use League\Flysystem\Exception;
 
 class ProjectsController extends Controller
 {
@@ -27,11 +28,28 @@ class ProjectsController extends Controller
     }
 
 
-    public function manage()
+    public function manage( Request $request)
     {
-        $projects = Project::where('user_id', Auth()->user()->id)->where('is_active', 1)->get();
 
-        return view('projects/manage', compact('projects'));
+        if(Auth()->user()->isAdmin())
+        {
+            $projects = Project::where('is_active', 1)->get();
+        }
+        else
+        {
+        $projects = Project::where('user_id', Auth()->user()->id)->where('is_active', 1)->get();
+        }
+
+        $message = "";
+
+       if($request->session()->get("message"))
+       {
+           $message = $request->session()->pull("message");
+
+       }
+
+        return view('projects/manage', compact('projects', 'message'));
+
 
     }
 
@@ -44,8 +62,11 @@ class ProjectsController extends Controller
             'title' => 'required|max:255',
             'description' => 'required | max:500',
             'address' => 'required | max:255',
-            'foto' => 'max:50000000 | mimes:jpeg,bmp,png'
+            'foto' => 'max:50000000 | mimes:jpeg,bmp,png',
+            'email' => 'email',
+            'telephoneNumber' => 'required|min:11|numeric',
         ]);
+
 
 
         $project = new Project;
@@ -80,25 +101,33 @@ class ProjectsController extends Controller
             $oldProject = Project::find($request->id);
             $user_id = $oldProject->user_id;
 
-            if ($user_id == Auth()->user()->id) {
+            if (($user_id == Auth()->user()->id) || (Auth()->user()->isAdmin()) ) {
                 if ($path == "") {
                     $path = $oldProject->foto;
                 }
+                try {
+                    $oldProject->update([
 
-                $oldProject->update([
+                        'title' => $request->title,
+                        'description' => $request->description,
+                        'address' => $request->address,
+                        'lat' => $request->lat,
+                        'lng' => $request->lng,
+                        'foto' => $path,
+                        'email' => $request->email,
+                        'telephoneNumber' => $request->telephoneNumber,
+                        'isPriority' => $isPriority,
+                        'isCompany' => $isCompany,
+                    ]);
+                    $request->session()->put('message', 'Je oproep is succesvol geupdate');
 
-                    'title' => $request->title,
-                    'description' => $request->description,
-                    'address' => $request->address,
-                    'lat' => $request->lat,
-                    'lng' => $request->lng,
-                    'foto' => $path,
-                    'email' => $request->email,
-                    'telephoneNumber' => $request->telephoneNumber,
-                    'isPriority' => $isPriority,
-                    'isCompany' => $isCompany,
+                }catch(Exception $e){
+                    return $e;
+                    //////////////error page ////////////////
+                }
 
-                ]);
+
+
 
 
             } else {
@@ -121,7 +150,19 @@ class ProjectsController extends Controller
             $project->lng = $request->lng;
             $project->isPriority = $isPriority;
             $project->isCompany = $isCompany;
-            $project->save();
+
+            $updateSuccessful =  $project->save();
+
+            if($updateSuccessful)
+            {
+                $request->session()->put('message', 'Je oproep is geplaatst');
+            }
+
+            else{
+                ///////////////error page ////////////////
+            }
+
+
         }
 
 
@@ -130,15 +171,23 @@ class ProjectsController extends Controller
 
     }
 
-    public function delete(Project $project)
+    public function delete(Project $project, Request $request)
     {
-        if(Auth()->user()->id == $project->user_id)
+        if((Auth()->user()->id == $project->user_id) || (Auth()->user()->isAdmin()))
         {
-            $project->update([
-                'is_active' => 0,
-            ]);
+            try{
 
-            return redirect('/projects/manage');
+                $project->update([
+                    'is_active' => 0,
+                ]);
+                $request->session()->put('message', 'Project succesvol verwijderd');
+                return redirect('/projects/manage');
+            }catch (Exception $e)
+            {
+                return $e;
+                //////////////error page ////////////////
+            }
+
         }
         else{
             return redirect('/');
