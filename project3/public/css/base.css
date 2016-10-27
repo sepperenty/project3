@@ -5758,11 +5758,6 @@ p {
   left: 0;
   right: 0; }
 
-.extra-info {
-  background-color: #f3953f;
-  color: #fff;
-  min-height: 150px; }
-
 nav {
   text-transform: uppercase; }
 
@@ -5777,6 +5772,9 @@ nav {
     color: #fff; }
 
 .extra-info {
+  background-color: #f3953f;
+  color: #fff;
+  min-height: 150px;
   text-align: center;
   padding-top: 15px; }
   .extra-info p {

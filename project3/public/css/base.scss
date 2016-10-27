@@ -113,12 +113,7 @@ p {
   //border-bottom: thin solid #000;
 }
 
-.extra-info {
-  background-color: $extra-info-color;
-  color: #fff;
-  min-height: 150px;
 
-}
 
 nav {
   text-transform: uppercase;
@@ -138,6 +133,9 @@ nav {
 }
 
 .extra-info {
+  background-color: $extra-info-color;
+  color: #fff;
+  min-height: 150px;
   text-align: center;
   padding-top: 15px;
   p {

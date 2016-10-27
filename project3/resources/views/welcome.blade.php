@@ -59,13 +59,8 @@
 <div class="container-fluid content-home">
     <div class="col-md-3 content-home-child">
         <img class="introduction-img" src="/images/medium/question.png" alt="Icon met een vraagteken">
-        <h1>Wat is Graag Gedaan</h1>
-        <p>ndustry. Lorem Ipsum has been the industry's
-            standard dummy text ever since the 1500s,
-            when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-            It has survived not only five centuries, but
-            also the leap </p>
+        <h1>Wat kunnen wij voor u doen?</h1>
+        <p>Hie moet uitleg lomen! </p>
         <button class="head-button">Registreer & plaats oproep</button>
     </div>
 </div>
@@ -78,7 +73,7 @@
             <p>mensen hulp</p>
         </div>
         <hr>
-        <div class="col-md-4">
+        <div class="col-md-4 content-extra">
             <p>Er zijn</p>
             <h1>{{$amountProjectCompanys}}</h1>
             <p>bedrijven gerigistreerd</p>
