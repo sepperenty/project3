@@ -15,6 +15,9 @@
                         <a class="badge" href="/projects/{{$project->id}}/delete">delete</a>
                     </li>
                 @endforeach
+                
+                {{$projects->links()}}
+
                 <li class="list-group-item project_list" data-project_id="new_project">
                     creeër nieuw project
                 </li>
@@ -27,6 +30,9 @@
                     @endforeach
                 @endif
             </ul>
+
+
+
         </div>
 
 

@@ -1,0 +1,20 @@
+
+BACKEND
+- Admin afwerken v
+- Nederlandstalig
+- Links maken
+- Validatie message email/telefone v
+- Manage pagina
+- Error paging
+
+
+
+FRONDEND
+- Blade overbrengen naar layout
+- Manage project design
+- Login/registratie design
+- Javascript manage/adminedit
+- tab zaken
+- Anysurfer implementatie
+- Inhoud link naar content
+- Navbar Collapse

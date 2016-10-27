@@ -13,7 +13,7 @@ class APIcontroller extends Controller
 
     public function allPorjectsAPI()
     {
-        $projects = Project::where('is_active', 1)->get();
+        $projects = Project::all();
         $projects->load('user');
 
         return $projects;
@@ -23,12 +23,12 @@ class APIcontroller extends Controller
     {
         $projects = "";
         if($key == "company") {
-            $projects = Project::where('is_active', 1)->where('isCompany', 1)->get();
+            $projects = Project::where('isCompany', 1)->get();
 
         }elseif($key == "individual"){
-            $projects = Project::where('is_active', 1)->where('isCompany', 0)->get();
+            $projects = Project::where('isCompany', 0)->get();
         }elseif($key == "priority"){
-            $projects = Project::where('is_active', 1)->where('isPriority', 1)->get();
+            $projects = Project::where('isPriority', 1)->get();
         }
 
 

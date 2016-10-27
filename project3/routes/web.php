@@ -21,8 +21,6 @@ Route::post('/pictures/store', "PictureController@store");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 Route::get('/projects/manage', 'ProjectsController@manage');
 
 Route::post('/projects/manage/add', 'ProjectsController@store');
@@ -33,12 +31,8 @@ Route::post('/reactions/{project}/add', 'ReactionsController@store');
 
 ////////////////////ADMIN///////////////////////////////////
 
-Route::get('/admin/projects/{project}/edit', 'AdminController@edit');
-
-Route::post('/admin/projects/{project}/update', 'AdminController@update');
-
-Route::get('/admin/projects/{project}/delete', 'AdminController@edit');
-
+Route::get('/admin/users', 'AdminController@users');
+Route::get('/{user}/delete', 'AdminController@deleteUser');
 
 ///////////////////*API's*///////////////////////////////////
 

@@ -8,6 +8,9 @@ use App\Http\Requests;
 
 use App\Project;
 
+use App\User;
+
+
 class AdminController extends Controller
 {
     public function __construct()
@@ -16,19 +19,26 @@ class AdminController extends Controller
     }
 
 
-    public function edit(Project $project)
+    public function users(Project $project)
     {
-        $project->load("User");
-        return view('admin.edit', compact('project'));
-    }
+        $users = User::all();
 
-    public function update(Request $request, Project $project)
-    {
+        return view('admin.users', compact('users'));
 
     }
 
-    public function deleteProject(Project $project)
+    public function deleteUser(User $user)
     {
+        $user->delete();
+        return redirect("/admin/users");
+    }
+
+
+    public function projects(User $user)
+    {
+        $projects = Project::where('user_id', $user->id);
+
+        return view('admin.projects', compact("projects", "user"));
 
     }
 

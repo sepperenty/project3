@@ -113,6 +113,15 @@
         </div>
     </div>
 </nav>
+
+@if(!empty($message))
+        
+        <div class="alert alert-info">
+            {{$message}}
+        </div>
+
+@endif
+
 @yield('welcome')
 <div class="container">
 
