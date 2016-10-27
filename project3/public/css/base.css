@@ -5844,4 +5844,31 @@ nav {
   .footer p {
     font-size: 0.83333em; }
 
+.content {
+  padding: 20px 20px 40px 20px;
+  margin: 10px 10px 0 0;
+  overflow: auto; }
+  .content .post-thumb {
+    float: left; }
+    .content .post-thumb img {
+      display: block;
+      height: 150px;
+      width: 150px;
+      border-radius: 150px; }
+  .content .siteNotice {
+    border-left: 1px solid rgba(0, 0, 0, 0.2);
+    padding-left: 20px;
+    line-height: 20px;
+    margin-left: 180px;
+    margin-top: -160px; }
+    .content .siteNotice p {
+      margin-top: -10px; }
+    .content .siteNotice a {
+      background-color: #202933;
+      color: #fff;
+      padding: 5px 15px 5px 15px;
+      border-radius: 15px;
+      font-weight: bold;
+      margin-top: 10px; }
+
 /*# sourceMappingURL=base.css.map */

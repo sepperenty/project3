@@ -84,15 +84,17 @@ $(function () {
                 var urlproject = '/projects/' + data[i].id + '/show';
                 console.log(urlproject);
 
-                var contentString = '<div id="content"> <img src="/images/small/' + data[i].foto + '.jpg" ' +
-                    '<div id="siteNotice">' +
-                    '</div>' +
-                    '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
-                    '<div id="bodyContent">' +
+                var contentString = '' +
+                    '<div class="content"> ' +
+                        '<div class="post-thumb">'+
+                            '<img src="/images/small/' + data[i].foto + '.jpg" ' +
+                        '</div>'+
+                        '<div class="siteNotice">' +
 
-                    '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer</a><div>' +
-
-                    '</div>' +
+                        '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
+                        '<div id="bodyContent">' +
+                        '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer</a><div>' +
+                        '</div>' +
                     '</div>';
 
                 return function () {
