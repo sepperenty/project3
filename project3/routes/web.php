@@ -32,7 +32,12 @@ Route::post('/reactions/{project}/add', 'ReactionsController@store');
 ////////////////////ADMIN///////////////////////////////////
 
 Route::get('/admin/users', 'AdminController@users');
-Route::get('/{user}/delete', 'AdminController@deleteUser');
+
+Route::get('/admin/{user}/delete', 'AdminController@deleteUser');
+
+Route::get('/admin/{user}/projects', 'AdminController@projects');
+
+Route::get('/admin/project/{project}/delete', "AdminController@delete");
 
 ///////////////////*API's*///////////////////////////////////
 

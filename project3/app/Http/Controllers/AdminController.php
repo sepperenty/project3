@@ -36,10 +36,17 @@ class AdminController extends Controller
 
     public function projects(User $user)
     {
-        $projects = Project::where('user_id', $user->id);
+        $projects = Project::where('user_id', $user->id)->get();
 
         return view('admin.projects', compact("projects", "user"));
 
+    }
+
+    public function delete(Project $project)
+    {
+        $project->delete();
+        //return $project->id;
+        return redirect('/admin/' .$project->user_id . '/projects');
     }
 
 }

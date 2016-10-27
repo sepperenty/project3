@@ -16,8 +16,8 @@
 			<tr>
 				<th>{{$user->name}}</th>
 				<th>{{$user->email}}</th>
-				<th><a href="/{{$user->id}}/delete">delete</a></th>
-				<th><a href="/{{$user->id}}/projects">Projects</a></th>
+				<th><a href="/admin/{{$user->id}}/delete">delete</a></th>
+				<th><a href="/admin/{{$user->id}}/projects">Projects</a></th>
 			</tr>
 			@endforeach
 	

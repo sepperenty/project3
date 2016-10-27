@@ -94,6 +94,9 @@
         <div class="col-md-12 col-sm-12 col-lg-12 heading">
             <h1>Fotogelerij getuigenissen</h1>
             <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
+            @if(Auth()->check())
+            <a href="/pictures/add" class="btn btn-primary">upload</a>
+            @endif
         </div>
 
         @foreach($randomPictures as $picture)

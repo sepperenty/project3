@@ -43,4 +43,14 @@ class PublicController extends Controller
         return view('projects/show', compact('project'));
 
     }
+
+    public function info()
+    {
+        return view("info");
+    }
+
+    public function contact()
+    {
+        return view('contact');
+    }
 }

@@ -6,6 +6,7 @@ BACKEND
 - Validatie message email/telefone v
 - Manage pagina
 - Error paging
+- max value aan text
 
 
 

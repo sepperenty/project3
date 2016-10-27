@@ -6,21 +6,31 @@
 
 	<table class="table">
 			<tr>
-				<th>name</th>
+				<th>title</th>
 				<th>email</th>
-				<th>Delete</th>
-				<th>projects</th>
+				<th>telephone number</th>
+				<th>address</th>
+				<th>picture</th>
+				<th>delete</th>
 			</tr>	
+			@if(count($projects)>0)
 
-			@foreach($users as $user)
-			<tr>
-				<th>{{$user->name}}</th>
-				<th>{{$user->email}}</th>
-				<th><a href="/{{$user->id}}/delete">delete</a></th>
-				<th><a href="/{{$user->id}}/projects">Projects</a></th>
-			</tr>
-			@endforeach
-	
+				@foreach($projects as $project)
+				<tr>
+					<th>{{$project->title}}</th>
+					<th>{{$project->email}}</th>
+					<th>{{$project->telephoneNumber}}</th>
+					<th>{{$project->address}}</th>
+					<th><img src="/images/small/{{$project->foto}}.jpg" alt=""></th>
+					<th><a href="/admin/project/{{$project->id}}/delete">delete</a></th>
+				</tr>
+				@endforeach
+			@else
+				<tr>
+					<th>No projects found</th>
+				</tr>
+			@endif
+		
 
 
 	</table>
