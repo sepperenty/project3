@@ -17,8 +17,8 @@ class PublicController extends Controller
     public function index()
     {
         $amountRegistered = User::count();
-        $amountProjectCompanys = Project::where('isCompany', 1)->where("is_active", 1)->count();
-        $amountProjectUsers = Project::where('isCompany', 0)->where("is_active", 1)->count();
+        $amountProjectCompanys = Project::where('isCompany', 1)->count();
+        $amountProjectUsers = Project::where('isCompany', 0)->count();
 
         $pictureCount = Picture::count();
         $maxAmount = 8;

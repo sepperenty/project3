@@ -26,9 +26,9 @@ class CreateProjectsTable extends Migration
             $table->string('telephoneNumber');
             $table->double('lat', 15, 8);  
             $table->double('lng', 15, 8);
-            $table->integer('is_active')->default(1);
             $table->boolean('isPriority')->default(0);
             $table->boolean('isCompany')->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

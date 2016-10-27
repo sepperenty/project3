@@ -34,11 +34,11 @@ class ProjectsController extends Controller
 
         if(Auth()->user()->isAdmin())
         {
-            $projects = Project::where('is_active', 1)->orderBy('updated_at', 'desc')->simplePaginate(6);;
+            $projects = Project::orderBy('updated_at', 'desc')->simplePaginate(6);;
         }
         else
         {
-            $projects = Project::where('user_id', Auth()->user()->id)->where('is_active', 1)->orderBy('updated_at', 'desc')->simplePaginate(6);
+            $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(6);
         }
 
         $message = "";
@@ -178,9 +178,7 @@ class ProjectsController extends Controller
         {
             try{
 
-                $project->update([
-                    'is_active' => 0,
-                ]);
+                $project->delete();
                 $request->session()->put('message', 'Project succesvol verwijderd');
                 return redirect('/projects/manage');
             }catch (Exception $e)
