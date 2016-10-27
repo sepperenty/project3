@@ -29,33 +29,12 @@ class ProjectsController extends Controller
     }
 
 
-    public function manage( Request $request)
+    public function add()
     {
-
-        if(Auth()->user()->isAdmin())
-        {
-            $projects = Project::orderBy('updated_at', 'desc')->simplePaginate(6);;
-        }
-        else
-        {
-            $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(6);
-        }
-
-        $message = "";
-
-       if($request->session()->get("message"))
-       {
-           $message = $request->session()->pull("message");
-
-       }
-
-        return view('projects/manage', compact('projects', 'message'));
-
-
+        return view('projects/add', compact('message'));
     }
 
-
-    public function store(Request $request)
+     public function store(Request $request)
     {
 
 
@@ -122,9 +101,38 @@ class ProjectsController extends Controller
 
     }
 
+     public function manage(Request $request)
+    {
+        $projects = "";
+        $message = "";
 
+        if(Auth()->user()->isAdmin())
+        {
+            $projects = Project::orderBy('updated_at', 'desc')->simplePaginate(6);;
+        }
+        else
+        {
+            $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(6);
+        }
+
+        
+
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+
+        }
+
+        return view('/projects/manage', compact('projects', "message"));
+    }
 
     public function edit(Project $project)
+    {
+        return view('projects/edit');
+    }
+
+
+    public function update(Project $project)
     {
        
         $oldProject = Project::find($request->id);
@@ -168,6 +176,9 @@ class ProjectsController extends Controller
             }
         
     }
+
+
+   
 
     public function delete(Project $project, Request $request)
     {

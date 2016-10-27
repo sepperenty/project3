@@ -70,17 +70,10 @@
                 <li class="{{ Request::is('/') ? 'active' : '' }}">
                     <a href="{{ url('/') }}" class="pull-left back">Home</a>
                 </li>
-                <li class="{{ Request::is('projects/manage') ? 'active' : '' }}">
-                    <a href="/projects/manage">Plaats oproep</a>
+                <li class="{{ Request::is('projects/add') ? 'active' : '' }}">
+                    <a href="/projects/add">Plaats oproep</a>
                 </li>
-                <li class="{{ Request::is('over-graag-gedaan') ? 'active' : '' }}">
-                    <!--Linkteksten zijn betekenisvol binnen hun context-->
-                    <a href="{{ url('/over-graag-gedaan') }}">Over Graag Gedaan</a>
-                </li>
-                <li class="{{ Request::is('/contact') ? 'active' : '' }}">
-                    <!--Linkteksten zijn betekenisvol binnen hun context-->
-                    <a href="{{ url('/contact') }}">Contact</a>
-                </li>
+                
 
                 @if (Auth::guest())
                     <li class="{{ Request::is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">Login</a></li>

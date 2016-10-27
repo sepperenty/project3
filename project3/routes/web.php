@@ -21,7 +21,11 @@ Route::post('/pictures/store', "PictureController@store");
 
 Auth::routes();
 
-Route::get('/projects/add', 'ProjectsController@manage');
+Route::get('/projects/add', 'ProjectsController@add');
+
+Route::get('/projects/beheer', 'ProjectsController@manage');
+
+Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 
 Route::post('/projects/add/new', 'ProjectsController@store');
 
