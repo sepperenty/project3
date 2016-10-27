@@ -113,6 +113,22 @@ p {
   //border-bottom: thin solid #000;
 }
 
+.inleiding{
+  text-align: center;
+  background-color: $extra-info-color;
+  color: #fff;
+}
+.content-container{
+  margin-top: 50px;
+  text-transform: uppercase;
+  .oproep-contact-gegevens{
+    text-transform: none;
+    background-color: $extra-info-color;
+    color: #fff;
+    border-radius: 50px;
+  }
+}
+
 
 
 nav {

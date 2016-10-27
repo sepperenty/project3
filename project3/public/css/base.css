@@ -5758,6 +5758,20 @@ p {
   left: 0;
   right: 0; }
 
+.inleiding {
+  text-align: center;
+  background-color: #f3953f;
+  color: #fff; }
+
+.content-container {
+  margin-top: 50px;
+  text-transform: uppercase; }
+  .content-container .oproep-contact-gegevens {
+    text-transform: none;
+    background-color: #f3953f;
+    color: #fff;
+    border-radius: 50px; }
+
 nav {
   text-transform: uppercase; }
 
