@@ -7,39 +7,46 @@
 
 @section('content')
     <div class="row">
-        <div class="col-md-4">
-            <ul class="list-group">
-                @foreach($projects as $project)
-                    <li class="list-group-item project_list" data-project_id="{{$project->id}}">
-                        {{$project->title}}
-                        <a class="badge" href="/projects/{{$project->id}}/delete">delete</a>
-                    </li>
-                @endforeach
-                
-                {{$projects->links()}}
+      <!--   <div class="col-md-4">
+          <ul class="list-group">
+              @foreach($projects as $project)
+                  <li class="list-group-item project_list" data-project_id="{{$project->id}}">
+                      {{$project->title}}
+                      <a class="badge" href="/projects/{{$project->id}}/delete">delete</a>
+                  </li>
+              @endforeach
+              
+              {{$projects->links()}}
+      
+              <li class="list-group-item project_list" data-project_id="new_project">
+                  creeër nieuw project
+              </li>
+              <p class="alert alert-info info col-md-12">Vul de gegevens in om je zoekertje te plaatsen</p>
+      
+      
+              @if(count($errors))
+                  @foreach($errors->all() as $error)
+                      <li class="alert alert-danger col-md-12 list-group-item">{{$error}}</li>
+                  @endforeach
+              @endif
+          </ul>
+      
+      
+      
+      </div>
+       -->
 
-                <li class="list-group-item project_list" data-project_id="new_project">
-                    creeër nieuw project
-                </li>
-                <p class="alert alert-info info col-md-12">Vul de gegevens in om je zoekertje te plaatsen</p>
+       <div class="col-md-12">
+           <h1 class="pull-left">Vul deze form in en plaats een nieuwe oproep.</h1>
+            <a href="/porjects/beheer" class="pull-right btn btn-primary">Berheer projecten</a>
+       </div>
 
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12">
 
-                @if(count($errors))
-                    @foreach($errors->all() as $error)
-                        <li class="alert alert-danger col-md-12 list-group-item">{{$error}}</li>
-                    @endforeach
-                @endif
-            </ul>
-
-
-
-        </div>
-
-
-        <div class="col-md-8">
-
-
-            {{ Form::open(array('url' => '/projects/manage/add', 'id'=>'form_project','files' => true)) }}
+            {{ Form::open(array('url' => '/projects/add/new', 'id'=>'form_project','files' => true)) }}
 
             {{ csrf_field() }}
             <div class="row">

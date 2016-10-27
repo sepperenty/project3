@@ -21,9 +21,9 @@ Route::post('/pictures/store', "PictureController@store");
 
 Auth::routes();
 
-Route::get('/projects/manage', 'ProjectsController@manage');
+Route::get('/projects/add', 'ProjectsController@manage');
 
-Route::post('/projects/manage/add', 'ProjectsController@store');
+Route::post('/projects/add/new', 'ProjectsController@store');
 
 Route::get('/projects/{project}/delete', 'ProjectsController@delete');
 

@@ -68,12 +68,8 @@ class ProjectsController extends Controller
             'telephoneNumber' => 'required|min:11|numeric',
         ]);
 
-
-
         $project = new Project;
-
         $path = "";
-
         $isPriority = 0;
         $isCompany = 0;
 
@@ -87,22 +83,55 @@ class ProjectsController extends Controller
 
         if ($request->hasFile('foto')) {
 
-
             $newName = rtrim(base64_encode(md5(microtime())), "=");
-
             $uploader = new UploadPicture($request->foto, $newName);
             $uploader->store();
-
-
             $path = $newName;
         }
 
 
-        if ($request->id) {
-            $oldProject = Project::find($request->id);
-            $user_id = $oldProject->user_id;
+        
+            if ($path == "") {
+                $path = "default";
+            }
+            $project->foto = $path;
+            $project->user_id = Auth()->user()->id;
+            $project->title = $request->title;
+            $project->description = $request->description;
+            $project->email = $request->email;
+            $project->telephoneNumber = $request->telephoneNumber;
+            $project->address = $request->address;
+            $project->lat = $request->lat;
+            $project->lng = $request->lng;
+            $project->isPriority = $isPriority;
+            $project->isCompany = $isCompany;
 
-            if (($user_id == Auth()->user()->id) || (Auth()->user()->isAdmin()) ) {
+            $updateSuccessful =  $project->save();
+
+            if($updateSuccessful)
+            {
+                $request->session()->put('message', 'Je oproep is geplaatst');
+                 return redirect('/projects/add');
+            }
+
+            else{
+                $request->session()->put('message', 'Er is iets mis gelopen, contacteer de webmaster');
+                return redirect('/projects/add');
+
+            }
+
+    }
+
+
+
+    public function edit(Project $project)
+    {
+       
+        $oldProject = Project::find($request->id);
+        $user_id = $oldProject->user_id;
+
+        if (($user_id == Auth()->user()->id) || (Auth()->user()->isAdmin()) ) {
+                
                 if ($path == "") {
                     $path = $oldProject->foto;
                 }
@@ -121,10 +150,12 @@ class ProjectsController extends Controller
                         'isCompany' => $isCompany,
                     ]);
                     $request->session()->put('message', 'Je oproep is succesvol geupdate');
+                    return redirect('/projects/beheer');
 
                 }catch(Exception $e){
                     return $e;
-                    //////////////error page ////////////////
+                    $request->session()->put('message', 'Er is iets misgelopen, contacteer de webmaster');
+                    return redirect('/projects/beheer');
                 }
 
 
@@ -132,44 +163,10 @@ class ProjectsController extends Controller
 
 
             } else {
-                return "unauthorised";
+                 $request->session()->put('message', 'Je bent niet geauthoriseerd om dit project te wijzigen.');
+                return redirect('/projects/beheer');
             }
-        } else {
-            if ($path == "") {
-                $path = "default";
-
-            }
-            $project->foto = $path;
-
-            $project->user_id = Auth()->user()->id;
-            $project->title = $request->title;
-            $project->description = $request->description;
-            $project->email = $request->email;
-            $project->telephoneNumber = $request->telephoneNumber;
-            $project->address = $request->address;
-            $project->lat = $request->lat;
-            $project->lng = $request->lng;
-            $project->isPriority = $isPriority;
-            $project->isCompany = $isCompany;
-
-            $updateSuccessful =  $project->save();
-
-            if($updateSuccessful)
-            {
-                $request->session()->put('message', 'Je oproep is geplaatst');
-            }
-
-            else{
-                ///////////////error page ////////////////
-            }
-
-
-        }
-
-
-        return redirect('/projects/manage');
-
-
+        
     }
 
     public function delete(Project $project, Request $request)
@@ -180,7 +177,7 @@ class ProjectsController extends Controller
 
                 $project->delete();
                 $request->session()->put('message', 'Project succesvol verwijderd');
-                return redirect('/projects/manage');
+                return redirect('/projects/beheer');
             }catch (Exception $e)
             {
                 return $e;
