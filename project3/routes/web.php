@@ -21,8 +21,6 @@ Route::post('/pictures/store', "PictureController@store");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 Route::get('/projects/manage', 'ProjectsController@manage');
 
 Route::post('/projects/manage/add', 'ProjectsController@store');

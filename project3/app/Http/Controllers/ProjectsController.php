@@ -6,7 +6,8 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 use Illuminate\Http\Request;
 
-use Illuminate\Http\UploadedFile;
+
+
 
 use App\Http\Requests;
 

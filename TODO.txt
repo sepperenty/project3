@@ -1,9 +1,9 @@
 
 BACKEND
-- Admin afwerken
+- Admin afwerken v
 - Nederlandstalig
 - Links maken
-- Validatie message email/telefone
+- Validatie message email/telefone v
 - Manage pagina
 - Error paging
 
