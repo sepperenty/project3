@@ -255,11 +255,10 @@ html {
   -webkit-tap-highlight-color: transparent; }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff; }
+  color: #333333; }
 
 input,
 button,
@@ -5677,6 +5676,42 @@ td.visible-print {
   display: table;
   content: " "; }
 
+.uppercas {
+  text-transform: uppercase; }
+
+.inleiding {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: #fff;
+  color: #202933;
+  margin: 10px;
+  margin-bottom: -10px; }
+
+.element {
+  background: #202933;
+  margin: 10px;
+  color: #fff; }
+  .element .content {
+    padding: -15px;
+    display: inline-block;
+    margin: 0px;
+    width: 70%;
+    vertical-align: top; }
+    .element .content hr {
+      margin-bottom: -15px; }
+    @media (max-width: 1550px) {
+      .element .content {
+        width: 60%; } }
+    @media (max-width: 1200px) {
+      .element .content {
+        width: 50%; } }
+    @media (max-width: 850px) {
+      .element .content {
+        width: 100%; } }
+  .element img {
+    display: inline-block;
+    vertical-align: middle; }
+
 p {
   font-size: 1.1em; }
 
@@ -5882,5 +5917,18 @@ nav {
       border-radius: 15px;
       font-weight: bold;
       margin-top: 10px; }
+
+.page {
+  margin-top: 25px; }
+
+.content-body {
+  margin: -10px 10px 10px 10px; }
+
+.dicription {
+  min-height: 600px;
+  background-color: #fff;
+  color: #202933; }
+  .dicription p {
+    font-size: 2em; }
 
 /*# sourceMappingURL=base.css.map */

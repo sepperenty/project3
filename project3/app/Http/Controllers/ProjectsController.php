@@ -90,7 +90,7 @@ class ProjectsController extends Controller
             $project->isCompany = $isCompany;
 
             $updateSuccessful =  $project->save();
-
+       
             if($updateSuccessful)
             {
                 $request->session()->put('message', 'Je oproep is geplaatst');
