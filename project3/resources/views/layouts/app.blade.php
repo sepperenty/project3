@@ -24,9 +24,11 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
     @yield('header')
 
-    <link href="/css/base.css" rel="stylesheet">
+
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
     <style>
         #map_form {
             height: 250px;
@@ -128,7 +130,7 @@
     @yield('content')
 
 </div>
-
+@yield('show_page')
 
 </body>
 </html>
