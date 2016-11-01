@@ -1,14 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: seppe
- * Date: 17/10/2016
- * Time: 13:38
- */
 
 namespace App;
-
-
 
 use Intervention\Image\ImageManagerStatic as Image;
 

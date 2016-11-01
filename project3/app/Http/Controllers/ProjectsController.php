@@ -6,9 +6,6 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 use Illuminate\Http\Request;
 
-
-
-
 use App\Http\Requests;
 
 use App\Project;
@@ -29,8 +26,13 @@ class ProjectsController extends Controller
     }
 
 
-    public function add()
+    public function add(Request $request)
     {
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+
+        }
         return view('projects/add', compact('message'));
     }
 
@@ -90,12 +92,12 @@ class ProjectsController extends Controller
             if($updateSuccessful)
             {
                 $request->session()->put('message', 'Je oproep is geplaatst');
-                 return redirect('/projects/add');
+                 return redirect('/projects/beheer');
             }
 
             else{
                 $request->session()->put('message', 'Er is iets mis gelopen, contacteer de webmaster');
-                return redirect('/projects/add');
+                return redirect('/projects/beheer');
 
             }
 
@@ -106,15 +108,9 @@ class ProjectsController extends Controller
         $projects = "";
         $message = "";
 
-        if(Auth()->user()->isAdmin())
-        {
-            $projects = Project::orderBy('updated_at', 'desc')->simplePaginate(6);;
-        }
-        else
-        {
-            $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(6);
-        }
-
+       
+        $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(6);
+        
         
 
         if($request->session()->get("message"))
@@ -128,23 +124,41 @@ class ProjectsController extends Controller
 
     public function edit(Project $project)
     {
-        return view('projects/edit');
+
+        return view('projects/edit', compact('project'));
     }
 
 
-    public function update(Project $project)
+    public function update(Project $project, Request $request)
     {
        
-        $oldProject = Project::find($request->id);
-        $user_id = $oldProject->user_id;
+        $user_id = $project->user_id;
+        $path = $project->foto;
+        $isPriority = 0;
+        $isCompany = 0;
 
-        if (($user_id == Auth()->user()->id) || (Auth()->user()->isAdmin()) ) {
-                
-                if ($path == "") {
-                    $path = $oldProject->foto;
+        if ( $user_id == Auth()->user()->id ) {
+
+                if ($request->hasFile('foto')) {
+
+                    $newName = rtrim(base64_encode(md5(microtime())), "=");
+                    $uploader = new UploadPicture($request->foto, $newName);
+                    $uploader->store();
+                    $path = $newName;
+
                 }
+
+                if ($request->isPriority == 'on') {
+                    $isPriority = 1;
+                }
+                if ($request->isCompany == 'on') {
+                    $isCompany = 1;
+
+                }
+
+                
                 try {
-                    $oldProject->update([
+                    $project->update([
 
                         'title' => $request->title,
                         'description' => $request->description,
@@ -161,14 +175,9 @@ class ProjectsController extends Controller
                     return redirect('/projects/beheer');
 
                 }catch(Exception $e){
-                    return $e;
                     $request->session()->put('message', 'Er is iets misgelopen, contacteer de webmaster');
                     return redirect('/projects/beheer');
                 }
-
-
-
-
 
             } else {
                  $request->session()->put('message', 'Je bent niet geauthoriseerd om dit project te wijzigen.');

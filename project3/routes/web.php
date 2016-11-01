@@ -27,6 +27,8 @@ Route::get('/projects/beheer', 'ProjectsController@manage');
 
 Route::get('/projects/{project}/edit', 'ProjectsController@edit');
 
+Route::post('/projects/{project}/update', 'ProjectsController@update');
+
 Route::post('/projects/add/new', 'ProjectsController@store');
 
 Route::get('/projects/{project}/delete', 'ProjectsController@delete');

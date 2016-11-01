@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Project;
 
 class User extends Authenticatable
 {
@@ -32,6 +33,20 @@ class User extends Authenticatable
     public function isAdmin()
     {
         return $this->admin;
+    }
+
+    public function hasProject()
+    {
+        $project = Project::where('user_id', $this->id)->first();
+
+        if($project !=null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 

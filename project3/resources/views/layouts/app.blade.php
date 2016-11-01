@@ -73,6 +73,12 @@
                 <li class="{{ Request::is('projects/add') ? 'active' : '' }}">
                     <a href="/projects/add">Plaats oproep</a>
                 </li>
+
+                @if((Auth()->check()) && (Auth()->user()->hasProject()))
+                <li class="{{ Request::is('projects/beheer') ? 'active' : '' }}">
+                    <a href="/projects/beheer">beheer oproepen</a>
+                </li>
+                @endif
                 
 
                 @if (Auth::guest())

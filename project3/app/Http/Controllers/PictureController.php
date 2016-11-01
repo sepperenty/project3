@@ -1,15 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
-
 use App\Picture;
 use App\User;
-
-use App\UploadPicture;
+use App\uploadPicture;
 
 class PictureController extends Controller
 {

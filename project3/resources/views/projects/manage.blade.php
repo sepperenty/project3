@@ -8,7 +8,10 @@
 
 
   <div class="col-md-12">
-  <h1>jouw oproepen</h1>
+  <div class="row">
+    
+  <h1 class="pull-left">jouw oproepen</h1><a href="/projects/add" class="pull-right btn btn-primary">Nieuw Project</a>
+  </div>
           <ul class="list-group">
               @foreach($projects as $project)
                   <li class="list-group-item project_list" data-project_id="{{$project->id}}">
