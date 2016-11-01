@@ -10,6 +10,10 @@
 | to using a Closure or controller method. Build something great!
 |
 */
+Auth::routes();
+
+Route::get('/redirect', 'SocialAuthController@redirect');
+Route::get('/callback', 'SocialAuthController@callback');
 
 Route::get('/', 'PublicController@index');
 
@@ -19,7 +23,6 @@ Route::get('/pictures/add', "PictureController@add");
 
 Route::post('/pictures/store', "PictureController@store");
 
-Auth::routes();
 
 Route::get('/projects/add', 'ProjectsController@add');
 

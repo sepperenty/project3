@@ -64,6 +64,8 @@
                                     </span>
                                 @endif
                             </div>
+                            <a href="redirect">FB Register</a>
+
                         </div>
 
                         <div class="form-group">

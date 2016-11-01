@@ -164,6 +164,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,    //Custum -> file manipulation
+        Laravel\Socialite\SocialiteServiceProvider::class, //facebook login
 
         /*
          * Package Service Providers...
@@ -230,6 +231,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Image' => Intervention\Image\Facades\Image::class,   //Custum -> file manipulation
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class, //custom -> facebook login
 
     ],
 
