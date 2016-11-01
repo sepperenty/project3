@@ -258,8 +258,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   line-height: 1.428571429;
-  color: #333333;
-  background: url("/images/background/background.png"); }
+  color: #333333; }
 
 input,
 button,
@@ -5688,16 +5687,7 @@ td.visible-print {
   margin: 10px;
   margin-bottom: -10px; }
 
-.content-body {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #fff;
-  color: #202933;
-  margin: 10px;
-  margin-top: -10px; }
-
 .element {
-  box-shadow: 10px 10px -5px #888888;
   background: #202933;
   margin: 10px;
   color: #fff; }
@@ -5927,5 +5917,18 @@ nav {
       border-radius: 15px;
       font-weight: bold;
       margin-top: 10px; }
+
+.page {
+  margin-top: 25px; }
+
+.content-body {
+  margin: -10px 10px 10px 10px; }
+
+.dicription {
+  min-height: 600px;
+  background-color: #fff;
+  color: #202933; }
+  .dicription p {
+    font-size: 2em; }
 
 /*# sourceMappingURL=base.css.map */

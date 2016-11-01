@@ -10,11 +10,11 @@ $base-color-black-without-opacity-font: #fff;
 $foto-full-hd-width: 1024px;
 $foto-full-hd-height: 720px;
 
-
-.uppercas{
+.uppercas {
   text-transform: uppercase;
 }
-.inleiding{
+
+.inleiding {
   padding-top: 5px;
   padding-bottom: 5px;
   background-color: #fff;
@@ -23,26 +23,15 @@ $foto-full-hd-height: 720px;
   margin-bottom: -10px;
 }
 
-
-.content-body{
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #fff;
-  color: $base-color-black-without-opacity;
-  margin: 10px;
-  margin-top: -10px;
-}
-
 .element {
 
-  box-shadow: 10px 10px -5px #888888;
   background: $base-color-black-without-opacity;
   margin: 10px;
   color: $base-color-black-without-opacity-font;
 
   .content {
     padding: -15px;
-    hr{
+    hr {
       margin-bottom: -15px;
     }
 
@@ -64,9 +53,11 @@ $foto-full-hd-height: 720px;
   img {
     display: inline-block;
     vertical-align: middle;
-
   }
 }
+
+
+
 
 p {
   font-size: $base-font-size *1.1;
@@ -335,5 +326,27 @@ $img-size: 150px;
       font-weight: bold;
       margin-top: 10px;
     }
+  }
+}
+
+.page{
+  margin-top: 25px;
+
+}
+//div{
+//  background-color: #fff;
+//}
+.content-body {
+  margin: -10px 10px 10px 10px;
+
+
+}
+
+.dicription {
+  min-height: 600px;
+  background-color: #fff;
+  color: $base-color-black-without-opacity;
+  p{
+    font-size: $base-font-size *2;
   }
 }
