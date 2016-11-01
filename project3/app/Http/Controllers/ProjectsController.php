@@ -41,12 +41,14 @@ class ProjectsController extends Controller
 
 
         $this->validate($request, [
-            'title' => 'required|max:255',
+            'title' => 'required|max:50',
             'description' => 'required | max:500',
             'address' => 'required | max:255',
             'foto' => 'max:50000000 | mimes:jpeg,bmp,png',
-            'email' => 'email',
-            'telephoneNumber' => 'required|min:11|numeric',
+            'email' => 'email | max:50',
+            'telephoneNumber' => 'required|min:11|numeric|max:50',
+            'lat' => 'required',
+            'lng' => 'required',
         ]);
 
         $project = new Project;
@@ -131,6 +133,16 @@ class ProjectsController extends Controller
 
     public function update(Project $project, Request $request)
     {
+         $this->validate($request, [
+            'title' => 'required|max:50',
+            'description' => 'required | max:500',
+            'address' => 'required | max:255',
+            'foto' => 'max:50000000 | mimes:jpeg,bmp,png',
+            'email' => 'email|max:50',
+            'telephoneNumber' => 'required|min:11|numeric|max:50',
+            'lat' => 'required',
+            'lng' => 'required',
+        ]);
        
         $user_id = $project->user_id;
         $path = $project->foto;

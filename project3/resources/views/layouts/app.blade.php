@@ -25,6 +25,7 @@
     @yield('header')
 
     <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/anysurfer.css">
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
           rel="stylesheet">
     <style>

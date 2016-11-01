@@ -1,0 +1,15 @@
+
+.focus{
+	border: 5px solid transparent;
+}
+
+.focus:focus{
+	border: 5px solid red;
+}
+
+
+.form-control:focus {
+	border: 5px solid red;
+}
+
+

@@ -28,7 +28,7 @@ class PictureController extends Controller
         $this->validate($request, [
 
             'foto' => 'required | max:5000 | mimes:jpeg,bmp,png',
-            'picture_info' => 'required',
+            'picture_info' => 'required | max:50',
 
         ]);
 

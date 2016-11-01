@@ -128,6 +128,8 @@ $(document).ready(function () {
         autocomplete = new google.maps.places.Autocomplete(input);
         console.log(autocomplete);
         autocomplete.addListener('place_changed', fillInAddress);
+
+
     }
 
 
@@ -191,4 +193,20 @@ $(document).ready(function () {
         });
 
     }
+
+    /*
+        Ontwijk de linken op google maps kaart met tab.
+    */
+
+    google.maps.event.addListenerOnce(map, 'idle', function(){
+        $('.map').find('a').each(function () {
+            $(this).attr('tabindex', "-1");
+            console.log('a');
+        });
+    });
+
+    
 })
+
+
+
