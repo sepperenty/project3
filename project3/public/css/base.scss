@@ -172,6 +172,7 @@ p {
 
 .content-container {
   margin-top: 50px;
+
   text-transform: uppercase;
   .oproep-contact-gegevens {
     text-transform: none;
@@ -225,7 +226,8 @@ nav {
 }
 
 .foto-gallery {
-  margin-top: 50px;
+  padding-top: 50px;
+  padding-bottom: 200px;
   background-color: #fff;
   color: #fff;
   .heading {
@@ -268,7 +270,7 @@ nav {
   padding-bottom: 100px;
   color: #fff;
   text-align: center;
-  margin-top: 200px;
+
 
   a {
     color: #000;
@@ -285,7 +287,7 @@ nav {
     font-size: $base-font-size /1.2;
   }
 
-  margin-top: 200px;
+
   border-top: thin solid #000;
 }
 
@@ -338,8 +340,7 @@ $img-size: 150px;
 //}
 .content-body {
   margin: -10px 10px 10px 10px;
-
-
+  margin-bottom: 100px;
 }
 
 .dicription {
@@ -347,6 +348,23 @@ $img-size: 150px;
   background-color: #fff;
   color: $base-color-black-without-opacity;
   p{
-    font-size: $base-font-size *2;
+    font-size: $base-font-size *1.5;
+  }
+
+  .beschrijving{
+    min-height: 600px;
+  }
+  .contact{
+    min-height: 600px;
+    background-color: lightslategray;
+    color: #fff;
+
+    p{
+      font-size: $base-font-size*1.5;
+      margin-top: 35px;
+    }
+    .float-right {
+      text-align: right;
+    }
   }
 }
