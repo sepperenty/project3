@@ -111,22 +111,12 @@
             </div>
         </div>
             @endforeach
-
-
     </div>
 </div>
 
 
 <!--En plaats de footer-div altijd onderaan in de broncode.-->
 
-<div class="container-fluid footer">
-
-    <div class="row">
-        <footer>
-            <H1><a href="/contact">Gemaakt door Graag Gedaan<p>Voor vragen of opmerkingen contacteer ons</p></a></H1>
-        </footer>
-    </div>
-</div>
 
 @endsection
 </body>

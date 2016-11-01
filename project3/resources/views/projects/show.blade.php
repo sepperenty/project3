@@ -20,18 +20,25 @@
                         </div>
 
                     </div>
-
-
                     <div class="content-body">
                         <div class="dicription">
-                            <div class="col-md-8">
+                            <div class="col-md-8 beschrijving">
                                 <h1>Beschrijving</h1>
                                 <hr>
                                 <p cl>{{$project->description}}</p>
                             </div>
-                            <div class="col-md-4">
-                                <h1>Contact</h1>
-                                <hr>
+                            <div class="col-md-4 contact">
+                                <div class="col-md-11">
+                                    <h1>Contact</h1>
+                                    <hr>
+                                    <p><strong>Naam:</strong><span class="pull-right">{{$project->user->name}}</span>
+                                    </p>
+                                    <p><strong>Adres:</strong><span class="pull-right">{{$project-> address }}</span>
+                                    </p>
+                                    <p><strong>Telefoon:</strong><span class="pull-right">{{$project->telephoneNumber}}</span>
+                                    </p>
+                                    <p><strong>Email:</strong><span class="pull-right">{{$project->email}}</span>
+                                </div>
                             </div>
                         </div>
                     </div>
