@@ -65,7 +65,7 @@
 
                 <div class="form-group col-md-12">
                     <label for="telephoneNumber">Telephone Number</label>
-                    <input type="text" name="telephoneNumber" class="form-control" value="{{ old('telephoneNumber') }}">
+                    <input type="number" name="telephoneNumber" class="form-control" value="{{ old('telephoneNumber') }}">
                     @if ($errors->has('telephoneNumber'))
                                     <span>
                                         <strong>{{ $errors->first('telephoneNumber') }}</strong>
