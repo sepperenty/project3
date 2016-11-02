@@ -34,18 +34,33 @@ class PictureController extends Controller
 
         if ($request->hasFile('foto')) {
 
+            try{
+                    $newName = rtrim(base64_encode(md5(microtime())), "=");
+                    $uploader = new UploadPicture($request->foto, $newName);
+                    $uploader->store();
+                    $picture = new Picture;
+                    $picture->name = $newName;
+                    $picture->user_id = Auth()->user()->id;
+                    $picture->picture_info = $request->picture_info;
+                    $picture->save();
+                    $request->session()->put('message', 'je foto is upgeload.');
+                    return redirect("/");
 
-            $newName = rtrim(base64_encode(md5(microtime())), "=");
-            $uploader = new UploadPicture($request->foto, $newName);
-            $uploader->store();
-            $picture = new Picture;
-            $picture->name = $newName;
-            $picture->user_id = Auth()->user()->id;
-            $picture->picture_info = $request->picture_info;
-            $picture->save();
+            }catch(Exception $e)
+            {       
+                    $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
+                    return redirect("/");
+            }
+        
+
         }
 
-        return redirect("/");
+        else
+        {
+            $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
+             return redirect("/pictures/add");
+        }
+       
 
 
     }

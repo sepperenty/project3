@@ -14,7 +14,7 @@ use App\RandomPictures;
 
 class PublicController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $amountRegistered = User::count();
         $amountProjectCompanys = Project::where('isCompany', 1)->count();
@@ -31,10 +31,15 @@ class PublicController extends Controller
         $randomPictures = Picture::orderByRaw('RAND()')->take($maxAmount)->get();
 
 
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+
+        }
 
 
 
-        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "randomPictures"));
+        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "randomPictures","message"));
     }
 
     public function show(Project $project)
