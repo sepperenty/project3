@@ -60,8 +60,26 @@
     <div class="col-md-3 content-home-child">
         <img class="introduction-img" src="/images/medium/question.png" alt="Icon met een vraagteken">
         <h1>Wat kunnen wij voor u doen?</h1>
-        <p>Hie moet uitleg lomen! </p>
-        <button class="head-button">Registreer & plaats oproep</button>
+        <p>
+            Deze website is gemaakt voor hulpzoekende en vrijwilligers.
+            Wil je graag vrijwilligers werk doen maar weet je niet waar te beginnen ?
+            Zoek je adres op de kaart en kijk wie je in de buurt kan helpen. 
+        </p>
+        <p>
+            Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het formulier in.
+            Onze doel is vrijwilligerswerk makkelijk maken.
+        </p>
+       
+            <a href="/projects/add">
+                 <button class="head-button">
+                 @if(Auth()->check())
+                plaats oproep
+                 @else 
+                Login & plaats oproep
+                @endif
+                 </button>
+            </a>
+       
     </div>
 </div>
 

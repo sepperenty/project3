@@ -19,34 +19,57 @@ class AdminController extends Controller
     }
 
 
-    public function users(Project $project)
+    public function users(Project $project, Request $request)
     {
+        $message = "";
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+        }
         $users = User::all();
-
-        return view('admin.users', compact('users'));
+        return view('admin.users', compact('users', "message"));
 
     }
 
-    public function deleteUser(User $user)
+    public function deleteUser(User $user, Request $request)
     {
-        $user->delete();
-        return redirect("/admin/users");
+        try{
+                $user->delete();
+                $request->session()->put('message', 'De user is succesvol verwijderd');
+                return redirect("/admin/users");
+        }catch(Exception $e)
+        {
+                $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
+                return redirect("/admin/users");
+        }
+      
     }
 
 
-    public function projects(User $user)
-    {
+    public function projects(User $user, Request $request)
+    {   
+        $message = "";
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+        }
+
         $projects = Project::where('user_id', $user->id)->get();
 
-        return view('admin.projects', compact("projects", "user"));
+        return view('admin.projects', compact("projects", "user", "message"));
 
     }
 
-    public function delete(Project $project)
+    public function delete(Project $project, Request $request)
     {
-        $project->delete();
-        //return $project->id;
-        return redirect('/admin/' .$project->user_id . '/projects');
+        try{
+            $project->delete();
+            $request->session()->put('message', 'Je oproep is geplaatst');
+            return redirect('/admin/' .$project->user_id . '/projects');
+        }catch(Exception $e){
+            $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
+            return redirect('/admin/' .$project->user_id . '/projects');
+        }
     }
 
 }
