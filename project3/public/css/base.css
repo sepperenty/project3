@@ -3387,9 +3387,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar {
   position: relative;
   z-index: 1000;
-  min-height: 50px;
-  margin-bottom: 20px;
-  border-bottom: thin solid black; }
+  min-height: 100px;
+  margin-bottom: 20px; }
 
 .navbar:before,
 .navbar:after {
@@ -3559,7 +3558,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-nav > li > a {
   padding-top: 20px;
   padding-bottom: 20px;
-  line-height: 40px; }
+  line-height: 70px; }
 
 @media (max-width: 767px) {
   .navbar-nav .open .dropdown-menu {
@@ -3667,7 +3666,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
     margin-left: 15px; } }
 /*costum nav-bar background-color*/
 .navbar-default {
-  background-color: #fff;
+  background-color: #202933;
   border-color: #e7e7e7; }
 
 .navbar-default .navbar-brand {
@@ -3683,22 +3682,22 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 /*costum-navbar-color & opacity*/
 .navbar-default .navbar-nav > li > a {
-  color: #909090; }
+  color: #fff; }
 
 /*costum-navbar-color-hover & opacity*/
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #000;
+  color: #202933;
   background-color: transparent;
   opacity: 1;
-  background-color: #f3953f; }
+  background-color: #fff; }
 
 /*costum-navbar-color-active & opacity*/
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #fff;
-  background-color: #f3953f; }
+  color: #202933;
+  background-color: #fff; }
 
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -5725,7 +5724,7 @@ p {
   background-color: #4cae4c; }
 
 .brand-logo {
-  max-height: 39px; }
+  height: 70px; }
 
 .google-maps-search {
   position: absolute;
@@ -5797,14 +5796,15 @@ nav {
   text-transform: uppercase; }
 
 .go-to-content {
-  min-height: 70px;
-  color: #fff;
-  background-color: #fff;
-  border: 0px; }
+  min-height: 100px;
+  color: #202933;
+  background-color: #202933;
+  border: 0px;
+  margin-right: 25px; }
   .go-to-content:hover, .go-to-content:focus {
     cursor: default;
-    background-color: #000;
-    color: #fff; }
+    background-color: #fff;
+    color: #202933; }
 
 .extra-info {
   background-color: #f3953f;
@@ -6014,5 +6014,29 @@ input[type=checkbox] {
     opacity: 1;
     color: #000;
     background-color: white; }
+
+.panel > .panel-heading {
+  font-size: 2em;
+  background-color: #202933;
+  color: #fff; }
+
+.panel > .panel-body label {
+  font-size: 2em; }
+
+.forgot-paswoord {
+  font-size: 2em; }
+
+.login_facebook {
+  font-size: 1.4em;
+  padding: 0px 0px 0px 40px;
+  height: 100%;
+  border-left: thin solid #202933; }
+
+.social_midia_icon {
+  height: 50px;
+  width: 50px; }
+
+.margin_bottom {
+  margin-bottom: 150px; }
 
 /*# sourceMappingURL=base.css.map */

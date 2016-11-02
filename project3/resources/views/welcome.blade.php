@@ -47,7 +47,7 @@
     </div><!-- /.col-lg-6 -->
 </div>
 
-<div class="container-fluid content-home">
+    <div class="container-fluid content-home">
     <div class="col-md-3 content-home-child">
         <img class="introduction-img" src="/images/medium/question.png">
         <h1>Wat kunnen wij voor u doen?</h1>
