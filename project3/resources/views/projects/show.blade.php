@@ -22,7 +22,6 @@
                             <hr>
                             <h1>{{ $project->title }}</h1>
                         </div>
-
                     </div>
                     <div class="content-body">
                         <div class="dicription">
