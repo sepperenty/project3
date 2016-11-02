@@ -56,9 +56,6 @@ $foto-full-hd-height: 720px;
   }
 }
 
-
-
-
 p {
   font-size: $base-font-size *1.1;
 }
@@ -267,9 +264,10 @@ nav {
 #wrap {
   min-height: 100%;
 }
+
 #main {
-  overflow:auto;
-  padding-bottom:150px; /* this needs to be bigger than footer height*/
+  overflow: auto;
+  padding-bottom: 150px; /* this needs to be bigger than footer height*/
 }
 
 .footer {
@@ -279,8 +277,8 @@ nav {
   position: relative;
   margin-top: -150px; /* negative value of footer height */
   height: 150px;
-  clear:both;
-  padding-top:20px;
+  clear: both;
+  padding-top: 20px;
 
   a {
     color: #fff;
@@ -296,7 +294,6 @@ nav {
   p {
     font-size: $base-font-size /1.2;
   }
-
 
   border-top: thin solid #000;
 }
@@ -341,10 +338,11 @@ $img-size: 150px;
   }
 }
 
-.page{
+.page {
   margin-top: 25px;
 
 }
+
 //div{
 //  background-color: #fff;
 //}
@@ -357,19 +355,19 @@ $img-size: 150px;
   min-height: 600px;
   background-color: #fff;
   color: $base-color-black-without-opacity;
-  p{
+  p {
     font-size: $base-font-size *1.5;
   }
 
-  .beschrijving{
+  .beschrijving {
     min-height: 600px;
   }
-  .contact{
+  .contact {
     min-height: 600px;
     background-color: lightslategray;
     color: #fff;
 
-    p{
+    p {
       font-size: $base-font-size*1.5;
       margin-top: 35px;
     }
@@ -378,39 +376,72 @@ $img-size: 150px;
     }
   }
 }
-.form-head{
+
+.form-head {
   background-color: $base-color-black-without-opacity;
   color: #fff;
   margin-bottom: 25px;
 
   padding: 25px;
-  h1{
+  h1 {
     text-align: center;
   }
 ;
 }
 
-.add_form{
+.add_form {
   padding-bottom: 50px;
   margin-bottom: 75px;
   background-color: #fff;
-  label{
+  label {
     font-size: $base-font-size*2;
   }
-  .margin-top-adress{
+  .margin-top-adress {
     margin-top: 25px;
   }
 }
 
-
-.form-control{
+.form-control {
   border: thin solid $base-color-black-without-opacity;
   background-color: rgba(32, 41, 51, 0.01);
   font-size: $base-font-size*1.5;
   height: 45px;
 
 }
+
 .form-control:focus {
   border-color: $base-color-black-without-opacity;
   box-shadow: inset 0 1px 1px $base-color-black-without-opacity, 0 0 8px $base-black-whit-opasity;
 }
+
+input[type=checkbox] {width:20px; height:20px;}
+
+.oproep-categorie{
+  margin-top: 25px;
+
+  legend{
+    margin-bottom: 0px;
+    font-size: $base-font-size*2;
+  }
+}
+
+
+
+.btn {
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: $base-font-size*2;
+}
+
+.btn:focus, .btn:active:focus, .btn.active:focus {
+  outline: 0 none;
+}
+
+.btn-primary {
+  background: $base-color-black-without-opacity;
+  color: #ffffff;
+}
+

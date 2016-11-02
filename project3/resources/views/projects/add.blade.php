@@ -61,7 +61,7 @@
                         </div>
                         <div class="form-group project_file col-md-6">
                             <label for="foto">Foto</label>
-                            <input type="file" class="form-control" name="foto">
+                            <input type="file" class="form-control " name="foto">
                             @if ($errors->has('foto'))
                                 <span>
                                         <strong>{{ $errors->first('foto') }}</strong>
@@ -73,7 +73,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="telephoneNumber">Telephone Number</label>
-                            <input type="text" name="telephoneNumber" class="form-control"
+                            <input type="number" name="telephoneNumber" class="form-control"
                                    value="{{ old('telephoneNumber') }}">
                             @if ($errors->has('telephoneNumber'))
                                 <span>
@@ -84,54 +84,57 @@
                     </div>
                     <div class="row">
 
-                            <div class="form-group col-md-12">
-                                <label for="address">Address(*)</label>
-                                <input type="text" name="address" class="form-control" id="searchTextField">
-                                <input type="text" name="lat" value="" hidden tabindex="-0">
-                                <input type="text" name="lng" value="" hidden tabindex="-0">
-                                <p class="alert alert-danger info_location col-md-12" hidden>Er ging iets mis,
-                                    probeer
-                                    het
-                                    later
-                                    nog
-                                    eens</p>
-                                @if ($errors->has('address'))
-                                    <span>
+                        <div class="form-group col-md-12">
+                            <label for="address">Address(*)</label>
+                            <input type="text" name="address" class="form-control" id="searchTextField">
+                            <input type="text" name="lat" value="" hidden tabindex="-0">
+                            <input type="text" name="lng" value="" hidden tabindex="-0">
+                            <p class="alert alert-danger info_location col-md-12" hidden>Er ging iets mis,
+                                probeer
+                                het
+                                later
+                                nog
+                                eens</p>
+                            @if ($errors->has('address'))
+                                <span>
                                         <strong>{{ $errors->first('address') }}</strong>
                                 </span>
-                                @endif
-                                @if ( ($errors->has('lat'))   ||  ($errors->has('lng')) )
-                                    <span>
+                            @endif
+                            @if ( ($errors->has('lat'))   ||  ($errors->has('lng')) )
+                                <span>
                                         <strong>Er is iets mis met het adres. Voer het opnieuw in.</strong>
                                 </span>
-                                @endif
+                            @endif
 
-                            </div>
-                            <div class="col-md-12">
-                                <div id="map_form"></div>
-                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div id="map_form"></div>
+                        </div>
 
                     </div>
 
+                    <fieldset class="oproep-categorie">
+                        <legend>Oproep categorien</legend>
 
-                    <div class="col-md-6">
-                        <div class="checkbox ">
-                            <label>
-                                <input type="checkbox" name="isPriority" id="checkFocus"> Het is dringend!
-                            </label>
+                            <div class="checkbox ">
+                                <label>
+                                    <input type="checkbox" name="isPriority" id="checkFocus"> Het is dringend!
+                                </label>
+                            </div>
+
+                            <div class="checkbox ">
+                                <label>
+                                    <input type="checkbox" name="isCompany" id="checkFocus"> Ik ben een bedrijf.
+                                </label>
+                            </div>
+
+
+                            <div class="form-group pull-right">
+                                <button class="btn btn-primary focus" id="manageBtn">Maak project aan</button>
+                            </div>
                         </div>
+                    </fieldset>
 
-                        <div class="checkbox col-md-6 corm-control">
-                            <label>
-                                <input type="checkbox" name="isCompany" id="checkFocus"> Ik ben een bedrijf.
-                            </label>
-                        </div>
-
-
-                        <div class="form-group ">
-                            <button class="btn btn-primary focus" id="manageBtn">Create Project</button>
-                        </div>
-                    </div>
 
                     {{ Form::close() }}
 
