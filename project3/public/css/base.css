@@ -259,6 +259,7 @@ body {
   font-size: 14px;
   line-height: 1.428571429;
   color: #333333;
+  height: 100%;
   background: url("/images/background/background.png"); }
 
 input,
@@ -5874,18 +5875,28 @@ nav {
   .caption p {
     color: #fff; }
 
+#wrap {
+  min-height: 100%; }
+
+#main {
+  overflow: auto;
+  padding-bottom: 150px;
+  /* this needs to be bigger than footer height*/ }
+
 .footer {
-  background-color: #eee;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  color: #fff;
-  text-align: center;
+  background-color: #202933;
+  position: relative;
+  margin-top: -150px;
+  /* negative value of footer height */
+  height: 150px;
+  clear: both;
+  padding-top: 20px;
   border-top: thin solid #000; }
   .footer a {
-    color: #000;
+    color: #fff;
     text-decoration: underline; }
     .footer a line {
-      color: #2a6496; }
+      color: #fff; }
   .footer h1 {
     font-size: 1.5em; }
   .footer p {
@@ -5942,5 +5953,32 @@ nav {
       margin-top: 35px; }
     .dicription .contact .float-right {
       text-align: right; }
+
+.form-head {
+  background-color: #202933;
+  color: #fff;
+  margin-bottom: 25px;
+  padding: 25px; }
+  .form-head h1 {
+    text-align: center; }
+
+.add_form {
+  padding-bottom: 50px;
+  margin-bottom: 75px;
+  background-color: #fff; }
+  .add_form label {
+    font-size: 2em; }
+  .add_form .margin-top-adress {
+    margin-top: 25px; }
+
+.form-control {
+  border: thin solid #202933;
+  background-color: rgba(32, 41, 51, 0.01);
+  font-size: 1.5em;
+  height: 45px; }
+
+.form-control:focus {
+  border-color: #202933;
+  box-shadow: inset 0 1px 1px #202933, 0 0 8px rgba(0, 0, 0, 0.8); }
 
 /*# sourceMappingURL=base.css.map */

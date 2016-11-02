@@ -13,10 +13,7 @@
     <!-- Styles -->
 
 
-
     <!--scripts-->
-
-
 
 
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -48,7 +45,6 @@
     {{--<script src="{{ url('/js/app.js')}}"></script>--}}
 
 
-
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -77,15 +73,16 @@
                 </li>
 
                 @if((Auth()->check()) && (Auth()->user()->hasProject()))
-                <li class="{{ Request::is('projects/beheer') ? 'active' : '' }}">
-                    <a href="/projects/beheer">beheer oproepen</a>
-                </li>
+                    <li class="{{ Request::is('projects/beheer') ? 'active' : '' }}">
+                        <a href="/projects/beheer">beheer oproepen</a>
+                    </li>
                 @endif
-                
+
 
                 @if (Auth::guest())
                     <li class="{{ Request::is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">Login</a></li>
-                    <li class="{{ Request::is('register') ? 'active' : '' }}"><a href="{{ url('/register') }}">Register</a></li>
+                    <li class="{{ Request::is('register') ? 'active' : '' }}"><a
+                                href="{{ url('/register') }}">Register</a></li>
 
 
                 @else
@@ -102,7 +99,8 @@
                                     Logout
                                 </a>
 
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+                                      style="display: none;">
                                     {{ csrf_field() }}
                                 </form>
                             </li>
@@ -116,10 +114,10 @@
 </nav>
 
 @if(!empty($message))
-        
-        <div class="alert alert-info">
-            {{$message}}
-        </div>
+
+    <div class="alert alert-info">
+        {{$message}}
+    </div>
 
 @endif
 
@@ -127,13 +125,18 @@
 <div class="container">
 
 
-    @yield('content')
-
 </div>
-@yield('show_page')
-<div class="container-fluid footer">
+<div id="wrap">
+    <div id="main">
+        @yield('content')
+        @yield('show_page')
+    </div>
+</div>
+
+
+<div class="container-fluid ">
     <div class="row">
-        <footer>
+        <footer class="footer">
             <H1><a href="/contact">Gemaakt door Graag Gedaan<p>Voor vragen of opmerkingen contacteer ons</p></a></H1>
         </footer>
     </div>
