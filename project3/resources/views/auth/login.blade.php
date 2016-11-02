@@ -28,7 +28,7 @@
                                 </div>
 
                                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                    <label for="password" class="col-md-4 control-label">Password(*)</label>
+                                    <label for="password" class="col-md-4 control-label">Wachtwoord(*)</label>
 
                                     <div class="col-md-8">
                                         <input id="password" type="password" class="form-control" name="password"
@@ -64,7 +64,6 @@
                             </form>
                         </div>
                         <div class="col-md-4 margin-top login_facebook">
-
                             <div class="col-md-12">
                                 <a href="redirect"><img class="social_midia_icon"
                                                         src="{{ url('/images/social_midia/f.png') }}">
@@ -73,11 +72,15 @@
                             <div class="col-md-12">
                                 <a href="{{ url('/password/reset') }}"><img class="social_midia_icon"
                                                                             src="{{ url('/images/social_midia/s.png') }}">
-                                    Jouw paswoord vergeten?
+                                    Jouw wachtwoord vergeten?
                                 </a>
                             </div>
-
-
+                            <div class="col-md-12">
+                                <a href="{{ url('/register') }}"><img class="social_midia_icon"
+                                                                   src="{{ url('/images/social_midia/l.png') }}">
+                                    Registreren
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
