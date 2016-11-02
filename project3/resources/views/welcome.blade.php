@@ -49,7 +49,7 @@
 
 <div class="container-fluid content-home">
     <div class="col-md-3 content-home-child">
-        <img class="introduction-img" src="/images/medium/question.png" alt="Icon met een vraagteken">
+        <img class="introduction-img" src="/images/medium/question.png">
         <h1>Wat kunnen wij voor u doen?</h1>
         <p>
             Deze website is gemaakt voor hulpzoekende en vrijwilligers.
@@ -60,16 +60,17 @@
             Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het formulier in.
             Onze doel is vrijwilligerswerk makkelijk maken.
         </p>
-       
-            <a href="/projects/add" class="head-button">
-                 
+        <form action="/projects/add">
+            <button class="btn btn-default" >  
                  @if(Auth()->check())
-                plaats oproep
+                    plaats oproep
                  @else 
-                Login & plaats oproep
+                    Login & plaats oproep
                 @endif
-               
-            </a>
+            </button>
+        </form>
+                
+            
     </div>
 </div>
 
@@ -103,7 +104,7 @@
             <h1>Fotogelerij getuigenissen</h1>
             <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
             @if(Auth()->check())
-            <a href="/pictures/add" class="btn btn-primary">upload</a>
+            <a href="/pictures/add" class="btn btn-primary">FOTO TOEVOEGEN</a>
             @endif
         </div>
 
@@ -111,7 +112,7 @@
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
                 <div class="img-frame">
-                    <img src="/images/medium/{{$picture->name}}.jpg" alt="...">
+                    <img src="/images/medium/{{$picture->name}}.jpg" alt="{{$picture->picture_info}}">
                     <div class="caption">
                         <p>{{$picture->picture_info}}</p>
                     </div>

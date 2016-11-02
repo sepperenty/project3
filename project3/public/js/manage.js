@@ -199,11 +199,18 @@ $(document).ready(function () {
     */
 
     google.maps.event.addListenerOnce(map, 'idle', function(){
-        $('.map').find('a').each(function () {
+        console.log("map ingeladen");
+        $('#map_form').find('a').each(function () {
+            console.log("a");
             $(this).attr('tabindex', "-1");
             console.log('a');
         });
+
+
     });
+
+
+   
 
     
 })

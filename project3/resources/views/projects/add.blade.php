@@ -1,5 +1,6 @@
 @extends('layouts/app')
 @section('header')
+    <title>Nieuwe Oproep - GRaag Gedaan</title>
     {{--<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>--}}
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
     <script src="{{ url('/js/manage.js') }}"></script>
@@ -67,7 +68,7 @@
                                         <strong>{{ $errors->first('foto') }}</strong>
                                 </span>
                             @endif
-                            <img src="" alt="" class="project_foto" id="currentPicture" hidden>
+                            
                         </div>
 
 
@@ -118,13 +119,13 @@
 
                             <div class="checkbox ">
                                 <label>
-                                    <input type="checkbox" name="isPriority" id="checkFocus"> Het is dringend!
+                                    <input type="checkbox" name="isPriority"> Het is dringend!
                                 </label>
                             </div>
 
                             <div class="checkbox ">
                                 <label>
-                                    <input type="checkbox" name="isCompany" id="checkFocus"> Ik ben een bedrijf.
+                                    <input type="checkbox" name="isCompany"> Ik ben een bedrijf.
                                 </label>
                             </div>
 
@@ -132,7 +133,7 @@
                             <div class="form-group pull-right">
                                 <button class="btn btn-primary focus" id="manageBtn">Maak project aan</button>
                             </div>
-                        </div>
+                        
                     </fieldset>
 
 
@@ -142,5 +143,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection

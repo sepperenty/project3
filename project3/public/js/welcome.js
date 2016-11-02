@@ -184,9 +184,23 @@ $(function () {
             scaleControl: true
         });
 
+        google.maps.event.addListenerOnce(map, 'idle', function(){
+        $('#map').find('a').each(function () {
+
+            $(this).attr('tabindex', "-1");
+            console.log('a');
+        });
+
+
+    });
+
 
     }
 
     google.maps.event.addDomListener(window, 'load', initMap);
+
+
+
+    
 
 });
