@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +9,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Styles -->
-
-
-    <!--scripts-->
-
-
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>
@@ -47,7 +40,7 @@
 
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default">
     <div class="nav-font-size">
         <div class="navbar-header">
             <!--Logo linkt naar homepage-->
@@ -137,7 +130,7 @@
 <div class="container-fluid ">
     <div class="row">
         <footer class="footer">
-            <H1><a href="/contact">Gemaakt door Graag Gedaan<p>Voor vragen of opmerkingen contacteer ons</p></a></H1>
+            <H1><a href="/contact">Gemaakt door Graag Gedaan <br> Voor vragen of opmerkingen contacteer ons</a></H1>
         </footer>
     </div>
 </div>

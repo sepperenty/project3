@@ -22,8 +22,8 @@ class CreateProjectsTable extends Migration
             $table->text('description');
             $table->text('foto');
             $table->string('address');
-            $table->string('email');
-            $table->string('telephoneNumber');
+            $table->string('email')->nullable();
+            $table->string('telephoneNumber')->nullable();
             $table->double('lat', 15, 8);  
             $table->double('lng', 15, 8);
             $table->boolean('isPriority')->default(0);

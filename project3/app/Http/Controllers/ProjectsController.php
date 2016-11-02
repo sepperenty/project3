@@ -45,8 +45,8 @@ class ProjectsController extends Controller
             'description' => 'required | max:500',
             'address' => 'required | max:255',
             'foto' => 'max:50000000 | mimes:jpeg,bmp,png',
-            'email' => 'email | max:50',
-            'telephoneNumber' =>"required | between:6,20",
+            'email' => ' email | max:50',
+            'telephoneNumber' =>"between:6,20",
             'lat' => 'required',
             'lng' => 'required',
         ]);
@@ -138,8 +138,8 @@ class ProjectsController extends Controller
             'description' => 'required | max:500',
             'address' => 'required | max:255',
             'foto' => 'max:50000000 | mimes:jpeg,bmp,png',
-            'email' => 'email|max:50',
-            'telephoneNumber' =>"required | between:6,20",
+            'email' => ' email | max:50',
+            'telephoneNumber' =>"between:6,20",
             'lat' => 'required',
             'lng' => 'required',
         ]);

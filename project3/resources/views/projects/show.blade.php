@@ -1,5 +1,9 @@
 @extends('layouts/app')
 
+  @section('header')
+    <title>Details Oproep - Graag Gedaan</title>
+  @endsection
+
 
 
 @section('show_page')
@@ -25,12 +29,14 @@
                             <div class="col-md-8 beschrijving">
                                 <h1>Beschrijving</h1>
                                 <hr>
-                                <p cl>{{$project->description}}</p>
+                                <p>{{$project->description}}</p>
                             </div>
                             <div class="col-md-4 contact">
                                 <div class="col-md-11">
+                                  
                                     <h1>Contact</h1>
                                     <hr>
+                                     @if(Auth()->check())
                                     <p><strong>Naam:</strong><span class="pull-right">{{$project->user->name}}</span>
                                     </p>
                                     <p><strong>Adres:</strong><span class="pull-right">{{$project-> address }}</span>
@@ -38,6 +44,9 @@
                                     <p><strong>Telefoon:</strong><span class="pull-right">{{$project->telephoneNumber}}</span>
                                     </p>
                                     <p><strong>Email:</strong><span class="pull-right">{{$project->email}}</span>
+                                    @else
+                                    <p>Je moet ingelogt zijn om de contactinformatie te raadpleden.</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

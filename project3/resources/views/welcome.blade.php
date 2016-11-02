@@ -1,25 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- styles -->
+@extends('layouts.app')
+
+
+
+    @section('header')
+     <!-- styles -->
     {{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
+    <title>Home - Graag Gedaan</title>
     <!--Pagina's hebben een betekenisvolle titel-->
     <!--bv title>Openingsuren bibliotheek - gemeente Aalst</title>-->
     <!--naam van de bedrijf achteraan plaatsen behaalve voor home page -> altijd naam van website vermelden-->
-    <title>Graag gedaan, Vrijwilligerswerk voor mindervaliden </title>
-
-    @extends('layouts.app')
-
-
-    <!--styles-->
-    @section('header')
+    
     <script src="{{ url('/js/welcome.js') }}"></script>
-        @endsection
-</head>
-<body>
+    @endsection
 
 
 @section('welcome')
@@ -54,7 +46,6 @@
         </div><!-- /input-group -->
     </div><!-- /.col-lg-6 -->
 </div>
-</div>
 
 <div class="container-fluid content-home">
     <div class="col-md-3 content-home-child">
@@ -70,16 +61,15 @@
             Onze doel is vrijwilligerswerk makkelijk maken.
         </p>
        
-            <a href="/projects/add">
-                 <button class="head-button">
+            <a href="/projects/add" class="head-button">
+                 
                  @if(Auth()->check())
                 plaats oproep
                  @else 
                 Login & plaats oproep
                 @endif
-                 </button>
+               
             </a>
-       
     </div>
 </div>
 
@@ -137,8 +127,7 @@
 
 
 @endsection
-</body>
-</html>
+
 
 
 
