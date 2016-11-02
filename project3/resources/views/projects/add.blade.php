@@ -12,9 +12,9 @@
     <div class="container-fluid ">
 
         <div class="row">
-            <div class="col-md-10 col-md-offset-1 add_form">
+            <div class="col-md-10 col-md-offset-1 add_form margin-top">
                 <div class="row form-head">
-                    <div class="col-md-12">
+                    <div class="col-md-12 ">
                         <h1 class="">Vul deze form in en plaats een nieuwe oproep.</h1>
                         {{--<a href="/projects/beheer" class="pull-right btn btn-primary focus">Berheer projecten</a>--}}
                     </div>

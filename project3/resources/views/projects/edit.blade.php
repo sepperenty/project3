@@ -5,7 +5,7 @@
 
     <div class="container-fluid ">
 
-        <div class="row">
+        <div class="row ">
             <div class="col-md-10 col-md-offset-1 add_form">
                 <div class="row form-head">
                     <div class="col-md-12">
