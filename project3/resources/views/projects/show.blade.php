@@ -20,7 +20,7 @@
                         <div class="content">
                             <h1 class="uppercas">Overzicht van het project</h1>
                             <hr>
-                            <h1>{{ $project->title }}</h1>
+                            <h1 id="inhoud">{{ $project->title }}</h1>
                         </div>
                     </div>
                     <div class="content-body">
@@ -42,7 +42,13 @@
                                     </p>
                                     <p><strong>Telefoon:</strong><span class="pull-right">{{$project->telephoneNumber}}</span>
                                     </p>
-                                    <p><strong>Email:</strong><span class="pull-right">{{$project->email}}</span>
+                                    <p><strong>Email:</strong><span class="pull-right">
+                                        @if(!empty($project->email))
+                                        {{$project->email}}
+                                        @else
+                                        {{$project->user->email}}
+                                        @endif
+                                    </span>
                                     @else
                                     <p>Je moet ingelogt zijn om de contactinformatie te raadpleden.</p>
                                     @endif

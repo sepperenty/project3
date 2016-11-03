@@ -48,28 +48,29 @@
 </div>
 
 <div class="container-fluid content-home">
-    <div class="col-md-3 content-home-child">
+    <div class="col-md-3 content-home-child" id="inhoud">
         <img class="introduction-img" src="/images/medium/question.png">
-        <h1>Wat kunnen wij voor u doen?</h1>
-        <p>
-            Deze website is gemaakt voor hulpzoekende en vrijwilligers.
-            Wil je graag vrijwilligers werk doen maar weet je niet waar te beginnen ?
-            Zoek je adres op de kaart en kijk wie je in de buurt kan helpen. 
-        </p>
-        <p>
-            Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het formulier in.
-            Onze doel is vrijwilligerswerk makkelijk maken.
-        </p>
-        <form action="/projects/add">
-            <button class="btn btn-default" >  
-                 @if(Auth()->check())
-                    plaats oproep
-                 @else 
-                    Login & plaats oproep
-                @endif
-            </button>
-        </form>
-                
+                        
+                            <h1>Wat kunnen wij voor u doen?</h1>
+                            <p>
+                                Deze website is gemaakt voor hulpzoekende en vrijwilligers.
+                                Wil je graag vrijwilligers werk doen maar weet je niet waar te beginnen ?
+                                Zoek je adres op de kaart en kijk wie je in de buurt kan helpen. 
+                            </p>
+                            <p>
+                                Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het formulier in.
+                                Onze doel is vrijwilligerswerk makkelijk maken.
+                            </p>
+                            <form action="/projects/add">
+                                <button class="btn btn-default" >  
+                                     @if(Auth()->check())
+                                        plaats oproep
+                                     @else 
+                                        Login & plaats oproep
+                                    @endif
+                                </button>
+                            </form>
+                    
             
     </div>
 </div>

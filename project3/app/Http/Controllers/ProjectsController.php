@@ -111,7 +111,7 @@ class ProjectsController extends Controller
         $message = "";
 
        
-        $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(6);
+        $projects = Project::where('user_id', Auth()->user()->id)->orderBy('updated_at', 'desc')->simplePaginate(15);
         
         
 

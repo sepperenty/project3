@@ -93,7 +93,7 @@ $(function () {
 
                         '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
                         '<div id="bodyContent">' +
-                        '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer</a><div>' +
+                        '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
                         '</div>' +
                     '</div>';
 

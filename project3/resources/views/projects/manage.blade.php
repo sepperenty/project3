@@ -1,5 +1,8 @@
 @extends('layouts/app')
 @section('header')
+    
+    <title>Beheer pagine - Graag Gedaan</title>
+
 
 @endsection
 
@@ -18,7 +21,7 @@
                     @foreach($projects as $project)
                         <div class="row manage_page">
                             <div class="col-xs-6 col-md-2">
-                                <a href="#" class="thumbnail">
+                                <a href="/projects/{{$project->id}}/show" class="thumbnail">
                                     <img src="/images/small/{{$project->foto}}.jpg"
                                          alt="Foto van {{$project->user->name}} als titel {{ $project->title }}">
                                 </a>
@@ -40,6 +43,7 @@
                         {{--<a class="badge" href="/projects/{{$project->id}}/delete">delete</a>--}}
                         {{--</li>--}}
                     @endforeach
+                    {{$projects->links()}}
                 </div>
             </div>
         </div>

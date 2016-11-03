@@ -30,7 +30,7 @@
                     <div class="row">
                         <input name="id" class="id" type="text" value="" hidden>
                         <div class="form-group col-md-6">
-                            <label for="title">Title(*)</label>
+                            <label for="title">Titel van je oproep(*)</label>
                             <input type="text" name="title" class="form-control" value="{{ old('title') }}">
                             @if ($errors->has('title'))
                                 <span>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="email">Email</label>
+                            <label for="email">Je email</label>
                             <input type="text" name="email" class="form-control" value="{{ old('email') }}">
                             @if ($errors->has('email'))
                                 <span>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="description">Description(*)</label>
+                            <label for="description">Waar gaat je oproep over ?(*)</label>
                     <textarea name="description" cols="10" rows="5"
                               class="form-control ">{{old('description')}}</textarea>
                             @if ($errors->has('description'))
@@ -73,7 +73,7 @@
 
 
                         <div class="form-group col-md-6">
-                            <label for="telephoneNumber">Telephone Number</label>
+                            <label for="telephoneNumber">Telefoon nummer</label>
                             <input type="number" name="telephoneNumber" class="form-control"
                                    value="{{ old('telephoneNumber') }}">
                             @if ($errors->has('telephoneNumber'))
@@ -86,7 +86,7 @@
                     <div class="row">
 
                         <div class="form-group col-md-12">
-                            <label for="address">Address(*)</label>
+                            <label for="address">Adres(*)</label>
                             <input type="text" name="address" class="form-control" id="searchTextField">
                             <input type="text" name="lat" value="" hidden tabindex="-0">
                             <input type="text" name="lng" value="" hidden tabindex="-0">
@@ -119,13 +119,13 @@
 
                             <div class="checkbox ">
                                 <label>
-                                    <input type="checkbox" name="isPriority"> Het is dringend!
+                                    <input type="checkbox" name="isPriority"> Deze oproep is zeer dringend.
                                 </label>
                             </div>
 
                             <div class="checkbox ">
                                 <label>
-                                    <input type="checkbox" name="isCompany"> Ik ben een bedrijf.
+                                    <input type="checkbox" name="isCompany"> Deze oproep komt vanuit een bedrijf.
                                 </label>
                             </div>
 
