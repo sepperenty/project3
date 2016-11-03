@@ -59,7 +59,7 @@
                     <form action="#inhoud">
                         <button type="submit" class="go-to-content">Naar inhoud</button>
                     </form>
-                        
+
                 </li>
                 <li class="{{ Request::is('/') ? 'active' : '' }}">
                     <a href="{{ url('/') }}" class="pull-left back">Home</a>
@@ -84,16 +84,16 @@
                 @else
                     <li>
                         <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
+                           onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                   {{Auth()->user()->name}} - Logout
-                                </a>
+                            {{Auth()->user()->name}} - Logout
+                        </a>
 
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>        
-            
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST"
+                              style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+
                     </li>
 
 
@@ -128,7 +128,69 @@
 <div class="container-fluid ">
     <div class="row">
         <footer class="footer">
-            <H1><a href="/contact">Gemaakt door Graag Gedaan <br> Voor vragen of opmerkingen contacteer ons</a></H1>
+
+            <div class="col-md-3">
+                <h1>Gemaakt door Graag Gedaan</h1>
+                <p>Deze website is gemaakt door 2 knappe studenten van KDG hogeschool.</p>
+            </div>
+            <div class="col-md-3">
+                <h1>Onze doelen</h1>
+                <ol>
+                    <li>Vrijwilligers een overzicht geven van oproepen die in het buurt zijn.</li>
+                    <li>Mensen die hulp nodig hebben de mogelijk geven om hulp te krijgen.</li>
+                    <li>Mensen samenbrengen </li>
+                </ol>
+            </div>
+            <div class="col-md-4 contact">
+                <h1>Contacteer ons</h1>
+                {{ Form::open(array('url' => '/projects/add/new', 'id'=>'form_project','files' => true)) }}
+                {{ csrf_field() }}
+                <div class="row">
+                    <input name="id" class="id" type="text" value="" hidden>
+                    <div class="form-group col-md-6">
+                        <label for="naam">Vul je naam(*)</label>
+                        <input type="text" name="naam" class="form-control" value="{{ old('naam') }}">
+                        @if ($errors->has('naam'))
+                            <span>
+                                        <strong>{{ $errors->first('naam') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Je email</label>
+                        <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                        @if ($errors->has('email'))
+                            <span>
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="onderwerp">Onderwerp van email</label>
+                        <input type="text" name="onderwerp" class="form-control" value="{{ old('onderwerp') }}">
+                        @if ($errors->has('onderwerp'))
+                            <span>
+                                        <strong>{{ $errors->first('onderwerp') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="bericht">Bericht?(*)</label>
+                    <textarea name="bericht" cols="10" rows="5"
+                              class="form-control ">{{old('bericht')}}</textarea>
+                        @if ($errors->has('bericht'))
+                            <span>
+                                <strong>{{ $errors->first('bericht') }}</strong>
+                                </span>
+                        @endif
+                        <div class="form-group pull-right">
+                            <button class="btn btn-primary focus" id="manageBtn">Verzenden</button>
+                        </div>
+                {{ Form::close() }}
+            </div>
         </footer>
     </div>
 </div>

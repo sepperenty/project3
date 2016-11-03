@@ -272,29 +272,47 @@ nav {
 .footer {
 
   background-color: $base-color-black-without-opacity;
-
   position: relative;
   margin-top: -150px; /* negative value of footer height */
-  height: 150px;
+  height: 550px;
   clear: both;
   padding-top: 20px;
+  color: $base-color-black-without-opacity-font;
 
-  a {
-    color: #fff;
-    text-decoration: underline;
-    line {
-      color: #fff;
-    }
-  }
-  h1 {
-
-    font-size: $base-font-size*1.5;
+  ol{
+    font-size: $base-font-size * 1.5;
   }
   p {
-    font-size: $base-font-size /1.2;
+    font-size: $base-font-size * 1.5;
   }
 
   border-top: thin solid #000;
+
+  .contact{
+    font-size: $base-font-size*1.5;
+
+
+
+    .btn {
+      padding: 14px 24px;
+      border: 0 none;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: $base-font-size*1.5;
+    }
+
+    .btn:focus, .btn:active:focus, .btn.active:focus {
+      outline: 0 none;
+    }
+
+    .btn-primary {
+      background: $base-color-black-without-opacity-font;
+      color: $base-color-black-without-opacity;
+    }
+
+  }
+
 }
 
 $img-size: 150px;

@@ -131,7 +131,7 @@
 
 
                             <div class="form-group pull-right">
-                                <button class="btn btn-primary focus" id="manageBtn">Maak project aan</button>
+                                <button class="btn btn-primary focus" id="manageBtn">Maak oproep aan</button>
                             </div>
                         
                     </fieldset>
