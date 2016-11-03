@@ -87,7 +87,7 @@ $(function () {
                 var contentString = '' +
                     '<div class="content"> ' +
                         '<div class="post-thumb">'+
-                            '<img src="/images/small/' + data[i].foto + '.jpg" ' +
+                            '<img src="/images/small/' + data[i].foto + '"' +
                         '</div>'+
                         '<div class="siteNotice">' +
 

@@ -15,7 +15,7 @@
 
                     {{--<div class="inleiding uppercas"><h1 >Overzicht van het project</h1></div>--}}
                     <div class="element">
-                        <img src="/images/medium/{{$project->foto}}.jpg"
+                        <img src="/images/medium/{{$project->foto}}"
                              alt="Foto van {{$project->user->name}} als titel {{ $project->title }}">
                         <div class="content">
                             <h1 class="uppercas"><span class="line-headers">O</span>verzicht van het project</h1>
