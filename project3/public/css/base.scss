@@ -67,7 +67,7 @@ p {
 }
 
 .brand-logo {
-  max-height: 39px;
+  height: 70px;
 }
 
 .google-maps-search {
@@ -182,14 +182,15 @@ nav {
 }
 
 .go-to-content {
-  min-height: 70px;
-  color: #fff;
-  background-color: #fff;
+  min-height: 100px;
+  color: $base-color-black-without-opacity;
+  background-color: $base-color-black-without-opacity;
   border: 0px;
+  margin-right: 25px;
   &:hover, &:focus {
     cursor: default;
-    background-color: #000;
-    color: #fff;
+    background-color: #fff;
+    color: $base-color-black-without-opacity;
   }
 
 }
@@ -469,15 +470,46 @@ input[type=checkbox] {
   color: #fff;
 
   text-align: center;
-  &:hover{
+  &:hover {
     opacity: 1;
     color: #000;
     background-color: rgba(255, 255, 255, 1);
   }
 
-
-}
-.white{
-
 }
 
+.panel > .panel-heading {
+  font-size: $base-font-size*2;
+  background-color: $base-color-black-without-opacity;
+  color: $base-color-black-without-opacity-font;
+
+}
+
+.panel > .panel-body {
+  label {
+    font-size: $base-font-size*2;
+  }
+
+}
+
+.forgot-paswoord {
+  font-size: $base-font-size*2;
+}
+
+.login_facebook {
+  font-size: $base-font-size*1.4;
+  padding: 0px 0px 0px 40px;
+  height: 100%;
+  border-left: thin solid $base-color-black-without-opacity;
+}
+
+.social_midia_icon {
+  height: 50px;
+  width: 50px;
+}
+.margin_bottom{
+  margin-bottom: 150px;
+}
+.margin_bottom_registreer{
+  margin-bottom: 100px;
+}
