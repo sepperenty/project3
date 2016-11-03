@@ -5908,7 +5908,8 @@ nav {
       font-size: 1.2em; }
     .footer .contact .form-control:focus {
       border-color: #202933;
-      box-shadow: inset 0 1px 1px #202933, 0 0 8px rgba(0, 0, 0, 0.8); }
+      box-shadow: inset 0 1px 1px #202933, 0 0 8px rgba(0, 0, 0, 0.8);
+      color: #fff; }
   .footer .heading-foter {
     font-size: 2em;
     margin-bottom: 35px; }
@@ -5964,6 +5965,18 @@ nav {
       margin-top: 35px; }
     .dicription .contact .float-right {
       text-align: right; }
+
+.email_show_project {
+  padding-top: 30px;
+  background: #54616F;
+  height: 500px;
+  color: #fff; }
+  .email_show_project h1 {
+    margin-bottom: 25px; }
+  .email_show_project .form-control:focus {
+    color: #fff; }
+  .email_show_project label {
+    font-size: 2em; }
 
 .form-head {
   background-color: #202933;

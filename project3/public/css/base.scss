@@ -330,6 +330,7 @@ nav {
     .form-control:focus {
       border-color: $base-color-black-without-opacity;
       box-shadow: inset 0 1px 1px $base-color-black-without-opacity, 0 0 8px $base-black-whit-opasity;
+      color: $base-color-black-without-opacity-font;
     }
 
   }
@@ -397,6 +398,8 @@ $img-size: 150px;
   min-height: 600px;
   background-color: #fff;
   color: $base-color-black-without-opacity;
+
+
   p {
     font-size: $base-font-size *1.5;
   }
@@ -416,6 +419,23 @@ $img-size: 150px;
     .float-right {
       text-align: right;
     }
+  }
+}
+.email_show_project{
+  h1{
+    margin-bottom: 25px;
+  }
+  padding-top: 30px;
+  background: #54616F;
+  height: 500px;
+  color: $base-color-black-without-opacity-font;
+  .form-control:focus {
+
+    color: $base-color-black-without-opacity-font;
+  }
+  label{
+
+    font-size: $base-font-size*2;
   }
 }
 
@@ -441,6 +461,8 @@ $img-size: 150px;
   .margin-top-adress {
     margin-top: 25px;
   }
+
+
 }
 
 .margin-top {
@@ -556,3 +578,4 @@ input[type=checkbox] {
 .margin_bottom_registreer{
   margin-bottom: 100px;
 }
+

@@ -1,8 +1,8 @@
 @extends('layouts/app')
 
-  @section('header')
+@section('header')
     <title>Details Oproep - Graag Gedaan</title>
-  @endsection
+@endsection
 
 
 
@@ -32,48 +32,59 @@
                             </div>
                             <div class="col-md-4 contact">
                                 <div class="col-md-11">
-                                  
+
                                     <h1>Contact</h1>
                                     <hr>
-                                     @if(Auth()->check())
-                                    <p><strong>Naam:</strong><span class="pull-right">{{$project->user->name}}</span>
-                                    </p>
-                                    <p><strong>Adres:</strong><span class="pull-right">{{$project-> address }}</span>
-                                    </p>
-                                    <p><strong>Telefoon:</strong><span class="pull-right">{{$project->telephoneNumber}}</span>
-                                    </p>
-                                    <p><strong>Email:</strong><span class="pull-right">
+                                    @if(Auth()->check())
+                                        <p><strong>Naam:</strong><span
+                                                    class="pull-right">{{$project->user->name}}</span>
+                                        </p>
+                                        <p><strong>Adres:</strong><span
+                                                    class="pull-right">{{$project-> address }}</span>
+                                        </p>
+                                        <p><strong>Telefoon:</strong><span
+                                                    class="pull-right">{{$project->telephoneNumber}}</span>
+                                        </p>
+                                        <p><strong>Email:</strong><span class="pull-right">
                                         @if(!empty($project->email))
-                                        {{$project->email}}
-                                        @else
-                                        {{$project->user->email}}
-                                        @endif
+                                                    {{$project->email}}
+                                                @else
+                                                    {{$project->user->email}}
+                                                @endif
                                     </span>
-                                    <hr>
-                                    <form action="/projects/{{$project->id}}/mail" method="post">
-                                        
-                                        {{ csrf_field() }}
-                
-                                        <div class="form-group">
-                                            <label for="subject"> Onderwerp </label>
-                                                <input type="text" name="subject" class="form-control">
-                                          
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="message"> Bericht </label>
-                                            <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="submit" class="btn btn-default">
-                                        </div>
-                                                
-                                    </form>
 
-                                    @else
-                                    <p>Je moet ingelogt zijn om de contactinformatie te raadpleden.</p>
-                                    @endif
+
                                 </div>
                             </div>
+
+                        </div>
+                        <div class="col-md-12 email_show_project">
+                            <h1>Wil je deze persoon helpen? neem contact!</h1>
+                            <hr>
+                            <form action="/projects/{{$project->id}}/mail" method="post">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label for="subject"> Onderwerp </label>
+                                        <input type="text" name="subject" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <label for="message"> Bericht </label>
+                                        <textarea name="message" id="" rows="2"
+                                                  class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12">
+                                        <input type="submit" class="btn btn-primary pull-right">
+                                    </div>
+                                </div>
+                            </form>
+                            @else
+                                <p>Je moet ingelogt zijn om de contactinformatie te raadpleden.</p>
+                            @endif
                         </div>
                     </div>
                 </div>
