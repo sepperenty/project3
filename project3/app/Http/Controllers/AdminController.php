@@ -10,6 +10,8 @@ use App\Project;
 
 use App\User;
 
+use App\Picture;
+
 
 class AdminController extends Controller
 {
@@ -26,7 +28,7 @@ class AdminController extends Controller
         {
                $message = $request->session()->pull("message");
         }
-        $users = User::all();
+        $users = User::simplePaginate(15);
         return view('admin.users', compact('users', "message"));
 
     }
@@ -54,7 +56,7 @@ class AdminController extends Controller
                $message = $request->session()->pull("message");
         }
 
-        $projects = Project::where('user_id', $user->id)->get();
+        $projects = Project::where('user_id', $user->id)->simplePaginate(15);
 
         return view('admin.projects', compact("projects", "user", "message"));
 
@@ -69,6 +71,31 @@ class AdminController extends Controller
         }catch(Exception $e){
             $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
             return redirect('/admin/' .$project->user_id . '/projects');
+        }
+    }
+
+    public function pictures(Request $request)
+    {
+        $message = "";
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+        }
+        $pictures = Picture::simplePaginate(15);
+        return view('admin/pictures', compact('pictures', 'message'));
+    }
+
+
+    public function deletePicture(Picture $picture, Request $request)
+    {
+        try{
+            $picture->delete();
+            $request->session()->put('message', 'De foto is succesvol verwijderd');
+            return redirect('/admin/pictures');
+        }catch(Exception $e)
+        {
+            $request->session()->put('message', 'Er is iets mis gegaan. We lossen het zo snel mogelijk op.');
+            return redirect('/admin/pictures');
         }
     }
 

@@ -212,8 +212,8 @@ class ProjectsController extends Controller
                 return redirect('/projects/beheer');
             }catch (Exception $e)
             {
-                return $e;
-                //////////////error page ////////////////
+                $request->session()->put('message', 'Er is iets misgegaan. We lossen het zo snel mogelijk op.');
+                return redirect('/projects/beheer'); 
             }
 
         }
@@ -222,6 +222,5 @@ class ProjectsController extends Controller
         }
 
     }
-
 
 }

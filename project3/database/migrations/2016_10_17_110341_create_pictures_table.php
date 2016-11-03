@@ -18,6 +18,7 @@ class CreatePicturesTable extends Migration
             $table->string('name');
             $table->integer('user_id')->index()->unsigned();
             $table->text("picture_info");
+            $table->softDeletes();
             $table->timestamps();
         });
     }

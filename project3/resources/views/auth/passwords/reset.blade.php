@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+    @section('header')
+        
+        <title>Nieuw Wachtwoord - Graag Gedaan</title>
+
+    @endsection
+
+
 @section('content')
 <div class="container-fluid">
     <div class="row margin_bottom">
@@ -9,7 +16,7 @@
 
                 <div class="panel-body">
 
-                    <form class="form-horizontal margin-top" role="form" method="POST" action="{{ url('/password/reset') }}">
+                    <form class="form-horizontal margin-top" method="POST" action="{{ url('/password/reset') }}">
                         {{ csrf_field() }}
 
                         <input type="hidden" name="token" value="{{ $token }}">

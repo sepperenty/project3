@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
-        <!-- Main Content -->
+    @section('header')
+    <title>Wachtwoord vergeten - Graag Gedaan</title>
+    @endsection
+
+
 @section('content')
     <div class="container-fluid">
         <div class="row margin_bottom">
@@ -14,7 +18,7 @@
                             </div>
                         @endif
                         <div class="col-md-8">
-                            <form class="form-horizontal margin-top" role="form" method="POST"
+                            <form class="form-horizontal margin-top" method="POST"
                                   action="{{ url('/password/email') }}">
                                 {{ csrf_field() }}
 
@@ -45,13 +49,13 @@
                             <div class="col-md-4 margin-top login_facebook margin_bottom">
                                 <div class="col-md-12">
                                     <a href="redirect"><img class="social_midia_icon"
-                                                            src="{{ url('/images/social_midia/f.png') }}">
+                                                            src="{{ url('/images/social_midia/f.png') }}" alt="Icoon Facebook">
                                         Aanmelden via Facebook</a>
                                 </div>
 
                                 <div class="col-md-12">
                                     <a href="{{ url('/register') }}"><img class="social_midia_icon"
-                                                                          src="{{ url('/images/social_midia/l.png') }}">
+                                                                          src="{{ url('/images/social_midia/l.png') }}" alt="Icoon Registreren">
                                         Registreren
                                     </a>
                                 </div>

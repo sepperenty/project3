@@ -1,4 +1,9 @@
 @extends('layouts.app')
+@section('header')
+    
+    <title>Registreer - Graag Gedaan</title>
+    
+@endsection
 
 @section('content')
     <div class="container-fluid">
@@ -8,7 +13,7 @@
                     <div class="panel-heading">Registreren</div>
                     <div class="panel-body">
                         <div class="col-md-8">
-                            <form class="form-horizontal margin-top" role="form" method="POST" action="{{ url('/register') }}">
+                            <form class="form-horizontal margin-top" method="POST" action="{{ url('/register') }}">
                                 {{ csrf_field() }}
 
                                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
@@ -84,12 +89,12 @@
                         <div class="col-md-4 margin-top login_facebook">
                             <div class="col-md-12">
                                 <a href="redirect"><img class="social_midia_icon"
-                                                        src="{{ url('/images/social_midia/f.png') }}">
+                                                        src="{{ url('/images/social_midia/f.png') }}" alt="Icoon Facebook">
                                     Aanmelden via Facebook</a>
                             </div>
                             <div class="col-md-12">
                                 <a href="{{ url('/login') }}"><img class="social_midia_icon"
-                                                                            src="{{ url('/images/social_midia/l.png') }}">
+                                                                            src="{{ url('/images/social_midia/l.png') }}" alt="Icoon Aanmelden">
                                     Aanmelden
                                 </a>
                             </div>

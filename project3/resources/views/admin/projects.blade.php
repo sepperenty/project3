@@ -30,6 +30,8 @@
 					<th>No projects found</th>
 				</tr>
 			@endif
+
+			{{$projects->links()}}
 		
 
 

@@ -36,11 +36,15 @@ Route::post('/projects/add/new', 'ProjectsController@store');
 
 Route::get('/projects/{project}/delete', 'ProjectsController@delete');
 
-Route::post('/reactions/{project}/add', 'ReactionsController@store');
+Route::post('/projects/{project}/mail', 'MailController@sendProjectMail');
 
 ////////////////////ADMIN///////////////////////////////////
 
 Route::get('/admin/users', 'AdminController@users');
+
+Route::get('/admin/pictures', "AdminController@pictures");
+
+Route::get('/admin/picture/{picture}/delete', "AdminController@deletePicture");
 
 Route::get('/admin/{user}/delete', 'AdminController@deleteUser');
 

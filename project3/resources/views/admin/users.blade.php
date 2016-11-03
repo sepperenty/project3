@@ -20,7 +20,8 @@
 				<th><a href="/admin/{{$user->id}}/projects">Projects</a></th>
 			</tr>
 			@endforeach
-	
+			
+			{{$users->links()}}
 
 
 	</table>
