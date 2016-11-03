@@ -128,21 +128,20 @@
 <div class="container-fluid ">
     <div class="row">
         <footer class="footer">
-
             <div class="col-md-3">
-                <h1>Gemaakt door Graag Gedaan</h1>
+                <h1 class="heading-foter"><span class="line-headers">G</span>emaakt door Graag Gedaan</h1>
                 <p>Deze website is gemaakt door 2 knappe studenten van KDG hogeschool.</p>
             </div>
-            <div class="col-md-3">
-                <h1>Onze doelen</h1>
+            <div class="col-md-3 contact">
+                <h1 class="heading-foter"> <span class="line-headers">O</span>nze doelen</h1>
                 <ol>
                     <li>Vrijwilligers een overzicht geven van oproepen die in het buurt zijn.</li>
                     <li>Mensen die hulp nodig hebben de mogelijk geven om hulp te krijgen.</li>
                     <li>Mensen samenbrengen </li>
                 </ol>
             </div>
-            <div class="col-md-4 contact">
-                <h1>Contacteer ons</h1>
+            <div class="col-md-6 contact">
+                <h1 class="heading-foter"><span class="line-headers">C</span>ontacteer ons</h1>
                 {{ Form::open(array('url' => '/projects/add/new', 'id'=>'form_project','files' => true)) }}
                 {{ csrf_field() }}
                 <div class="row">
@@ -177,7 +176,7 @@
                                     </span>
                         @endif
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6 ">
                         <label for="bericht">Bericht?(*)</label>
                     <textarea name="bericht" cols="10" rows="5"
                               class="form-control ">{{old('bericht')}}</textarea>
