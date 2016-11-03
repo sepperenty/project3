@@ -16,6 +16,12 @@ class MailController extends Controller
 
     public function sendProjectMail(Project $project, Request $request)
     {
+         $this->validate($request, [
+            'subject' => 'required | max:50',
+            'message' => 'required | max:500',
+        ]);
+
+
     	$data = (object) null;
     	$data->subject = $request->subject;
     	$data->message = $request->message;
@@ -46,5 +52,15 @@ class MailController extends Controller
     	}
 
   
+    }
+
+    public function sendContactMail(Request $request)
+    {
+         $this->validate($request, [
+            'naam' => 'required | max:50',
+            'email' => 'required | max:50',
+            'bericht' => 'required | max:500',
+            'onderwerp' => 'required | max:50',
+        ]);
     }
 }

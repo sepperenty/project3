@@ -142,7 +142,7 @@
             </div>
             <div class="col-md-6 contact">
                 <h1 class="heading-foter"><span class="line-headers">C</span>ontacteer ons</h1>
-                {{ Form::open(array('url' => '/projects/add/new', 'id'=>'form_project','files' => true)) }}
+                {{ Form::open(array('url' => '/contact/send', 'id'=>'form_project','files' => true)) }}
                 {{ csrf_field() }}
                 <div class="row">
                     <input name="id" class="id" type="text" value="" hidden>
