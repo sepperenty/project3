@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in!
+                    <span class="line-headers">Y</span>ou are logged in!
                 </div>
             </div>
         </div>

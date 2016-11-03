@@ -12,7 +12,7 @@
     <div class="row margin_bottom">
         <div class="col-md-8 col-md-offset-2 margin-top">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+                <div class="panel-heading"><span class="line-headers">R</span>eset Password</div>
 
                 <div class="panel-body">
 

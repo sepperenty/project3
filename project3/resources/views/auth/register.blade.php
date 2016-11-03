@@ -10,7 +10,7 @@
         <div class="row margin_bottom_registreer">
             <div class="col-md-8 col-md-offset-2 margin-top">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Registreren</div>
+                    <div class="panel-heading"><span class="line-headers">R</span>egistreren</div>
                     <div class="panel-body">
                         <div class="col-md-8">
                             <form class="form-horizontal margin-top" method="POST" action="{{ url('/register') }}">

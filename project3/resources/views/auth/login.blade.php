@@ -11,7 +11,7 @@
         <div class="row margin_bottom">
             <div class="col-md-8 col-md-offset-2 margin-top">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Aanmelden</div>
+                    <div class="panel-heading"><span class="line-headers">A</span>anmelden</div>
                     <div class="panel-body">
                         <div class="col-md-8">
                             <form class="form-horizontal margin-top" method="POST"

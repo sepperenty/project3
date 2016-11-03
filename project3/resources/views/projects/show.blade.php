@@ -18,7 +18,7 @@
                         <img src="/images/medium/{{$project->foto}}.jpg"
                              alt="Foto van {{$project->user->name}} als titel {{ $project->title }}">
                         <div class="content">
-                            <h1 class="uppercas">Overzicht van het project</h1>
+                            <h1 class="uppercas"><span class="line-headers">O</span>verzicht van het project</h1>
                             <hr>
                             <h1 id="inhoud">{{ $project->title }}</h1>
                         </div>
