@@ -104,17 +104,15 @@
     <div class="row">
         <div class="col-md-12 col-sm-12 col-lg-12 heading">
             <h1>Fotogelerij getuigenissen</h1>
-            <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
-            @if(Auth()->check())
+            <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>        
             <a href="/pictures/add" class="btn btn-primary">FOTO TOEVOEGEN</a>
-            @endif
         </div>
 
         @foreach($randomPictures as $picture)
         <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
                 <div class="img-frame">
-                    <img src="/images/medium/{{$picture->name}}.jpg" alt="{{$picture->picture_info}}">
+                    <img src="/images/medium/{{$picture->name}}" alt="{{$picture->picture_info}}">
                     <div class="caption">
                         <p>{{$picture->picture_info}}</p>
                     </div>

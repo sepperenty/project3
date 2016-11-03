@@ -39,7 +39,7 @@ class PictureController extends Controller
                     $uploader = new UploadPicture($request->foto, $newName);
                     $uploader->store();
                     $picture = new Picture;
-                    $picture->name = $newName;
+                    $picture->name = $newName . "." . $request->foto->extension();
                     $picture->user_id = Auth()->user()->id;
                     $picture->picture_info = $request->picture_info;
                     $picture->save();

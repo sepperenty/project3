@@ -58,14 +58,20 @@
                                 </span>
                             @endif
                         </div>
+                        
                         <div class="form-group project_file col-md-6">
-                            <label for="foto">Foto</label>
-                            <input type="file" class="form-control " name="foto">
-                            @if ($errors->has('foto'))
-                                <span>
-                                        <strong>{{ $errors->first('foto') }}</strong>
-                                </span>
-                            @endif
+                            
+                            <div class="col-md-8">
+                                <label for="foto">Foto</label>
+                                <input type="file" class="form-control " name="foto">
+                                @if ($errors->has('foto'))
+                                    <span>
+                                            <strong>{{ $errors->first('foto') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                            
+                            <img src=" {{ url('/images/small/'.$project->foto) }} " alt="Huidige foto bij project" class="col-md-4">
 
                         </div>
 

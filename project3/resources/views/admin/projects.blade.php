@@ -21,7 +21,7 @@
 					<th>{{$project->email}}</th>
 					<th>{{$project->telephoneNumber}}</th>
 					<th>{{$project->address}}</th>
-					<th><img src="/images/small/{{$project->foto}}.jpg" alt=""></th>
+					<th><img src="/images/small/{{$project->foto}}" alt=""></th>
 					<th><a href="/admin/project/{{$project->id}}/delete">delete</a></th>
 				</tr>
 				@endforeach

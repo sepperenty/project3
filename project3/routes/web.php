@@ -15,7 +15,7 @@ Auth::routes();
 Route::get('/redirect', 'SocialAuthController@redirect');
 Route::get('/callback', 'SocialAuthController@callback');
 
-Route::post('/contact/send', 'MailController@sendContactMail');
+Route::post('/contact/send', 'PublicController@sendContactMail');
 
 Route::get('/', 'PublicController@index');
 

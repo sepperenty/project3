@@ -146,6 +146,7 @@
                 {{ csrf_field() }}
                 <div class="row">
                     <input name="id" class="id" type="text" value="" hidden>
+                    @if(!Auth()->check())
                     <div class="form-group col-md-6">
                         <label for="naam">Vul je naam(*)</label>
                         <input type="text" name="naam" class="form-control" value="{{ old('naam') }}">
@@ -156,7 +157,7 @@
                         @endif
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="email">Je email</label>
+                        <label for="email">Je email(*)</label>
                         <input type="text" name="email" class="form-control" value="{{ old('email') }}">
                         @if ($errors->has('email'))
                             <span>
@@ -164,11 +165,12 @@
                                     </span>
                         @endif
                     </div>
+                    @endif
                 </div>
 
                 <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="onderwerp">Onderwerp van email</label>
+                        <label for="onderwerp">Onderwerp van email(*)</label>
                         <input type="text" name="onderwerp" class="form-control" value="{{ old('onderwerp') }}">
                         @if ($errors->has('onderwerp'))
                             <span>

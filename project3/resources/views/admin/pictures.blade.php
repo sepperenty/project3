@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<div class="container">
+
 
 	<table class="table">
 			<tr>
@@ -15,7 +15,7 @@
 				@foreach($pictures as $picture)	
 				<tr>
 					<td>
-					<img src="/images/small/{{$picture->name}}.jpg" alt="">
+					<img src="/images/small/{{$picture->name}}" alt="">
 					</td>
 					<td>
 						{{$picture->picture_info}}
@@ -28,13 +28,10 @@
 				{{$pictures->links()}}
 
 		
-	</div>
-
-
 		
 			
-
-
+</table>
+	
 
 
 @endsection

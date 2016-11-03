@@ -22,7 +22,7 @@
                         <div class="row manage_page">
                             <div class="col-xs-6 col-md-2">
                                 <a href="/projects/{{$project->id}}/show" class="thumbnail">
-                                    <img src="/images/small/{{$project->foto}}.jpg"
+                                    <img src="/images/small/{{$project->foto}}"
                                          alt="Foto van {{$project->user->name}} als titel {{ $project->title }}">
                                 </a>
                             </div>

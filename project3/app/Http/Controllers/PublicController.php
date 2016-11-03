@@ -11,6 +11,7 @@ use App\Project;
 use App\Picture;
 use App\Reaction;
 use App\RandomPictures;
+use Mail;
 
 class PublicController extends Controller
 {
@@ -63,5 +64,52 @@ class PublicController extends Controller
     public function contact()
     {
         return view('contact');
+    }
+
+     public function sendContactMail(Request $request)
+    {
+        $data = (object) null;
+        
+        $this->validate($request, [
+            'bericht' => 'required | max:500',
+            'onderwerp' => 'required | max:50',
+            ]);
+        if(Auth()->check())
+        {
+            $data->name = Auth()->user()->name;
+            $data->email = Auth()->user()->email;
+        }
+        else{
+            $this->validate($request, [
+             'naam' => 'required | max:50',
+            'email' => 'required | email | max:50',
+            ]);
+            $data->name = $request->naam;
+            $data->email = $request->email;
+
+        }
+                
+        $data->subject = $request->onderwerp;
+        $data->message = $request->bericht;
+        
+        $data->receiverEmail = "sepperenty@hotmail.com";
+
+        try{
+            Mail::send('mails.contactMail', ['data' => $data], function ($m) use ($data) {
+
+            $m->from('GraagGedaan@web.be', 'Graag Gedaan');
+
+            $m->to($data->receiverEmail, "Graag Gedaan")->subject($data->subject);
+            });
+
+            $request->session()->put('message', 'Je contact forulier is verzonden. Bedankt.');
+            return redirect('/'); 
+        }catch(Exception $e)
+        {
+            $request->session()->put('message', 'Er is iets misgegaan. We proberen het zo snel mogelijk op te lossen.');
+            return redirect('/'); 
+        }
+
+
     }
 }

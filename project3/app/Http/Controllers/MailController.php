@@ -54,13 +54,5 @@ class MailController extends Controller
   
     }
 
-    public function sendContactMail(Request $request)
-    {
-         $this->validate($request, [
-            'naam' => 'required | max:50',
-            'email' => 'required | max:50',
-            'bericht' => 'required | max:500',
-            'onderwerp' => 'required | max:50',
-        ]);
-    }
+   
 }

@@ -69,13 +69,13 @@ class ProjectsController extends Controller
             $newName = rtrim(base64_encode(md5(microtime())), "=");
             $uploader = new UploadPicture($request->foto, $newName);
             $uploader->store();
-            $path = $newName;
+            $path = $newName . "." . $request->foto->extension();
         }
 
 
         
             if ($path == "") {
-                $path = "default";
+                $path = "default.jpg";
             }
             $project->foto = $path;
             $project->user_id = Auth()->user()->id;
@@ -156,7 +156,7 @@ class ProjectsController extends Controller
                     $newName = rtrim(base64_encode(md5(microtime())), "=");
                     $uploader = new UploadPicture($request->foto, $newName);
                     $uploader->store();
-                    $path = $newName;
+                    $path = $newName . "." . $request->foto->extension();
 
                 }
 
