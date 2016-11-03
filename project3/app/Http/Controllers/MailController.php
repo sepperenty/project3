@@ -16,15 +16,17 @@ class MailController extends Controller
 
     public function sendProjectMail(Project $project, Request $request)
     {
-    	$data={};
+    	$data = (object) null;
     	$data->subject = $request->subject;
-    	$data->message = $request->subject;
-    	$data->user = Auth()->user;
+    	$data->message = $request->message;
+    	$data->user = Auth()->user();
+    	$data->receiverEmail = $project->user->email;
+    	$data->project = $project;
+    	$data->request = $request;
 
-    	$receiverEmail = $project->user->email;
     	if(!empty($project->email))
     	{
-    		$receiverEmail = $project->email;
+    		$data->receiverEmail = $project->email;
     	}
 
     	try{
@@ -32,15 +34,15 @@ class MailController extends Controller
 
             $m->from('GraagGedaan@web.be', 'Graag Gedaan');
 
-            $m->to($receiverEmail, $project->user->name)->subject($request->subject);
+            $m->to($data->receiverEmail, $data->project->user->name)->subject($data->request->subject);
         	});
 
         	$request->session()->put('message', 'Je formulier is verzonden! Hou je email in het oog voor een antwoord.');
-            return redirect('/projects/$project->id/show'); 
+            return redirect('/projects/' . $project->id . '/show'); 
     	}catch(Exception $e)
     	{
     		$request->session()->put('message', 'Er is iets misgegaan. We proberen het zo snel mogelijk op te lossen.');
-            return redirect('/projects/$project->id/show'); 
+            return redirect('/projects/' . $project->id . '/show'); 
     	}
 
   

@@ -42,10 +42,16 @@ class PublicController extends Controller
         return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "randomPictures","message"));
     }
 
-    public function show(Project $project)
+    public function show(Project $project, Request $request)
     {
+
+        if($request->session()->get("message"))
+        {
+               $message = $request->session()->pull("message");
+
+        }
         $project->load('reactions.user');
-        return view('projects/show', compact('project'));
+        return view('projects/show', compact('project', 'message'));
 
     }
 

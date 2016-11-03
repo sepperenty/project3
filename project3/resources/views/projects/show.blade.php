@@ -49,6 +49,26 @@
                                         {{$project->user->email}}
                                         @endif
                                     </span>
+                                    <hr>
+                                    <form action="/projects/{{$project->id}}/mail" method="post">
+                                        
+                                        {{ csrf_field() }}
+                
+                                        <div class="form-group">
+                                            <label for="subject"> Onderwerp </label>
+                                                <input type="text" name="subject" class="form-control">
+                                          
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="message"> Bericht </label>
+                                            <textarea name="message" id="" cols="30" rows="10" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" class="btn btn-default">
+                                        </div>
+                                                
+                                    </form>
+
                                     @else
                                     <p>Je moet ingelogt zijn om de contactinformatie te raadpleden.</p>
                                     @endif
