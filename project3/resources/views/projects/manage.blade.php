@@ -27,7 +27,7 @@
                                 </a>
                             </div>
                             <div class=" col-md-8">
-                                <h1>{{ $project->title }}</h1>
+                                <h1>{{ $project->title}}</h1>
                                 <hr>
                             </div>
                             <div class="col-md-2 ">

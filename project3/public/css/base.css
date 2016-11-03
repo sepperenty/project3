@@ -5728,7 +5728,6 @@ p {
 
 .google-maps-search {
   position: absolute;
-  font-size: 1.1em;
   margin-left: 25%;
   max-width: 30%; }
   @media (max-width: 992px) {
@@ -5750,13 +5749,18 @@ p {
 .content-home {
   margin-left: -15px;
   margin-top: -20px;
-  background-color: rgba(0, 0, 0, 0.8); }
+  background-color: rgba(255, 255, 255, 0.7); }
   @media (max-width: 992px) {
     .content-home {
       margin-top: 550px;
       background-color: #202933; } }
+  .content-home h1 {
+    text-transform: uppercase;
+    font-weight: 700; }
+  .content-home p {
+    font-size: 2em; }
   .content-home div {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(10, 22, 34, 0.9);
     min-height: 575px;
     padding-left: 1%;
     color: #fff; }
@@ -5769,6 +5773,23 @@ p {
       left: 50%;
       margin-left: -71.875px;
       max-height: 143.75px; }
+    .content-home div button {
+      margin: 35px 0px 35px 0px;
+      font-size: 2em;
+      width: 100%;
+      padding: 15px;
+      color: #fff;
+      border: 1px solid #fff;
+      text-align: center;
+      text-decoration: none;
+      background: rgba(32, 41, 51, 0.8);
+      text-transform: uppercase;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease-out, color 0.2s ease-out; }
+      .content-home div button:hover, .content-home div button:focus {
+        background-color: #202933;
+        color: #fff;
+        transition: background-color 0.3s ease-in, color 0.3s ease-in; }
 
 #map {
   position: absolute;
