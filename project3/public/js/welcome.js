@@ -1,30 +1,41 @@
 $(function () {
     var map;
-    var cons_zoom_closup = 12;
+    var cons_zoom_closup = 10;
     var dropdown_selected = "";
-
+    var myLatLng = {lat: 51.2194475, lng: 4.4024643};
     function initMap() {
-        var myLatLng = {lat: 51.2194475, lng: 4.4024643};
 
 
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                var pos = {
-                    lat: position.coords.latitude,
-                    lng: position.coords.longitude
-                };
 
-                init_map(pos.lat, pos.lng, cons_zoom_closup);
-            }, function () {
-                //handleLocationError(true, infoWindow, map.getCenter());
-            });
+        // if (navigator.geolocation) {
+        //     navigator.geolocation.getCurrentPosition(function (position) {
+        //         var pos = {
+        //             lat: position.coords.latitude,
+        //             lng: position.coords.longitude
+        //         };
+        //
+        //         init_map(pos.lat, pos.lng, cons_zoom_closup);
+        //     }, function () {
+        //         //handleLocationError(true, infoWindow, map.getCenter());
+        //     });
+        // } else {
+        // Browser doesn't support Geolocation
+        init_map(myLatLng.lat, myLatLng.lng, cons_zoom_closup);
+        // }
+
+
+        if ($("#inhoud").length) {
+            $("#inhoud").height(function () {
+
+                $(".google-maps").height($("#inhoud").height());
+                $(window).resize(function () {
+                    console.log($("#inhoud").width(), " ", $("#inhoud").height());
+                    $(".google-maps").height($("#inhoud").height());
+                })
+            })
         } else {
-            // Browser doesn't support Geolocation
-            init_map(myLatLng.lat, myLatLng.lng, cons_zoom_closup);
+            $("#map").height(650).css("left", "0");
         }
-
-
-
 
 
         // map = new google.maps.Map(document.getElementById('map'), {
@@ -35,8 +46,8 @@ $(function () {
 
         $(function () {
             $(".dropdown-menu li a").click(function () {
-                $(".btn:first-child").text($(this).text());
-                $(".btn:first-child").val($(this).text());
+                $(".dropdown-toggle").text($(this).text());
+                $(".dropdown-toggle").val($(this).text());
                 dropdown_selected = $(this).text();
                 console.log(dropdown_selected);
             });
@@ -86,15 +97,15 @@ $(function () {
 
                 var contentString = '' +
                     '<div class="content"> ' +
-                        '<div class="post-thumb">'+
-                            '<img src="/images/small/' + data[i].foto + '"' +
-                        '</div>'+
-                        '<div class="siteNotice">' +
+                    '<div class="post-thumb">' +
+                    '<img src="/images/small/' + data[i].foto + '"' +
+                    '</div>' +
+                    '<div class="siteNotice">' +
 
-                        '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
-                        '<div id="bodyContent">' +
-                        '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
-                        '</div>' +
+                    '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
+                    '<div id="bodyContent">' +
+                    '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
+                    '</div>' +
                     '</div>';
 
                 return function () {
@@ -129,6 +140,25 @@ $(function () {
             console.log("auto compitted bestaat");
             console.log(autocomplete);
         }
+
+        if (serach_category) {
+            var search_category_term;
+            switch (serach_category) {
+                case "Noodoproep":
+                    search_category_term = "priority";
+                    break;
+                case "Gewoon oproep":
+                    search_category_term = "individual"
+                    break;
+                case "Bedrijven":
+                    search_category_term = "company"
+                    break;
+                default:
+                    search_category_term = "";
+            }
+        }
+
+
         if ($("#searchTextField").val()) {
             console.log($("#searchTextField").val());
             if (autocomplete.getPlace().formatted_address) {
@@ -142,24 +172,8 @@ $(function () {
                             var lat = data.results[0].geometry.location.lat;
                             var lng = data.results[0].geometry.location.lng;
                             init_map(lat, lng, cons_zoom_closup);
+                            configur_google_map(search_category_term)
 
-                            if (serach_category) {
-                                var search_category_term;
-                                switch (serach_category) {
-                                    case "Noodoproep":
-                                        search_category_term = "priority";
-                                        break;
-                                    case "Gewoon oproep":
-                                        search_category_term = "individual"
-                                        break;
-                                    case "Bedrijven":
-                                        search_category_term = "company"
-                                        break;
-                                    default:
-                                        search_category_term = "";
-                                }
-                                configur_google_map(search_category_term)
-                            }
                         } else {
                             $("#searchTextField").css("background-color", "yellow");
                         }
@@ -168,6 +182,9 @@ $(function () {
                         $("#searchTextField").css("background-color", "yellow");
                     });
             }
+        } else {
+            init_map(myLatLng.lat, myLatLng.lng, cons_zoom_closup);
+            configur_google_map(search_category_term)
         }
     }
 
@@ -184,23 +201,20 @@ $(function () {
             scaleControl: true
         });
 
-        google.maps.event.addListenerOnce(map, 'idle', function(){
-        $('#map').find('a').each(function () {
+        google.maps.event.addListenerOnce(map, 'idle', function () {
+            $('#map').find('a').each(function () {
 
-            $(this).attr('tabindex', "-1");
-            console.log('a');
+                $(this).attr('tabindex', "-1");
+                console.log('a');
+            });
+
+
         });
-
-
-    });
 
 
     }
 
     google.maps.event.addDomListener(window, 'load', initMap);
 
-
-
-    
 
 });

@@ -15,24 +15,6 @@
 
 @section('welcome')
 
-    <script>
-        $(document).ready(function () {
-
-            if ($("#inhoud").length) {
-                $("#inhoud").height(function () {
-
-                    $(".google-maps").height($("#inhoud").height());
-                    $(window).resize(function () {
-                        console.log($("#inhoud").width(), " ", $("#inhoud").height());
-                        $(".google-maps").height($("#inhoud").height());
-                    })
-                })
-            } else {
-                $("#map").height(650).css("left", "0");
-            }
-
-        })
-    </script>
 
     <div class="container-fluid google-maps-top">
         @if(!Auth()->check())

@@ -5657,6 +5657,7 @@ p {
   width: 90%;
   background-color: #202933; }
   .google-maps-search .input-group input {
+    color: #fff;
     margin-top: 3px;
     border-left: thin solid #fff;
     border-right: thin solid #fff;

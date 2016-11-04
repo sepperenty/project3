@@ -79,6 +79,7 @@ p {
 
   .input-group {
     input {
+      color: $base-color-black-without-opacity-font;
       margin-top: 3px;
       border-left: thin solid $base-color-black-without-opacity-font;
       border-right: thin solid $base-color-black-without-opacity-font;
