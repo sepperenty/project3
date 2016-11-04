@@ -47,22 +47,39 @@
             <!--<a href="http://www.vioe.be/">-->
             <!--<img src="vioe-logo.png" alt="Home VIOE - Vlaams Instituut voor het Onroerend Erfgoed" /></a>-->
 
+            <!-- Collapsed Hamburger -->
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#app-navbar-collapse">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+
             <a class="navbar-brand" href="/"><img class="brand-logo" src="/images/medium/GraagGedaan-small.png"
                                                   alt="home Graag Gedaan - Vrijwilligerswerk voor mindervaliden"></a>
         </div>
 
 
-        <div class="collapse navbar-collapse navbar-ex1-collapse navbar-right">
-            <ul class="nav navbar-nav ">
 
-                <li>
-                    <form action="#inhoud">
-                        <button type="submit" class="go-to-content">Naar inhoud</button>
-                    </form>
+        <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <!-- Left Side Of Navbar -->
+            <ul class="nav navbar-nav">
 
+                &nbsp;
+
+            </ul>
+
+
+            <!-- Right Side Of Navbar -->
+            <ul class="nav navbar-nav navbar-right">
+                
+                <li class="{{ Request::is('/#inhoud') ? 'active' : '' }}">
+                    <a href="{{ url('/#inhoud') }}">Naar inhoud</a>
                 </li>
                 <li class="{{ Request::is('/') ? 'active' : '' }}">
-                    <a href="{{ url('/') }}" class="pull-left back">Home</a>
+                    <a href="{{ url('/') }}">Home</a>
                 </li>
                 <li class="{{ Request::is('projects/add') ? 'active' : '' }}">
                     <a href="/projects/add">Plaats oproep</a>
@@ -127,44 +144,46 @@
 
 <div class="container-fluid ">
     <div class="row">
+
         <footer class="footer">
             <div class="col-md-3">
                 <h1 class="heading-foter"><span class="line-headers">G</span>emaakt door Graag Gedaan</h1>
                 <p>Deze website is gemaakt door 2 knappe studenten van KDG hogeschool.</p>
             </div>
             <div class="col-md-3 contact">
-                <h1 class="heading-foter"> <span class="line-headers">O</span>nze doelen</h1>
+                <h1 class="heading-foter"><span class="line-headers">O</span>nze doelen</h1>
                 <ol>
                     <li>Vrijwilligers een overzicht geven van oproepen die in het buurt zijn.</li>
                     <li>Mensen die hulp nodig hebben de mogelijk geven om hulp te krijgen.</li>
-                    <li>Mensen samenbrengen </li>
+                    <li>Mensen samenbrengen</li>
                 </ol>
             </div>
             <div class="col-md-6 contact">
                 <h1 class="heading-foter"><span class="line-headers">C</span>ontacteer ons</h1>
+
                 {{ Form::open(array('url' => '/contact/send', 'id'=>'form_project','files' => true)) }}
                 {{ csrf_field() }}
                 <div class="row">
                     <input name="id" class="id" type="text" value="" hidden>
                     @if(!Auth()->check())
-                    <div class="form-group col-md-6">
-                        <label for="naam">Vul je naam(*)</label>
-                        <input type="text" name="naam" class="form-control" value="{{ old('naam') }}">
-                        @if ($errors->has('naam'))
-                            <span>
+                        <div class="form-group col-md-6">
+                            <label for="naam">Vul je naam(*)</label>
+                            <input type="text" name="naam" class="form-control" value="{{ old('naam') }}">
+                            @if ($errors->has('naam'))
+                                <span>
                                         <strong>{{ $errors->first('naam') }}</strong>
                                     </span>
-                        @endif
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="email">Je email(*)</label>
-                        <input type="text" name="email" class="form-control" value="{{ old('email') }}">
-                        @if ($errors->has('email'))
-                            <span>
+                            @endif
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="email">Je email(*)</label>
+                            <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                            @if ($errors->has('email'))
+                                <span>
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                        @endif
-                    </div>
+                            @endif
+                        </div>
                     @endif
                 </div>
 
@@ -190,7 +209,12 @@
                         <div class="form-group pull-right">
                             <button class="btn btn-primary focus" id="manageBtn">Verzenden</button>
                         </div>
-                {{ Form::close() }}
+                        {{ Form::close() }}
+
+                    </div>
+
+                </div>
+
             </div>
         </footer>
     </div>

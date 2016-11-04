@@ -1,6 +1,6 @@
 $(function () {
     var map;
-    var cons_zoom_closup = 10;
+    var cons_zoom_closup = 9;
     var dropdown_selected = "";
     var myLatLng = {lat: 51.2194475, lng: 4.4024643};
     function initMap() {
