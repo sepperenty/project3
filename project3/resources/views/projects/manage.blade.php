@@ -1,7 +1,7 @@
 @extends('layouts/app')
 @section('header')
     
-    <title>Beheer pagine - Graag Gedaan</title>
+    <title>Beheer oproepen - Graag Gedaan</title>
 
 
 @endsection

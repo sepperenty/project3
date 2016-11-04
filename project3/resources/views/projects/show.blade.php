@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('header')
-    <title>Details Oproep - Graag Gedaan</title>
+    <title>{{$project->title}} - Graag Gedaan</title>
 @endsection
 
 

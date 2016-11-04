@@ -30,8 +30,8 @@
                         Onze doel is vrijwilligerswerk makkelijk maken.
                     </p>
                     <p>
-                        Deze website is gemaakt voor hulpzoekende en vrijwilligers.
-                        Wil je graag vrijwilligers werk doen maar weet je niet waar te beginnen ?
+                        Deze website is gemaakt hulpzoekende en vrijwilligers samen te brengen.
+                        
                         Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
                     </p>
 
