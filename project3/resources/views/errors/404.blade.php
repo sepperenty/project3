@@ -11,8 +11,6 @@
 </head>
 <body>
 
-    
-    
               <div class="container-fluid ">
         <div class="row margin-top">
             <div class="col-md-10 col-md-offset-1 add_form">

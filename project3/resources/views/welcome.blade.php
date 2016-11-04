@@ -58,9 +58,9 @@
                                     aria-haspopup="true" aria-expanded="false">Categorie <span
                                         class="glyphicon glyphicon-align-justify"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Noodoproep</a></li>
-                                <li><a href="#">Gewoon oproep</a></li>
+                                <li><a href="#">Person</a></li>
                                 <li><a href="#">Bedrijven</a></li>
+                                <li><a href="#">Noodoproep</a></li>
                             </ul>
                         </div><!-- /btn-group -->
                         <input type="text" name="seach" id="searchTextField" class="form-control" aria-label="..."

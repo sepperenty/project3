@@ -1,8 +1,27 @@
 $(function () {
     var map;
-    var cons_zoom_closup = 9;
+    var cons_zoom_closup = 15;
+    var cons_zoom = 9;
     var dropdown_selected = "";
     var myLatLng = {lat: 51.2194475, lng: 4.4024643};
+
+    var iconBase = window.location.host;
+    var icons = {
+        company: {
+            icon: '/images/google_maps_pin/bedrijf.png'
+        },
+        priority: {
+            icon:  '/images/google_maps_pin/gebruiker-dringend.png'
+        },
+        individual: {
+            icon: '/images/google_maps_pin/gebruiker-gewoon.png'
+        },
+        company_priority: {
+            icon: '/images/google_maps_pin/bedrijf-dringend.png'
+        }
+    };
+
+    console.log(icons["company"].icon);
     function initMap() {
 
 
@@ -20,21 +39,40 @@ $(function () {
         //     });
         // } else {
         // Browser doesn't support Geolocation
-        init_map(myLatLng.lat, myLatLng.lng, cons_zoom_closup);
+        init_map(myLatLng.lat, myLatLng.lng, cons_zoom);
         // }
 
 
         if ($("#inhoud").length) {
             $("#inhoud").height(function () {
 
-                $(".google-maps").height($("#inhoud").height());
+                $(".google-maps").height(function () {
+
+                    if( $(window).width() < "992"){
+                        return "400";
+                    }else{
+                        return $("#inhoud").height();
+                    }
+
+                });
+
                 $(window).resize(function () {
-                    console.log($("#inhoud").width(), " ", $("#inhoud").height());
-                    $(".google-maps").height($("#inhoud").height());
+
+                    if( $(window).width() < "992"){
+                        $(".google-maps").height(400);
+                    }else{
+                        $(".google-maps").height($("#inhoud").height());
+                    }
+
                 })
             })
         } else {
-            $("#map").height(650).css("left", "0");
+            if($(window).width() < "992"){
+                $("#map").height(400).css("left", "0");
+            }else{
+                $("#map").height(650).css("left", "0");
+            }
+
         }
 
 
@@ -85,27 +123,40 @@ $(function () {
     function initialize_markers(data) {
         for (i = 0; i < data.length; i++) {
             var infowindow = new google.maps.InfoWindow();
+            var type_icon ="individual";
+            if(data[i].isPriority && data[i].isCompany ){
+                type_icon ="company_priority";
+            }else if(data[i].isPriority){
+                type_icon ="priority";
+            }else if(data[i].isCompany){
+                type_icon ="company";
+            }else {
+                type_icon ="individual";
+            }
+
             var marker, i;
             marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data[i].lat, data[i].lng),
+                icon: icons[type_icon].icon,
                 map: map
             });
+            console.log("-----------------",data);
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
 
                 var urlproject = '/projects/' + data[i].id + '/show';
                 console.log(urlproject);
 
                 var contentString = '' +
-                    '<div class="content"> ' +
-                    '<div class="post-thumb">' +
-                    '<img src="/images/small/' + data[i].foto + '"' +
-                    '</div>' +
-                    '<div class="siteNotice">' +
+                    '<div class="content_google-map"> ' +
+                        '<div class="post-thumb">' +
+                            '<img src="/images/small/' + data[i].foto +
+                        '</div>' +
+                        '<div class="siteNotice">' +
 
-                    '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
-                    '<div id="bodyContent">' +
-                    '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
-                    '</div>' +
+                            '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
+                            '<div id="bodyContent">' +
+                            '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
+                        '</div>' +
                     '</div>';
 
                 return function () {
@@ -147,7 +198,7 @@ $(function () {
                 case "Noodoproep":
                     search_category_term = "priority";
                     break;
-                case "Gewoon oproep":
+                case "Person":
                     search_category_term = "individual"
                     break;
                 case "Bedrijven":
@@ -183,7 +234,7 @@ $(function () {
                     });
             }
         } else {
-            init_map(myLatLng.lat, myLatLng.lng, cons_zoom_closup);
+            init_map(myLatLng.lat, myLatLng.lng, cons_zoom);
             configur_google_map(search_category_term)
         }
     }
