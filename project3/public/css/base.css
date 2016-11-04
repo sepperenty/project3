@@ -5711,8 +5711,7 @@ p {
 .google-maps-top {
   margin-top: -20px;
   background-color: #0a1622;
-  min-height: 650px;
-  color: #fff; }
+  min-height: 650px; }
 
 #map {
   position: absolute;
@@ -5858,23 +5857,26 @@ nav {
     .content .post-thumb img {
       display: block;
       height: 150px;
-      width: 150px;
-      border-radius: 150px; }
-  .content .siteNotice {
-    border-left: 1px solid rgba(0, 0, 0, 0.2);
-    padding-left: 20px;
-    line-height: 20px;
-    margin-left: 180px;
-    margin-top: -160px; }
-    .content .siteNotice p {
-      margin-top: -10px; }
-    .content .siteNotice a {
-      background-color: #202933;
-      color: #fff;
-      padding: 5px 15px 5px 15px;
-      border-radius: 15px;
-      font-weight: bold;
-      margin-top: 10px; }
+      width: 150px; }
+
+.content_google-map h1 {
+  margin-top: 50px; }
+.content_google-map .siteNotice {
+  border-left: 1px solid rgba(0, 0, 0, 0.2);
+  padding-left: 20px;
+  line-height: 20px;
+  margin-left: 180px;
+  margin-top: -160px; }
+  .content_google-map .siteNotice p {
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .content_google-map .siteNotice a {
+    background-color: #202933;
+    color: #fff;
+    padding: 5px 15px 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    margin-top: 10px; }
 
 .page {
   margin-top: 25px; }

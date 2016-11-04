@@ -148,14 +148,15 @@ $(function () {
 
                 var contentString = '' +
                     '<div class="content_google-map"> ' +
-                        '<div class="post-thumb">' +
-                            '<img src="/images/small/' + data[i].foto +
+                        '<div class="post-thumb col-md-4" >' +
+                            '<img src="/images/small/' + data[i].foto + '">' +
                         '</div>' +
-                        '<div class="siteNotice">' +
+                        '<div class="siteNotice col-md-8" >' +
 
-                            '<h1 id="firstHeading" class="firstHeading">' + data[i].title + '</h1>' +
+                            '<h1>' + data[i].title + '</h1>' +
                             '<div id="bodyContent">' +
-                            '<p>' + data[i].description + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
+                                '<p>' + data[i].description.substring(1, 100) + '...' + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
+                            '</div>'
                         '</div>' +
                     '</div>';
 
