@@ -31,7 +31,7 @@
                                 <hr>
                             </div>
                             <div class="col-md-2 ">
-                                <a class="white" href="/projects/{{$project->id}}/edit"> <div class="col-md-12 a-button">Bijwerken</div></a>
+                                <a class="white" href="/projects/{{$project->id}}/edit"> <div class="col-md-12 a-button">Bewerken</div></a>
                                 <a class="white" href="/projects/{{$project->id}}/delete"> <div class="col-md-12 a-button">Verwijderen</div></a>
                             </div>
 

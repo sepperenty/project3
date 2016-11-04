@@ -43,11 +43,11 @@ class MailController extends Controller
             $m->to($data->receiverEmail, $data->project->user->name)->subject($data->request->subject);
         	});
 
-        	$request->session()->put('message', 'Je formulier is verzonden! Hou je email in het oog voor een antwoord.');
+        	$request->session()->put('message', 'Je bericht is verzonden! Controleer je mail voor een antwoord.');
             return redirect('/projects/' . $project->id . '/show'); 
     	}catch(Exception $e)
     	{
-    		$request->session()->put('message', 'Er is iets misgegaan. We proberen het zo snel mogelijk op te lossen.');
+    		$request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
             return redirect('/projects/' . $project->id . '/show'); 
     	}
 

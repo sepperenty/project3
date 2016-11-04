@@ -23,7 +23,7 @@
                 </div>
                 <div class="col-md-12 white-space">
 
-                <h1>De pagina die je zoekt bestaat niet.</h1>
+                <h1>Er is iets misgelopen</h1>
 
                 <p>Excuseer ons.</p>
                     

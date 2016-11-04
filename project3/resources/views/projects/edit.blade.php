@@ -15,7 +15,7 @@
             <div class="col-md-10 col-md-offset-1 add_form margin-top">
                 <div class="row form-head">
                     <div class="col-md-12 ">
-                        <h1 class=""><span class="line-headers">P</span>rojecten beheren</h1>
+                        <h1 class=""><span class="line-headers">P</span>roject bewerken</h1>
                         {{--<a href="/projects/beheer" class="pull-right btn btn-primary focus">Berheer projecten</a>--}}
                     </div>
                 </div>
@@ -123,13 +123,13 @@
 
                         <div class="checkbox ">
                             <label>
-                                <input type="checkbox" name="isPriority" checked="{{$project->isPriority}}"> Deze oproep is zeer dringend.
+                                <input type="checkbox" name="isPriority" @if($project->isPriority) checked @endif > Deze oproep is zeer dringend.
                             </label>
                         </div>
 
                         <div class="checkbox ">
                             <label>
-                                <input type="checkbox" name="isCompany" checked="{{$project->isCompany}}"> Deze oproep komt vanuit een bedrijf.
+                                <input type="checkbox" name="isCompany" @if($project->isCompany) checked @endif> Deze oproep komt vanuit een bedrijf.
                             </label>
                         </div>
 

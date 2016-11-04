@@ -1,9 +1,10 @@
 
 BACKEND
-
+-map negeren tab
 - Nederlandstalig javascript validatie
 - Error paging
 - max aantal karakters terug sturen in api
+
 
 
 

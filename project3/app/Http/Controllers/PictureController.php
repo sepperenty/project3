@@ -43,7 +43,7 @@ class PictureController extends Controller
                     $picture->user_id = Auth()->user()->id;
                     $picture->picture_info = $request->picture_info;
                     $picture->save();
-                    $request->session()->put('message', 'je foto is upgeload.');
+                    $request->session()->put('message', 'je foto is geplaatst.');
                     return redirect("/");
 
             }catch(Exception $e)

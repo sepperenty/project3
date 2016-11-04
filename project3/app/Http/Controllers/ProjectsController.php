@@ -98,7 +98,7 @@ class ProjectsController extends Controller
             }
 
             else{
-                $request->session()->put('message', 'Er is iets mis gelopen, contacteer de webmaster');
+                $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
                 return redirect('/projects/beheer');
 
             }
@@ -187,12 +187,12 @@ class ProjectsController extends Controller
                     return redirect('/projects/beheer');
 
                 }catch(Exception $e){
-                    $request->session()->put('message', 'Er is iets misgelopen, contacteer de webmaster');
+                    $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
                     return redirect('/projects/beheer');
                 }
 
             } else {
-                 $request->session()->put('message', 'Je bent niet geauthoriseerd om dit project te wijzigen.');
+                 $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
                 return redirect('/projects/beheer');
             }
         
@@ -212,13 +212,14 @@ class ProjectsController extends Controller
                 return redirect('/projects/beheer');
             }catch (Exception $e)
             {
-                $request->session()->put('message', 'Er is iets misgegaan. We lossen het zo snel mogelijk op.');
+                $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
                 return redirect('/projects/beheer'); 
             }
 
         }
         else{
-            return redirect('/');
+                $request->session()->put('message', 'Deze oproep kan jij niet verwijderen.');
+                return redirect('/'); 
         }
 
     }

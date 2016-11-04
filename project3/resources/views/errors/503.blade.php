@@ -1,47 +1,50 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Be right back.</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Niet gevonden - Graag Gedaan</title>
+    <title>Document</title>
+     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+</head>
+<body>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    
+    
+              <div class="container-fluid ">
+        <div class="row margin-top">
+            <div class="col-md-10 col-md-offset-1 add_form">
+                <div class="row form-head">
+                    <div class="col-md-12">
+                        <h1 class=""><span class="line-headers">W</span>e zijn meteen terug </h1>
+                    </div>
+                </div>
+                <div class="col-md-12 white-space">
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+                <h1>We zijn met onderhoud bezig.</h1>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato', sans-serif;
-            }
+                <p>Excuseer ons.</p>
+                    
+                
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
+                <a href="/" class="btn btn-primary">Terug naar homepagina</a>
 
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
 
-            .title {
-                font-size: 72px;
-                margin-bottom: 40px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Be right back.</div>
-            </div>
-        </div>
-    </body>
+                </div>
+                </div>
+                </div>
+                </div>
+    
+</body>
 </html>
+
+
+
+
+    
+
+
+
+

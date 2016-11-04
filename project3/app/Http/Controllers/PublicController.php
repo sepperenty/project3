@@ -40,7 +40,7 @@ class PublicController extends Controller
 
 
 
-        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "randomPictures","message"));
+        return view('welcome', compact("amountRegistered", "amountProjectCompanys", "amountProjectUsers", "randomPictures", "message"));
     }
 
     public function show(Project $project, Request $request)

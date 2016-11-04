@@ -94,7 +94,7 @@ class AdminController extends Controller
             return redirect('/admin/pictures');
         }catch(Exception $e)
         {
-            $request->session()->put('message', 'Er is iets mis gegaan. We lossen het zo snel mogelijk op.');
+            $request->session()->put('message', 'Er is iets misgelopen. We lossen het zo snel mogelijk op.');
             return redirect('/admin/pictures');
         }
     }
