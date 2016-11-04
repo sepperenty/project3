@@ -1,15 +1,18 @@
-@extends("layouts/app")
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Niet gevonden - Graag Gedaan</title>
+	<title>Document</title>
+	 <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+</head>
+<body>
 
-	@section('header')
-		
-		<title>Niet gevonden - Graag Gedaan</title>
-
-	@endsection
-
-
-
-	@section('content')
-
+	
+	
 			  <div class="container-fluid ">
         <div class="row margin-top">
             <div class="col-md-10 col-md-offset-1 add_form">
@@ -26,15 +29,22 @@
 					
 				
 
-				<a href="/" class="btn btn-default">Terug naar homepagina</a>
+				<a href="/" class="btn btn-primary">Terug naar homepagina</a>
 
 
                 </div>
                 </div>
                 </div>
                 </div>
+	
+</body>
+</html>
 
 
 
 
-	@endsection
+	
+
+
+
+
