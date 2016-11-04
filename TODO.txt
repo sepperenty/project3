@@ -1,27 +1,16 @@
 
 BACKEND
-- Admin afwerken v
-- Nederlandstalig
-- Links maken
-- Validatie message email/telefone v
-- Manage pagina
+
+- Nederlandstalig javascript validatie
 - Error paging
-- max value aan text
 - max aantal karakters terug sturen in api
 
 
 
 FRONDEND
-- Blade overbrengen naar layout
-- Manage project design
-- Login/registratie design
 - Javascript manage/adminedit
-- tab zaken
+- tab zaken ook -> inhoud toevoegen bij welcom page naar fotogalerij
 - Anysurfer implementatie
-- Inhoud link naar content
 - Navbar Collapse
-
-
-
 -titel tags van boven toevoegen
--bij het toevoegen van bestand op hom page verschijt er bove en melding dat foto is toegevoegd (waar is dat?)
+-bij het toevoegen van bestand op hom page verschijt er bove en melding dat foto is toegevoegd (waar is dat?)->stylen
