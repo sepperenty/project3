@@ -37,7 +37,7 @@
 
                     <div class="form-group col-md-6">
                         <label for="pictureInfo">Over wat gaat deze foto?(*)</label>
-                        <input type="text" class="form-control" name="picture_info">
+                        <input type="text" class="form-control" placeholder="" name="picture_info" value="{{ old('picture_info') }}">
                         @if ($errors->has('picture_info'))
                             <span>
                     <strong>{{ $errors->first('picture_info') }}</strong>

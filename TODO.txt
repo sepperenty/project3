@@ -20,3 +20,8 @@ FRONDEND
 - Anysurfer implementatie
 - Inhoud link naar content
 - Navbar Collapse
+
+
+
+-titel tags van boven toevoegen
+-bij het toevoegen van bestand op hom page verschijt er bove en melding dat foto is toegevoegd (waar is dat?)

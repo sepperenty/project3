@@ -15,17 +15,64 @@
 
 @section('welcome')
 
-    <div class="container-fluid">
+    <script>
+        $(document).ready(function () {
 
-        <div class=" google-maps">
+            if ($("#inhoud").length) {
+                $("#inhoud").height(function () {
+
+                    $(".google-maps").height($("#inhoud").height());
+                    $(window).resize(function () {
+                        console.log($("#inhoud").width(), " ", $("#inhoud").height());
+                        $(".google-maps").height($("#inhoud").height());
+                    })
+                })
+            } else {
+                $("#map").height(650).css("left", "0");
+            }
+
+        })
+    </script>
+
+    <div class="container-fluid google-maps-top">
+        @if(!Auth()->check())
+            <div class=" content-home">
+                <div class="col-md-5" id="inhoud">
+
+                    <img class="introduction-img" src="/images/medium/question.png">
+
+                    <h1><span class="line-headers">w</span>at kunnen wij voor u betekenen.</h1>
+                    <p>
+                        Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het
+                        formulier in.
+                        Onze doel is vrijwilligerswerk makkelijk maken.
+                    </p>
+                    <p>
+                        Deze website is gemaakt voor hulpzoekende en vrijwilligers.
+                        Wil je graag vrijwilligers werk doen maar weet je niet waar te beginnen ?
+                        Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
+                    </p>
+
+                    <form action="/projects/add">
+                        <button class="btn btn-default">
+                            @if(Auth()->check())
+                                plaats oproep
+                            @else
+                                Login & plaats oproep
+                            @endif
+                        </button>
+                    </form>
+                </div>
+            </div>
+        @endif
+        <div class=" {{ Auth()->check() ? ' google-maps' : 'col-md-7  google-maps' }}  ">
             <div id="map"></div>
-
             <div class=" google-maps-search">
                 <fieldset class="search-fieldset">
                     <legend>Zoeken op google maps</legend>
                     <div class="input-group">
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">Categorie <span
                                         class="glyphicon glyphicon-align-justify"></span></button>
                             <ul class="dropdown-menu">
@@ -36,67 +83,43 @@
                         </div><!-- /btn-group -->
                         <input type="text" name="seach" id="searchTextField" class="form-control" aria-label="..."
                                placeholder="Locatie">
-                    <span class="input-group-btn">
-                         <button class="btn btn-default" id="search_button" type="button">Zoek <span
-                                     class="glyphicon glyphicon-search"></span></button>
-                     </span>
+            <span class="input-group-btn">
+            <button class="btn btn-primary" id="search_button" type="button">Zoek <span
+                        class="glyphicon glyphicon-search"></span></button>
+            </span>
                     </div>
                 </fieldset>
-
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
     </div>
 
-    <div class="container-fluid content-home">
-        <div class="col-md-5 content-home-child" id="inhoud">
 
-            <img class="introduction-img" src="/images/medium/question.png">
-
-            <h1>wat kunnen wij voor u betekenen.</h1>
-            <p>
-                Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het
-                formulier in.
-                Onze doel is vrijwilligerswerk makkelijk maken.
-            </p>
-            <p>
-                Deze website is gemaakt voor hulpzoekende en vrijwilligers.
-                Wil je graag vrijwilligers werk doen maar weet je niet waar te beginnen ?
-                Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
-            </p>
-
-            <form action="/projects/add">
-                <button class="btn btn-default">
-                    @if(Auth()->check())
-                        plaats oproep
-                    @else
-                        Login & plaats oproep
-                    @endif
-                </button>
-            </form>
-
-
-        </div>
-    </div>
 
     <div class="container-fluid ">
         <div class="row extra-info">
-            <div class="col-md-4">
-                <p>Er zoeken</p>
-                <h1>{{$amountProjectUsers}}</h1>
-                <p>mensen hulp</p>
+            {{--<div class="col-md-4">--}}
+            {{--<p>Er zoeken</p>--}}
+            {{--<p class="cijfers">{{$amountProjectUsers}}</p>--}}
+            {{--<p>mensen hulp</p>--}}
+            {{--</div>--}}
+            {{--<hr>--}}
+            {{--<div class="col-md-4 content-extra">--}}
+            {{--<p>Er zijn</p>--}}
+            {{--<p class="cijfers">{{$amountProjectCompanys}}</p>--}}
+            {{--<p>bedrijven gerigistreerd</p>--}}
+            {{--</div>--}}
+            {{--<hr>--}}
+            {{--<div class="col-md-4">--}}
+            {{--<p>We zijn trots op onze</p>--}}
+            {{--<p class="cijfers">{{$amountRegistered}}</p>--}}
+            {{--<p>Geregistreerde leden</p>--}}
+            {{--</div>--}}
+
+            <div class="col-md-12 home-header ">
+                <h1><span class="line-headers"> F</span>otogelerij getuigenissen</h1>
+                <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
             </div>
-            <hr>
-            <div class="col-md-4 content-extra">
-                <p>Er zijn</p>
-                <h1>{{$amountProjectCompanys}}</h1>
-                <p>bedrijven gerigistreerd</p>
-            </div>
-            <hr>
-            <div class="col-md-4">
-                <p>We zijn trots op onze</p>
-                <h1>{{$amountRegistered}}</h1>
-                <p>Geregistreerde leden</p>
-            </div>
+
         </div>
 
     </div>
@@ -104,25 +127,29 @@
 
     <div class="container-fluid foto-gallery">
         <div class="row">
-            <div class="col-md-12 col-sm-12 col-lg-12 heading">
-                <h1>Fotogelerij getuigenissen</h1>
-                <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
-                <a href="/pictures/add" class="btn btn-primary">FOTO TOEVOEGEN</a>
-            </div>
+            {{--<div class="col-md-12 col-sm-12 col-lg-12 heading">--}}
+            {{--<h1>Fotogelerij getuigenissen</h1>--}}
+            {{--<p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>--}}
 
+            {{--</div>--}}
+        </div>
+
+
+        <div class="row">
             @foreach($randomPictures as $picture)
-                <div class="col-sm-6 col-md-3">
-                    <div class="thumbnail">
-                        <div class="img-frame">
-                            <img src="/images/medium/{{$picture->name}}" alt="{{$picture->picture_info}}">
-                            <div class="caption">
-                                <p>{{$picture->picture_info}}</p>
-                            </div>
+                <div class="col-sm-6 col-md-4 ">
+                    <div class="thumbnail img-frame">
+                        <img src="/images/medium/{{$picture->name}}" alt="{{$picture->picture_info}}">
+                        <div class="caption">
+                            <h3>{{$picture->picture_info}}</h3>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+        @if(Auth()->check())
+            <a href="/pictures/add" class="btn btn-primary pull-right margin-top">FOTO TOEVOEGEN</a>
+        @endif
     </div>
 
 
