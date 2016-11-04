@@ -5785,6 +5785,8 @@ nav {
     min-height: 100px;
     background-color: #202933;
     color: #fff; }
+  .foto-gallery .btn {
+    margin-bottom: 30px; }
 
 .home-header {
   padding: 25px; }

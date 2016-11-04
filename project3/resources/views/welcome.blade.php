@@ -108,6 +108,9 @@
 
 
     <div class="container-fluid foto-gallery">
+    @if(Auth()->check())
+            <a href="/pictures/add" class="btn btn-primary col-md-offset-5 margin-top">FOTO TOEVOEGEN</a>
+        @endif
         <div class="row">
             {{--<div class="col-md-12 col-sm-12 col-lg-12 heading">--}}
             {{--<h1>Fotogelerij getuigenissen</h1>--}}
@@ -129,9 +132,7 @@
                 </div>
             @endforeach
         </div>
-        @if(Auth()->check())
-            <a href="/pictures/add" class="btn btn-primary pull-right margin-top">FOTO TOEVOEGEN</a>
-        @endif
+        
     </div>
 
 
