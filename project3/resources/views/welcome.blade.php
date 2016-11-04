@@ -16,7 +16,7 @@
 @section('welcome')
 
 
-    <div class="container-fluid google-maps-top">
+    <div class="container-fluid {{ Auth()->check() ? ' ' : 'google-maps-top' }}  ">
         @if(!Auth()->check())
             <div class=" content-home">
                 <div class="col-md-5" id="inhoud">

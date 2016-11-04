@@ -68,8 +68,10 @@ $(function () {
             })
         } else {
             if($(window).width() < "992"){
+                $(".google-maps").height(400);
                 $("#map").height(400).css("left", "0");
             }else{
+                $(".google-maps").height(650);
                 $("#map").height(650).css("left", "0");
             }
 

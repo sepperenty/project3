@@ -164,7 +164,7 @@ p {
   margin-top: -20px;
   background-color: rgba(10, 22, 34, 1);
   min-height: $height-section-map;
-
+  color: $base-color-black-without-opacity-font;
 }
 
 .google-maps {
@@ -375,7 +375,12 @@ $img-size: 150px;
 }
 
 .content_google-map{
- 
+  padding-top: 35px;
+  padding-bottom: 25px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  color: $base-color-black-without-opacity;
   h1 {
   margin-top: 50px;
   }
