@@ -25,6 +25,8 @@ $(function () {
     function initMap() {
 
 
+        console.log($(".adress_fill").val());
+
 
         // if (navigator.geolocation) {
         //     navigator.geolocation.getCurrentPosition(function (position) {
@@ -142,11 +144,11 @@ $(function () {
                 icon: icons[type_icon].icon,
                 map: map
             });
-            console.log("-----------------",data);
+            //console.log("-----------------",data);
             google.maps.event.addListener(marker, 'click', (function (marker, i) {
 
                 var urlproject = '/projects/' + data[i].id + '/show';
-                console.log(urlproject);
+                //console.log(urlproject);
 
                 var contentString = '' +
                     '<div class="content_google-map"> ' +
@@ -257,18 +259,9 @@ $(function () {
 
         google.maps.event.addListenerOnce(map, 'idle', function () {
             $('#map').find('a').each(function () {
-
                 $(this).attr('tabindex', "-1");
-                console.log('a');
             });
-
-
         });
-
-
     }
-
     google.maps.event.addDomListener(window, 'load', initMap);
-
-
 });

@@ -91,7 +91,7 @@
 
                         <div class="form-group col-md-12">
                             <label for="address">Adres(*)</label>
-                            <input type="text" name="address" class="form-control" id="searchTextField">
+                            <input  type="text" name="address" class="form-control adress_fill" id="searchTextField" value="{{$project->address}}">
                             <input type="text" name="lat" value="" hidden tabindex="-0">
                             <input type="text" name="lng" value="" hidden tabindex="-0">
                             <p class="alert alert-danger info_location col-md-12" hidden>Er ging iets mis,
