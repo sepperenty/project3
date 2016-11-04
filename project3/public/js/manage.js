@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    console.log("manege page lets doe it!");
+
 
 
     var cons_lan = 51.2194475;
@@ -7,6 +7,9 @@ $(document).ready(function () {
     var cons_zoom_closup = 15;
     var cons_zoom_uot = 10;
     var map;
+
+
+
 
 //form validation
 
@@ -54,9 +57,18 @@ $(document).ready(function () {
                 e.preventDefault();
             }
         });
+
+
+
         autocomplete = new google.maps.places.Autocomplete(input);
+        if($(".adress_fill").val()){
+            fillInAddress($(".adress_fill").val());
+        } ;
         console.log(autocomplete);
-        autocomplete.addListener('place_changed', fillInAddress);
+        autocomplete.addListener('place_changed', function() {
+            var place = this.getPlace().formatted_address;
+            fillInAddress(place);
+        });
 
 
     }
@@ -66,14 +78,10 @@ $(document).ready(function () {
 
 
 
-    function fillInAddress() {
+    function fillInAddress(addres) {
 
-        if(!autocomplete.getPlace().formatted_address){
-            console.log("locatie bestaat niet");
-        }
-        if(autocomplete.getPlace().formatted_address){
-            var adress = autocomplete.getPlace().formatted_address;
-            var jqxhr = $.get("https://maps.googleapis.com/maps/api/geocode/json?address="+adress+"&key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug" , function () {
+
+            var jqxhr = $.get("https://maps.googleapis.com/maps/api/geocode/json?address="+addres+"&key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug" , function () {
                 console.log("success");
             })
                 .done(function (data) {
@@ -102,7 +110,6 @@ $(document).ready(function () {
                     //$(".info").fadeOut("fast").html("Er ging iets mis, probeer het later nog eens").removeClass("alert-info").addClass("alert-danger").fadeIn("fast");
 
                 });
-        }
 
     }
 
