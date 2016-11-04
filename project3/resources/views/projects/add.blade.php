@@ -1,6 +1,6 @@
 @extends('layouts/app')
 @section('header')
-    <title>Nieuwe Oproep - GRaag Gedaan</title>
+    <title>Nieuwe Oproep - Graag Gedaan</title>
     {{--<script src="https://maps.googleapis.com/maps/api/js?v=3&amp;sensor=false&amp;key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug&libraries=places"></script>--}}
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
     <script src="{{ url('/js/manage.js') }}"></script>
