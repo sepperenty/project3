@@ -16,6 +16,7 @@
                 <div class="row form-head">
                     <div class="col-md-12 ">
                         <h1 class=""><span class="line-headers">V</span>ul deze form in en plaats een nieuwe oproep.</h1>
+                        <p class="subHead">Nadat je oproep is geplaatst kunnen vrijwilligers jouw oproep bekijken en eventueel hulp aanbieden.</p>
                         {{--<a href="/projects/beheer" class="pull-right btn btn-primary focus">Berheer projecten</a>--}}
                     </div>
                 </div>

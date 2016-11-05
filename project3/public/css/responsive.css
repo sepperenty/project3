@@ -182,6 +182,8 @@
     margin-top: 20px; }
     #main .mobileBtn #manageBtn {
       width: 100%; }
+    #main .mobileBtn .btn {
+      width: 100%; }
   #main .mobilePct {
     display: none; }
   #main .manage_page {
@@ -190,6 +192,11 @@
   #main .add_form {
     padding: 20px; }
   #main .email_show_project label {
-    font-size: 15px; } }
+    font-size: 15px; }
+
+  .foto-gallery .img-frame {
+    margin-bottom: 40px; }
+    .foto-gallery .img-frame h3 {
+      font-size: 20px; } }
 
 /*# sourceMappingURL=responsive.css.map */

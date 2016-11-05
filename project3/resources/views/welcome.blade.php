@@ -29,7 +29,7 @@
                         Ons doel is vrijwilligerswerk makkelijk te maken.
                     </p>
                     <p>
-                        Deze website is gemaakt om hulpzoekende en vrijwilligers samen te brengen. Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
+                        Deze website is gemaakt om hulpzoekenden en vrijwilligers samen te brengen. Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
                     </p>
 
                     <form action="/projects/add">
@@ -55,7 +55,7 @@
                                     aria-haspopup="true" aria-expanded="false">Categorie <span
                                         class="glyphicon glyphicon-align-justify"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Person</a></li>
+                                <li><a href="#">Persoon</a></li>
                                 <li><a href="#">Bedrijven</a></li>
                                 <li><a href="#">Noodoproep</a></li>
                             </ul>
@@ -95,7 +95,7 @@
             {{--</div>--}}
 
             <div class="col-md-12 home-header ">
-                <h1><span class="line-headers"> F</span>otogelerij getuigenissen</h1>
+                <h1><span class="line-headers"> F</span>otogalerij getuigenissen</h1>
                 <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
             </div>
 
@@ -110,7 +110,7 @@
         @endif
         <div class="row">
             {{--<div class="col-md-12 col-sm-12 col-lg-12 heading">--}}
-            {{--<h1>Fotogelerij getuigenissen</h1>--}}
+            {{--<h1>Fotoglerij getuigenissen</h1>--}}
             {{--<p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>--}}
 
             {{--</div>--}}
@@ -119,12 +119,12 @@
 
         <div class="row">
             @foreach($randomPictures as $picture)
-                <div class="col-sm-6 col-md-4 ">
-                    <div class="thumbnail img-frame">
+                <div class="col-sm-6 col-md-3 frame">
+                    <div class="thumbnail uploadPicture">
                         <img src="/images/medium/{{$picture->name}}" alt="{{$picture->picture_info}}">
-                        <div class="caption">
-                            <h3>{{$picture->picture_info}}</h3>
-                        </div>
+                       <!--  <div class="caption">
+                           <h3>{{$picture->picture_info}}</h3>
+                       </div> -->
                     </div>
                 </div>
             @endforeach

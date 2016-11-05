@@ -44,7 +44,7 @@
                 </span>
                         @endif
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-12 mobileBtn">
                         <button class="btn btn-primary pull-right">Foto toevoegen</button>
                     </div>
                     {{Form::close()}}

@@ -15,6 +15,7 @@
                 <div class="row form-head">
                     <div class="col-md-12">
                         <h1 class=""><span class="line-headers">O</span>proepen beheren</h1>
+                        <p class="subHead">Hier kan je voorgaande oproepen bewerken of verwijderen.</p>
                     </div>
                 </div>
                 <div class="col-md-12 white-space">

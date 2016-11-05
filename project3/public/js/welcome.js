@@ -203,7 +203,7 @@ $(function () {
                 case "Noodoproep":
                     search_category_term = "priority";
                     break;
-                case "Person":
+                case "Persoon":
                     search_category_term = "individual"
                     break;
                 case "Bedrijven":

@@ -16,6 +16,8 @@
                 <div class="row form-head">
                     <div class="col-md-12 ">
                         <h1 class=""><span class="line-headers">P</span>roject bewerken</h1>
+
+                        <p class="subHead">Bewerk de formulieren om je voorgaande oproep te wijzigen.</p>
                         {{--<a href="/projects/beheer" class="pull-right btn btn-primary focus">Berheer projecten</a>--}}
                     </div>
                 </div>
@@ -135,7 +137,7 @@
 
 
                         <div class="form-group pull-right mobileBtn">
-                            <button class="btn btn-primary focus" id="manageBtn">Pas oproep aan</button>
+                            <button class="btn btn-primary focus" id="manageBtn">oproep wijzigen</button>
                         </div>
 
                     </fieldset>

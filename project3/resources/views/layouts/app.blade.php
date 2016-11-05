@@ -94,9 +94,9 @@
 
 
                 @if (Auth::guest())
-                    <li class="{{ Request::is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">Login</a></li>
+                    <li class="{{ Request::is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">aanmelden</a></li>
                     <li class="{{ Request::is('register') ? 'active' : '' }}"><a
-                                href="{{ url('/register') }}">Register</a></li>
+                                href="{{ url('/register') }}">Registreer</a></li>
 
 
                 @else
@@ -154,9 +154,9 @@
             <div class="col-md-3 contact">
                 <h1 class="heading-foter"><span class="line-headers">O</span>nze doelen</h1>
                 <ol>
-                    <li>Vrijwilligers een overzicht geven van oproepen die in het buurt zijn.</li>
-                    <li>Mensen die hulp nodig hebben de mogelijk geven om hulp te krijgen.</li>
-                    <li>Mensen samenbrengen</li>
+                    <li>Vrijwilligers een overzicht geven van oproepen die in de buurt zijn.</li>
+                    <li>Mensen die hulp nodig hebben de mogelijkheid geven om hulp te krijgen.</li>
+                    <li>Mensen samenbrengen.</li>
                 </ol>
             </div>
             <div class="col-md-6 contact">

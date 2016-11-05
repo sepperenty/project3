@@ -5777,14 +5777,26 @@ nav {
     margin-bottom: 50px; }
     .foto-gallery .heading p {
       font-size: 1.5em; }
-  .foto-gallery .img-frame {
-    border: thin solid black;
-    margin: 0px auto 0px auto;
-    text-align: center; }
+  .foto-gallery .homePicture {
+    height: 300px; }
+    .foto-gallery .homePicture .img-frame {
+      border: thin solid black;
+      margin: 0px auto 0px auto;
+      text-align: center;
+      height: 100%;
+      overflow: hidden; }
+      .foto-gallery .homePicture .img-frame img {
+        height: 100%; }
   .foto-gallery .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     min-height: 100px;
     background-color: #202933;
-    color: #fff; }
+    color: #fff;
+    text-align: center; }
+    .foto-gallery .caption h3 {
+      font-size: 15px; }
   .foto-gallery .btn {
     margin-bottom: 30px; }
 
@@ -5932,6 +5944,8 @@ nav {
   padding: 25px; }
   .form-head h1 {
     text-align: center; }
+  .form-head .subHead {
+    text-align: center; }
 
 .add_form {
   padding-bottom: 50px;
@@ -6028,5 +6042,32 @@ input[type=checkbox] {
 
 .margin_bottom_registreer {
   margin-bottom: 100px; }
+
+.frame {
+  padding: 10px;
+  margin-bottom: 20px; }
+
+.frame label {
+  width: 100%; }
+
+.uploadPicture {
+  height: 350px;
+  position: relative;
+  background-color: white;
+  box-shadow: 4px 4p 5px black;
+  border-radius: 5px;
+  border: 1px solid black; }
+
+.uploadPicture img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto; }
 
 /*# sourceMappingURL=base.css.map */

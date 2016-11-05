@@ -250,22 +250,46 @@ nav {
       font-size: $base-font-size * 1.5;
     }
   }
-  .img-frame {
-    border: thin solid black;
-    margin: 0px auto 0px auto;
-    text-align: center;
 
+  .homePicture{
+    height: 300px;
+
+     .img-frame {
+
+      border: thin solid black;
+      margin: 0px auto 0px auto;
+      text-align: center;
+      height:100%;
+      overflow:hidden;
+    img{
+    height:100%;
+    }
+
+
+   }
 
   }
+
+ 
   .caption {
+    position:absolute;
+    bottom: 0;
+    width:100%;
     min-height: 100px;
     background-color: $base-color-black-without-opacity;
     color: $base-color-black-without-opacity-font;
+    h3{
+        font-size:15px;  
+    }
+
+    text-align:center;
   }
 
   .btn{
   margin-bottom: 30px;
   }
+
+
 }
 
 .home-header{
@@ -475,13 +499,19 @@ $img-size: 150px;
   background-color: $base-color-black-without-opacity;
   color: #fff;
   margin-bottom: 25px;
-
   padding: 25px;
-  h1 {
+
+  h1
+  {
     text-align: center;
   }
-;
+
+  .subHead{
+  text-align:center;
+  }
+
 }
+
 
 .add_form {
   padding-bottom: 50px;
@@ -612,3 +642,30 @@ input[type=checkbox] {
   margin-bottom: 100px;
 }
 
+
+
+.frame {
+  padding: 10px;
+  margin-bottom:20px; }
+  .frame label {
+    width: 100%; }
+
+.uploadPicture {
+  height: 350px;
+  position: relative;
+  background-color: white;
+ 
+  box-shadow: 4px 4p 5px black;
+  border-radius: 5px;
+  border: 1px solid black; }
+  .uploadPicture img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto; }
