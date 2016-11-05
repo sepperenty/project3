@@ -85,13 +85,15 @@
                 <li class="{{ Request::is('projects/add') ? 'active' : '' }}">
                     <a href="/projects/add">Plaats oproep</a>
                 </li>
+                @if(Auth()->check())
+                <li class="{{ Request::is('pictures/add') ? 'active' : '' }}">
+                        <a href="/pictures/add">Deel Ervaring</a>
+                    </li>
+                @endif
 
                 @if((Auth()->check()) && (Auth()->user()->hasProject()))
                     <li class="{{ Request::is('projects/beheer') ? 'active' : '' }}">
                         <a href="/projects/beheer">beheer oproepen</a>
-                    </li>
-                    <li class="{{ Request::is('pictures/add') ? 'active' : '' }}">
-                        <a href="/pictures/add">Deel Ervaring</a>
                     </li>
                 @endif
 
@@ -108,7 +110,7 @@
                         <a href="{{ url('/logout') }}"
                            onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                            {{Auth()->user()->name}} - Logout
+                            {{Auth()->user()->name}} - afmelden
                         </a>
 
                         <form id="logout-form" action="{{ url('/logout') }}" method="POST"

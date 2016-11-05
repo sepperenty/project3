@@ -13,7 +13,7 @@
             <div class="col-md-10 col-md-offset-1 add_form margin-top margin_bottom">
                 <div class="row form-head">
                     <div class="col-md-12 ">
-                        <h1 class=""><span class="line-headers">K</span>iez je foto om aan onze foto fotogalerij toe te
+                        <h1 class=""><span class="line-headers">K</span>ies een foto om aan onze foto fotogalerij toe te
                             voegen
                         </h1>
                         <p class="subHead"> Heb je een leuke foto genomen tijdens een hulpverlening ? Hier kan je hem plaatsen.</p>

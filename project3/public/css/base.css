@@ -6073,9 +6073,9 @@ input[type=checkbox] {
   width: auto;
   height: auto; }
 
-.form-group input {
+.footer .form-group input, .email_show_project .form-group input {
   color: white; }
-.form-group textarea {
+.footer .form-group textarea, .email_show_project .form-group textarea {
   color: white; }
 
 /*# sourceMappingURL=base.css.map */
