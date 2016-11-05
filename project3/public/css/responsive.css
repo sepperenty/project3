@@ -108,7 +108,8 @@
     margin-top: 0px; }
 
   .footer {
-    height: auto; }
+    height: auto;
+    padding: 20px; }
     .footer p, .footer li {
       font-size: 13px; }
     .footer .heading-foter {
@@ -148,8 +149,11 @@
 
   #main [class*="col-"] {
     padding: 0px; }
-  #main .element img {
-    width: 100%; }
+  #main .element {
+    max-height: 400px;
+    overflow: hidden; }
+    #main .element img {
+      width: 100%; }
   #main h1 {
     font-size: 23px;
     line-height: 1.7; }
