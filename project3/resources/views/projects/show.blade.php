@@ -39,12 +39,16 @@
                                         <p><strong>Naam:</strong><span
                                                     class="pull-right">{{$project->user->name}}</span>
                                         </p>
+
                                         <p><strong>Adres:</strong><span
                                                     class="pull-right">{{$project-> address }}</span>
                                         </p>
+
+                                        @if(!empty($project->user->telephoneNumber))
                                         <p><strong>Telefoon:</strong><span
                                                     class="pull-right">{{$project->telephoneNumber}}</span>
                                         </p>
+                                        @endif
                                         <p><strong>Email:</strong><span class="pull-right">
                                         @if(!empty($project->email))
                                                     {{$project->email}}
@@ -83,7 +87,7 @@
                                 </div>
                             </form>
                             @else
-                                <p>Je moet ingelogt zijn om de contactinformatie te raadpleden.</p>
+                                <p>Je moet ingelogt zijn om de contactinformatie te raadplegen.</p>
                             @endif
                         </div>
                     </div>

@@ -96,7 +96,7 @@
 
             <div class="col-md-12 home-header ">
                 <h1><span class="line-headers"> F</span>otogalerij getuigenissen</h1>
-                <p>Hier worden ervaringen gedeeld door middel van foto&apos;s</p>
+                <p>Hier worden ervaringen gedeeld door middel van foto&apos;s.</p>
             </div>
 
         </div>
@@ -105,9 +105,9 @@
 
 
     <div class="container-fluid foto-gallery">
-    @if(Auth()->check())
-            <a href="/pictures/add" class="btn btn-primary col-md-offset-5 margin-top">FOTO TOEVOEGEN</a>
-        @endif
+   
+            <!-- <a href="/pictures/add" class="btn btn-primary col-md-offset-5 margin-top">FOTO TOEVOEGEN</a> -->
+
         <div class="row">
             {{--<div class="col-md-12 col-sm-12 col-lg-12 heading">--}}
             {{--<h1>Fotoglerij getuigenissen</h1>--}}

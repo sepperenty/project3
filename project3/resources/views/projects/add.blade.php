@@ -42,7 +42,7 @@
 
                         <div class="form-group col-md-6">
                             <label for="email">Je email</label>
-                            <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                            <input type="text" name="email" class="form-control" value="{{ (old('email') ? old('email') : Auth()->user()->email) }}" >
                             @if ($errors->has('email'))
                                 <span>
                                         <strong>{{ $errors->first('email') }}</strong>

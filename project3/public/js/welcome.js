@@ -159,7 +159,7 @@ $(function () {
 
                             '<h1>' + data[i].title + '</h1>' +
                             '<div id="bodyContent">' +
-                                '<p>' + data[i].description.substring(1, 100) + '...' + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
+                                '<p>' + data[i].description.substring(0, 100) + '...' + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
                             '</div>'
                         '</div>' +
                     '</div>';

@@ -90,10 +90,14 @@
                     <li class="{{ Request::is('projects/beheer') ? 'active' : '' }}">
                         <a href="/projects/beheer">beheer oproepen</a>
                     </li>
+                    <li class="{{ Request::is('pictures/add') ? 'active' : '' }}">
+                        <a href="/pictures/add">Deel Ervaring</a>
+                    </li>
                 @endif
 
 
                 @if (Auth::guest())
+                    
                     <li class="{{ Request::is('login') ? 'active' : '' }}"><a href="{{ url('/login') }}">aanmelden</a></li>
                     <li class="{{ Request::is('register') ? 'active' : '' }}"><a
                                 href="{{ url('/register') }}">Registreer</a></li>

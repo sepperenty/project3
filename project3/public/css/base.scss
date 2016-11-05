@@ -311,6 +311,10 @@ nav {
 #main {
   overflow: auto;
   padding-bottom: 150px; /* this needs to be bigger than footer height*/
+  .element{
+  max-height:400px;
+  overflow: hidden;
+  }
 }
 
 .line-headers {
@@ -669,3 +673,14 @@ input[type=checkbox] {
     max-height: 100%;
     width: auto;
     height: auto; }
+
+
+  .form-group{
+      input{
+      color: white;
+      }
+
+      textarea{
+      color:white;
+      }
+  }
