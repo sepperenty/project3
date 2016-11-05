@@ -3,7 +3,23 @@
 	margin:0px;
 	}
 
+@media only screen and (max-width: 786px) {
+
+    .footer{
+    height: auto;
+    }
+
+}
+
 @media only screen and (max-width: 763px) {
+    
+    .margin-top{
+    margin-top:20px;
+    }
+    
+    .page{
+    margin-top:0px;
+    }
 
 	.navbar-default{
 	margin:0px;
@@ -134,7 +150,8 @@
 
     .footer{
 
-    height: auto;
+        height: auto;
+
     	p, li{
     	font-size: 13px;
     	}
@@ -148,6 +165,7 @@
     }
 
     .panel-body{
+        padding: 30px;
     	.btn{
     	width:100%;
     	font-size: 20px;
@@ -173,6 +191,10 @@
     }
 
     .form-head{
+        width:100%;
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
 	    h1{
 	    font-size: 23px;
 	    }
@@ -181,6 +203,97 @@
     .add_form label{
     font-size: 20px;
     }
+
+    #main{
+        [class*="col-"]{
+        padding:0px;
+        }
+
+        .element
+        {
+        img{
+        width:100%;
+        }
+        }
+
+        h1{
+        font-size: 23px;
+        line-height: 1.7;
+        }
+
+        .projectForm{
+        padding: 30px;
+        }
+        .dicription{
+             padding: 20px;
+             
+             .contact{
+            padding:20px;
+            }
+         }
+
+        .contact{
+        padding: 20px;
+        font-size: 13px;
+        min-height:auto;
+            p{
+                
+                strong{
+                width:100%;
+                }
+                span{
+                width:100%;
+                margin-bottom: 15px;
+                }
+            }
+        }
+
+        .dicription .beschrijving{
+        min-height: 200px;
+        }
+
+        .email_show_project{
+            padding: 20px;
+            font-size: 13px;
+        }
+
+        .mobileBtn{
+        width:100%;
+        margin-top:20px;
+            #manageBtn{
+            width:100%;
+            }
+        }
+
+        
+        .mobilePct{
+                display: none;
+        }
+
+        .manage_page{
+        padding-left:20px;
+        padding-right:20px;
+        
+        }
+
+        .add_form{
+        padding:20px;
+        }
+
+        .email_show_project label{
+        font-size: 15px
+        }
+
+
+        
+    }
+
+
+
+
+
+    
+
 
 
 }

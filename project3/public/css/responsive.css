@@ -1,7 +1,16 @@
 .navbar-default {
   margin: 0px; }
 
+@media only screen and (max-width: 786px) {
+  .footer {
+    height: auto; } }
 @media only screen and (max-width: 763px) {
+  .margin-top {
+    margin-top: 20px; }
+
+  .page {
+    margin-top: 0px; }
+
   .navbar-default {
     margin: 0px; }
 
@@ -107,11 +116,13 @@
     .footer .col-md-3 {
       margin-bottom: 40px; }
 
-  .panel-body .btn {
-    width: 100%;
-    font-size: 20px; }
-  .panel-body label {
-    font-size: 15px; }
+  .panel-body {
+    padding: 30px; }
+    .panel-body .btn {
+      width: 100%;
+      font-size: 20px; }
+    .panel-body label {
+      font-size: 15px; }
 
   .panel > .panel-body label {
     font-size: 20px;
@@ -124,10 +135,57 @@
     .login_facebook .col-md-12 {
       margin-bottom: 20px; }
 
-  .form-head h1 {
-    font-size: 23px; }
+  .form-head {
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+    .form-head h1 {
+      font-size: 23px; }
 
   .add_form label {
-    font-size: 20px; } }
+    font-size: 20px; }
+
+  #main [class*="col-"] {
+    padding: 0px; }
+  #main .element img {
+    width: 100%; }
+  #main h1 {
+    font-size: 23px;
+    line-height: 1.7; }
+  #main .projectForm {
+    padding: 30px; }
+  #main .dicription {
+    padding: 20px; }
+    #main .dicription .contact {
+      padding: 20px; }
+  #main .contact {
+    padding: 20px;
+    font-size: 13px;
+    min-height: auto; }
+    #main .contact p strong {
+      width: 100%; }
+    #main .contact p span {
+      width: 100%;
+      margin-bottom: 15px; }
+  #main .dicription .beschrijving {
+    min-height: 200px; }
+  #main .email_show_project {
+    padding: 20px;
+    font-size: 13px; }
+  #main .mobileBtn {
+    width: 100%;
+    margin-top: 20px; }
+    #main .mobileBtn #manageBtn {
+      width: 100%; }
+  #main .mobilePct {
+    display: none; }
+  #main .manage_page {
+    padding-left: 20px;
+    padding-right: 20px; }
+  #main .add_form {
+    padding: 20px; }
+  #main .email_show_project label {
+    font-size: 15px; } }
 
 /*# sourceMappingURL=responsive.css.map */

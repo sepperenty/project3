@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 projectForm">
 
 
                     {{ Form::open(array('url' => '/projects/add/new', 'id'=>'form_project','files' => true)) }}
@@ -130,7 +130,7 @@
                             </div>
 
 
-                            <div class="form-group pull-right">
+                            <div class="form-group pull-right mobileBtn">
                                 <button class="btn btn-primary focus" id="manageBtn">Maak oproep aan</button>
                             </div>
                         

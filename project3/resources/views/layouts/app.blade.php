@@ -19,6 +19,7 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/responsive.css">
     <style>
         #map_form {
             height: 250px;

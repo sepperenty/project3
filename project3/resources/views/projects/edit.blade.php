@@ -20,7 +20,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12 projectForm">
                     {{ Form::open(array('url' => '/projects/'.$project->id.'/update', 'id'=>'form_project','files' => true)) }}
 
                     {{ csrf_field() }}
@@ -134,7 +134,7 @@
                         </div>
 
 
-                        <div class="form-group pull-right">
+                        <div class="form-group pull-right mobileBtn">
                             <button class="btn btn-primary focus" id="manageBtn">Pas oproep aan</button>
                         </div>
 

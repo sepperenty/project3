@@ -14,13 +14,13 @@
             <div class="col-md-10 col-md-offset-1 add_form">
                 <div class="row form-head">
                     <div class="col-md-12">
-                        <h1 class=""><span class="line-headers">P</span>rojecten beheren</h1>
+                        <h1 class=""><span class="line-headers">O</span>proepen beheren</h1>
                     </div>
                 </div>
                 <div class="col-md-12 white-space">
                     @foreach($projects as $project)
                         <div class="row manage_page">
-                            <div class="col-xs-6 col-md-2">
+                            <div class="col-xs-6 col-md-2 mobilePct">
                                 <a href="/projects/{{$project->id}}/show" class="thumbnail">
                                     <img src="/images/small/{{$project->foto}}"
                                          alt="Foto van {{$project->user->name}} als titel {{ $project->title }}">
