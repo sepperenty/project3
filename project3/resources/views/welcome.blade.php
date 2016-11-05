@@ -25,14 +25,11 @@
 
                     <h1><span class="line-headers">w</span>at kunnen wij voor u betekenen.</h1>
                     <p>
-                        Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op plaats oproep en vul het
-                        formulier in.
-                        Onze doel is vrijwilligerswerk makkelijk maken.
+                        Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op "plaats oproep" en vul het formulier in.
+                        Ons doel is vrijwilligerswerk makkelijk te maken.
                     </p>
                     <p>
-                        Deze website is gemaakt hulpzoekende en vrijwilligers samen te brengen.
-                        
-                        Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
+                        Deze website is gemaakt om hulpzoekende en vrijwilligers samen te brengen. Zoek je adres op de kaart en kijk wie je in de buurt kan helpen.
                     </p>
 
                     <form action="/projects/add">
@@ -51,7 +48,7 @@
             <div id="map"></div>
             <div class=" google-maps-search">
                 <fieldset class="search-fieldset">
-                    <legend>Zoeken op google maps</legend>
+                    <legend>Zoek</legend>
                     <div class="input-group">
                         <div class="input-group-btn">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
