@@ -11,7 +11,7 @@ $(function () {
             icon: '/images/google_maps_pin/bedrijf.png'
         },
         priority: {
-            icon:  '/images/google_maps_pin/gebruiker-dringend.png'
+            icon: '/images/google_maps_pin/gebruiker-dringend.png'
         },
         individual: {
             icon: '/images/google_maps_pin/gebruiker-gewoon.png'
@@ -50,9 +50,9 @@ $(function () {
 
                 $(".google-maps").height(function () {
 
-                    if( $(window).width() < "992"){
+                    if ($(window).width() < "992") {
                         return "400";
-                    }else{
+                    } else {
                         return $("#inhoud").height();
                     }
 
@@ -60,19 +60,19 @@ $(function () {
 
                 $(window).resize(function () {
 
-                    if( $(window).width() < "992"){
+                    if ($(window).width() < "992") {
                         $(".google-maps").height(400);
-                    }else{
+                    } else {
                         $(".google-maps").height($("#inhoud").height());
                     }
 
                 })
             })
         } else {
-            if($(window).width() < "992"){
+            if ($(window).width() < "992") {
                 $(".google-maps").height(400);
                 $("#map").height(400).css("left", "0");
-            }else{
+            } else {
                 $(".google-maps").height(650);
                 $("#map").height(650).css("left", "0");
             }
@@ -96,8 +96,17 @@ $(function () {
         });
 
         $("#search_button").click(function () {
-            fillInAddress(dropdown_selected);
-        })
+            fillInAddress(dropdown_selected, $("#searchTextField").val());
+        });
+        $('#searchTextField').bind('keyup', function (e) {
+
+            if (e.keyCode === 13) { // 13 is enter key
+                console.log("enter key souwn");
+                fillInAddress(dropdown_selected, $("#searchTextField").val());
+
+            }
+
+        });
     }
 
 
@@ -127,15 +136,15 @@ $(function () {
     function initialize_markers(data) {
         for (i = 0; i < data.length; i++) {
             var infowindow = new google.maps.InfoWindow();
-            var type_icon ="individual";
-            if(data[i].isPriority && data[i].isCompany ){
-                type_icon ="company_priority";
-            }else if(data[i].isPriority){
-                type_icon ="priority";
-            }else if(data[i].isCompany){
-                type_icon ="company";
-            }else {
-                type_icon ="individual";
+            var type_icon = "individual";
+            if (data[i].isPriority && data[i].isCompany) {
+                type_icon = "company_priority";
+            } else if (data[i].isPriority) {
+                type_icon = "priority";
+            } else if (data[i].isCompany) {
+                type_icon = "company";
+            } else {
+                type_icon = "individual";
             }
 
             var marker, i;
@@ -152,17 +161,17 @@ $(function () {
 
                 var contentString = '' +
                     '<div class="content_google-map"> ' +
-                        '<div class="post-thumb col-md-4" >' +
-                            '<img src="/images/small/' + data[i].foto + '">' +
-                        '</div>' +
-                        '<div class="siteNotice col-md-8" >' +
+                    '<div class="post-thumb col-md-4" >' +
+                    '<img src="/images/small/' + data[i].foto + '">' +
+                    '</div>' +
+                    '<div class="siteNotice col-md-8" >' +
 
-                            '<h1>' + data[i].title + '</h1>' +
-                            '<div id="bodyContent">' +
-                                '<p>' + data[i].description.substring(0, 100) + '...' + '</p>' + '<div><a href="' + urlproject + '">meer lezen over dit project</a><div>' +
-                            '</div>'
-                        '</div>' +
-                    '</div>';
+                    '<h1>' + data[i].title + '</h1>' +
+                    '<div id="bodyContent">' +
+                    '<p>' + data[i].description.substring(0, 100) + '...' + '</p>' + '<div><a href="' + urlproject + '">meer lezen</a><div>' +
+                    '</div>'
+                '</div>' +
+                '</div>';
 
                 return function () {
                     infowindow.setContent(contentString);
@@ -180,6 +189,7 @@ $(function () {
         input = document.getElementById('searchTextField');
 
         google.maps.event.addDomListener(input, 'keydown', function (e) {
+            $("#searchTextField").css("background-color","#222b35");
             if (e.keyCode == 13) {
                 e.preventDefault();
             }
@@ -190,12 +200,7 @@ $(function () {
     }
 
 
-    function fillInAddress(serach_category) {
-
-        if (autocomplete) {
-            console.log("auto compitted bestaat");
-            console.log(autocomplete);
-        }
+    function fillInAddress(serach_category, place) {
 
         if (serach_category) {
             var search_category_term;
@@ -214,21 +219,31 @@ $(function () {
             }
         }
 
-
-        if ($("#searchTextField").val()) {
+        var address = place;
+        // if ($("#searchTextField").val()) {
+        //     address = $("#searchTextField").val();
+        // }
+        if (address) {
             console.log($("#searchTextField").val());
-            if (autocomplete.getPlace().formatted_address) {
-                var adress = autocomplete.getPlace().formatted_address;
-                var jqxhr = $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + adress + "&key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug", function () {
+                var jqxhr = $.get("https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=AIzaSyAkd49_wxLkclwesSzLODJAkt3VeRvLrug", function () {
                         console.log("success");
                     })
                     .done(function (data) {
                         if (data) {
-                            console.log(data.results[0].geometry.location);
-                            var lat = data.results[0].geometry.location.lat;
-                            var lng = data.results[0].geometry.location.lng;
-                            init_map(lat, lng, cons_zoom_closup);
-                            configur_google_map(search_category_term)
+
+                            console.log('data',data);
+                            if(!(data.status == 'ZERO_RESULTS')){
+                                $("#searchTextField").css("background-color","#222b35");
+                                console.log(data.results[0].geometry.location);
+                                var lat = data.results[0].geometry.location.lat;
+                                var lng = data.results[0].geometry.location.lng;
+                                init_map(lat, lng, cons_zoom_closup);
+                                configur_google_map(search_category_term)
+                            }else{
+                                $("#searchTextField").css("background-color","#e84c3d");
+                                console.log('address niet gevonden');
+                            }
+
 
                         } else {
                             $("#searchTextField").css("background-color", "yellow");
@@ -237,7 +252,7 @@ $(function () {
                     .fail(function () {
                         $("#searchTextField").css("background-color", "yellow");
                     });
-            }
+
         } else {
             init_map(myLatLng.lat, myLatLng.lng, cons_zoom);
             configur_google_map(search_category_term)
@@ -263,5 +278,6 @@ $(function () {
             });
         });
     }
+
     google.maps.event.addDomListener(window, 'load', initMap);
 });

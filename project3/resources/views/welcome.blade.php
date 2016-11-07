@@ -14,15 +14,11 @@
 
 
 @section('welcome')
-
-
     <div class="container-fluid {{ Auth()->check() ? ' ' : 'google-maps-top' }}  ">
         @if(!Auth()->check())
             <div class=" content-home">
                 <div class="col-md-5" id="inhoud">
-
                     <img class="introduction-img" src="/images/medium/question.png">
-
                     <h1><span class="line-headers">w</span>at kunnen wij voor u betekenen.</h1>
                     <p>
                         Zijn er zaken waarbij je een helpende hand kunt gebruiken ? Klik dan op "plaats oproep" en vul het formulier in.
