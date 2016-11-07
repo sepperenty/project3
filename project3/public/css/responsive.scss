@@ -214,10 +214,13 @@
 
         .element
         {
-        max-height: 400px;
+
+        max-height: 1000px;;
         overflow: hidden;
         img{
-        width:100%;
+        min-width:auto;
+        max-height:400px;
+
         }
         }
 

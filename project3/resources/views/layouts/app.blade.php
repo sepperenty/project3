@@ -76,8 +76,8 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
                 
-                <li class="{{ Request::is('/#inhoud') ? 'active' : '' }}">
-                    <a href="{{ url('/#inhoud') }}">Naar inhoud</a>
+                <li>
+                    <a href="#inhoud">Naar inhoud</a>
                 </li>
                 <li class="{{ Request::is('/') ? 'active' : '' }}">
                     <a href="{{ url('/') }}">Home</a>

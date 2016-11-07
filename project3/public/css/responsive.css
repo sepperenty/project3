@@ -150,10 +150,11 @@
   #main [class*="col-"] {
     padding: 0px; }
   #main .element {
-    max-height: 400px;
+    max-height: 1000px;
     overflow: hidden; }
     #main .element img {
-      width: 100%; }
+      min-width: auto;
+      max-height: 400px; }
   #main h1 {
     font-size: 23px;
     line-height: 1.7; }

@@ -12,7 +12,7 @@ use App\Project;
 
 use App\User;
 
-use App\UploadPicture;
+use App\uploadPicture;
 use League\Flysystem\Exception;
 
 class ProjectsController extends Controller

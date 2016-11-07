@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1 add_form margin-top">
                 <div class="row form-head">
-                    <div class="col-md-12 ">
+                    <div class="col-md-12 " id="inhoud">
                         <h1 class=""><span class="line-headers">P</span>roject bewerken</h1>
 
                         <p class="subHead">Bewerk de formulieren om je voorgaande oproep te wijzigen.</p>
